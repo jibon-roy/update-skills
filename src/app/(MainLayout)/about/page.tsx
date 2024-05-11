@@ -1,9 +1,9 @@
 type Props = {}
 
-function page({ }: Props) {
+function About({ }: Props) {
     return (
-        <div>about page</div>
+        <div>about About</div>
     )
 };
 
-export default page;
+export default About;
