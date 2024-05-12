@@ -6,7 +6,8 @@ import connectDB from "../../config";
 export async function getPosts() {
   try {
     await connectDB();
-    return { message: "GET" };
+    const data = await PostModel.find();
+    return data;
   } catch (error) {
     return { error: error.message };
   }
