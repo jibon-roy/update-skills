@@ -114,7 +114,7 @@ export function Dashboard() {
                 size="icon"
                 variant="ghost"
               >
-                <Image
+                {/* <Image
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
@@ -124,7 +124,7 @@ export function Dashboard() {
                     objectFit: "cover",
                   }}
                   width="32"
-                />
+                /> */}
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>
