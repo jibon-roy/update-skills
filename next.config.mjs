@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn-icons-png.freepik.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        port: "",
+      },
+    ],
+  },
+};
 
 export default nextConfig;
