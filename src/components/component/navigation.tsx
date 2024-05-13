@@ -30,6 +30,9 @@ export function Navigation() {
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
               Contact
             </Link>
+            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+              Link
+            </Link>
           </nav>
           <div className="flex items-center gap-4">
             <Button size="sm" variant="outline">
