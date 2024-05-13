@@ -4,7 +4,7 @@ export interface UserModel extends Document {
   name: string;
   dateOfBirth: string;
   email: string;
-  imageURL: string;
+  gender: string;
 }
 
 const UserSchema: Schema = new Schema({
@@ -20,7 +20,7 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true
   },
-  imageUrl: {
+  gender: {
     type: String,
     required: true
   }
