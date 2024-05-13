@@ -22,6 +22,9 @@ export function Navigation() {
               Home
             </Link>
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+              Dashboard
+            </Link>
+            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
               About
             </Link>
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
@@ -29,9 +32,6 @@ export function Navigation() {
             </Link>
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
               Contact
-            </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
-              Link
             </Link>
           </nav>
           <div className="flex items-center gap-4">
