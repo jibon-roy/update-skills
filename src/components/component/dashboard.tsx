@@ -39,11 +39,11 @@ export function Dashboard() {
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-[60px] items-center border-b px-6">
             <Link className="flex items-center gap-2 font-semibold" href="#">
-              <MountainIcon className="h-6 w-6" />
+              <MountainIcon />
               <span className="">Acme Dashboard</span>
             </Link>
             <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
-              <BellIcon className="h-4 w-4" />
+              <BellIcon />
               <span className="sr-only">Toggle notifications</span>
             </Button>
           </div>
@@ -53,21 +53,21 @@ export function Dashboard() {
                 className="flex items-center gap-3 rounded-lg bg-gray-100 px-3 py-2 text-gray-900 transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50"
                 href="#"
               >
-                <HomeIcon className="h-4 w-4" />
+                <HomeIcon />
                 Overview
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 href="#"
               >
-                <LineChartIcon className="h-4 w-4" />
+                <LineChartIcon />
                 Analytics
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
                 href="#"
               >
-                <SettingsIcon className="h-4 w-4" />
+                <SettingsIcon />
                 Settings
               </Link>
             </nav>
@@ -90,13 +90,13 @@ export function Dashboard() {
       <div className="flex flex-col">
         <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
           <Link className="lg:hidden" href="#">
-            <MountainIcon className="h-6 w-6" />
+            <MountainIcon />
             <span className="sr-only">Home</span>
           </Link>
           <div className="w-full flex-1">
             <form>
               <div className="relative">
-                <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
+                <SearchIcon />
                 <Input
                   className="w-full bg-white shadow-none appearance-none pl-8 md:w-2/3 lg:w-1/3 dark:bg-gray-950"
                   placeholder="Search..."
@@ -182,7 +182,7 @@ export function Dashboard() {
                 <CardDescription>A breakdown of sales by product category.</CardDescription>
               </CardHeader>
               <CardContent>
-                <BarChart className="w-full aspect-[4/3]" />
+                <BarChart />
               </CardContent>
             </Card>
             <Card>
@@ -191,7 +191,7 @@ export function Dashboard() {
                 <CardDescription>A chart showing user acquisition over time.</CardDescription>
               </CardHeader>
               <CardContent>
-                <LineChart className="w-full aspect-[4/3]" />
+                <LineChart />
               </CardContent>
             </Card>
             <Card>
@@ -200,7 +200,7 @@ export function Dashboard() {
                 <CardDescription>A chart showing the top referrers to the site.</CardDescription>
               </CardHeader>
               <CardContent>
-                <LabelledpieChart className="w-full aspect-[4/3]" />
+                <LabelledpieChart />
               </CardContent>
             </Card>
           </div>
@@ -210,7 +210,7 @@ export function Dashboard() {
   )
 }
 
-function BarChart(props) {
+function BarChart(props: object) {
   return (
     <div {...props}>
       <ResponsiveBar
@@ -222,6 +222,7 @@ function BarChart(props) {
           { name: "May", count: 119 },
           { name: "Jun", count: 72 },
         ]}
+
         keys={["count"]}
         indexBy="name"
         margin={{ top: 0, right: 0, bottom: 40, left: 40 }}
@@ -264,7 +265,7 @@ function BarChart(props) {
 }
 
 
-function BellIcon(props) {
+function BellIcon(props: object) {
   return (
     <svg
       {...props}
@@ -285,7 +286,7 @@ function BellIcon(props) {
 }
 
 
-function HomeIcon(props) {
+function HomeIcon(props: object) {
   return (
     <svg
       {...props}
@@ -306,7 +307,7 @@ function HomeIcon(props) {
 }
 
 
-function LabelledpieChart(props) {
+function LabelledpieChart(props: object) {
   return (
     <div {...props}>
       <ResponsivePie
@@ -347,7 +348,7 @@ function LabelledpieChart(props) {
 }
 
 
-function LineChart(props) {
+function LineChart(props: {}) {
   return (
     <div {...props}>
       <ResponsiveLine
@@ -421,7 +422,7 @@ function LineChart(props) {
 }
 
 
-function LineChartIcon(props) {
+function LineChartIcon(props: object) {
   return (
     <svg
       {...props}
@@ -442,7 +443,7 @@ function LineChartIcon(props) {
 }
 
 
-function MountainIcon(props) {
+function MountainIcon(props: object) {
   return (
     <svg
       {...props}
@@ -462,7 +463,7 @@ function MountainIcon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props: object) {
   return (
     <svg
       {...props}
@@ -483,7 +484,7 @@ function SearchIcon(props) {
 }
 
 
-function SettingsIcon(props) {
+function SettingsIcon(props: object) {
   return (
     <svg
       {...props}
