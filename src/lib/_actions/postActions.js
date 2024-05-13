@@ -1,13 +1,12 @@
 "use server";
+import connectDB from "@/config/index";
+import { SlideModel } from "@/lib/models/postModel";
 
-import PostModel from "../models/postModel";
-import connectDB from "../../config";
-
-export default async function getPosts() {
+export default async function GetPosts() {
   try {
     await connectDB();
-    const data = await PostModel.find();
-    return data;
+    const data = await SlideModel.find();
+    return { data: data };
   } catch (error) {
     return { error: error.message };
   }

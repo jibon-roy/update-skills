@@ -1,15 +1,13 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model } from "mongoose";
 
-const postSchema = new Schema(
-  {
-    message: {
-      type: String,
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
+// Define the schema
+const slideSchema = new Schema({
+  heading: String,
+  text: String,
+  bgImage: String,
+});
 
-const PostModel = models.user || model("post", postSchema);
+// Define and export the model
+const SlideModel = model("sliderData", slideSchema);
 
-export default PostModel;
+export { SlideModel, slideSchema };

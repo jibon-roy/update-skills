@@ -1,9 +1,9 @@
 import Link from "next/link";
-import getPosts from '@/lib/_actions/postActions'
+import GetPosts from '@/lib/_actions/postActions'
 
 
 export default async function Home() {
-  const res = await getPosts()
+  const res = await GetPosts()
   console.log(res)
   return (
     <main>
