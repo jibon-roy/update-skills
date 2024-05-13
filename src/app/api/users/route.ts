@@ -8,9 +8,9 @@ export async function GET() {
 
     try {
         const users = await UserData.find({})
-        NextResponse.json(users)
+        return NextResponse.json(users)
     } catch (error: any) {
-        NextResponse.json({error: error.message})
+        return NextResponse.json({error: error.message})
     }
 };
 
