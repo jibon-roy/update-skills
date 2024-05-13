@@ -114,17 +114,17 @@ export function Dashboard() {
                 size="icon"
                 variant="ghost"
               >
-                {/* <Image
+                <Image
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
-                  src="/placeholder.svg"
+                  src="https://cdn-icons-png.freepik.com/512/813/813741.png"
                   style={{
                     aspectRatio: "32/32",
                     objectFit: "cover",
                   }}
                   width="32"
-                /> */}
+                />
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>
