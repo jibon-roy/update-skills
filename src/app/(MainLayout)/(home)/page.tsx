@@ -1,12 +1,14 @@
 
+import axios from "axios";
 import Link from "next/link";
 
 
 
 export default async function Home() {
+
   const fetchUsers = async () => {
-    const res = await fetch("http://localhost:3000/api/users")
-    return res.json()
+    const res = await axios.get("http://localhost:3000/api/users")
+    return res.data
   }
   const users = await fetchUsers();
   console.log(users)
