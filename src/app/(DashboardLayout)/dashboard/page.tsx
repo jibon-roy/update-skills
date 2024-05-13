@@ -1,14 +1,15 @@
-import Link from "next/link";
+import { Dashboard } from "@/components/component/dashboard";
+// import Link from "next/link";
 
 type Props = {}
 
-function Dashboard({ }: Props) {
+function DashboardPage({ }: Props) {
     return (
         <div>
-            <Link href="/about">about</Link>
+            <Dashboard />
         </div>
     )
 };
 
-export default Dashboard;
+export default DashboardPage;
 
