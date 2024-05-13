@@ -12,6 +12,9 @@ export default async function Home() {
   console.log(users)
   return (
     <main>
+      {
+        users.map((user: { _id: string, name: string }) => <div key={user._id}>{user.name}</div>)
+      }
       <Link href="/about">About page</Link>
     </main>
   );
