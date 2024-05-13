@@ -1,10 +1,11 @@
+
 import Link from "next/link";
-import GetPosts from '@/lib/_actions/postActions'
+
 
 
 export default async function Home() {
-  const res = await GetPosts()
-  console.log(res)
+  const res = await fetch("http://localhost:3000/api/users")
+  console.log(res.json())
   return (
     <main>
       <Link href="/about">About page</Link>

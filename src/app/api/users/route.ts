@@ -3,7 +3,7 @@ import UserData from "@/lib/models/userModel";
 import { NextResponse } from "next/server";
 
 
-export default async function GET() {
+export async function GET() {
     await connectDB();
 
     try {
