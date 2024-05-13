@@ -6,7 +6,7 @@ async function connectDB() {
         return;
     }
 
-    const db = await mongoose.connect(process.env.MONGODB_URI!)
+    const db = await mongoose.connect(process.env.MONGODB_URI!,{dbName: "UpdateSkills"})
     connection.isConnected = db.connections[0].readyState;
 }
 
