@@ -34,7 +34,7 @@ import { ResponsiveLine } from "@nivo/line"
 import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import EditDashboard from "./editDashboard/editDashboard"
+
 
 export function Dashboard() {
 
@@ -278,7 +278,6 @@ export function Dashboard() {
             <Card>
               <CardHeader>
                 <CardTitle>Top Referrers</CardTitle>
-                <EditDashboard />
                 <CardDescription>A chart showing the top referrers to the site.</CardDescription>
               </CardHeader>
               <CardContent>
