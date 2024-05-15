@@ -33,8 +33,15 @@ import { ResponsiveBar } from "@nivo/bar"
 import { ResponsiveLine } from "@nivo/line"
 import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
+import EditDashboard from "./editDashboard/editDashboard"
 
 export function Dashboard() {
+
+  const path: string = usePathname().slice(1)
+  const pathName: string = path[0].toUpperCase() + path.slice(1)
+
+  console.log(pathName)
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
@@ -42,7 +49,7 @@ export function Dashboard() {
           <div className="flex h-[60px] items-center border-b px-6">
             <Link className="flex items-center gap-2 font-semibold" href="#">
               <MountainIcon />
-              <span className="">Acme Dashboard</span>
+              <span className="">UC Dashboard</span>
             </Link>
             <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
               <BellIcon />
@@ -271,6 +278,7 @@ export function Dashboard() {
             <Card>
               <CardHeader>
                 <CardTitle>Top Referrers</CardTitle>
+                <EditDashboard />
                 <CardDescription>A chart showing the top referrers to the site.</CardDescription>
               </CardHeader>
               <CardContent>

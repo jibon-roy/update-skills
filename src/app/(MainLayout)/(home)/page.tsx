@@ -7,7 +7,7 @@ import Link from "next/link";
 export default async function Home() {
 
   const fetchUsers = async () => {
-    const res = await axios.get("http://localhost:3000/api/users")
+    const res = await axios.get(`${process.env.HOST_URI}/api/users`)
     return res.data
   }
   const users = await fetchUsers();

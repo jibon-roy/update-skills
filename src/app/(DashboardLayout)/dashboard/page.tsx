@@ -1,4 +1,4 @@
-import { Dashboard } from "@/components/component/dashboard";
+import { Dashboard } from "@/components/component/dashboard/dashboard";
 // import Link from "next/link";
 
 type Props = {}
