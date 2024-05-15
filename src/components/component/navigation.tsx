@@ -24,7 +24,7 @@ export function Navigation() {
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/dashboard">
               Dashboard
             </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/about">
               About
             </Link>
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
