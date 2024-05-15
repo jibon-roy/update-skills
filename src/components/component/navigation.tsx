@@ -15,7 +15,7 @@ export function Navigation() {
         <div className="flex justify-between h-14 items-center">
           <Link className="flex items-center" href="#">
             <MountainIcon />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Update Skills</span>
           </Link>
           <nav className="hidden md:flex gap-4">
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
