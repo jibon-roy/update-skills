@@ -21,8 +21,9 @@ import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 
 export function Dashboard() {
 
-  const path: string = usePathname().slice(1)
-  const pathName: string = path[0].toUpperCase() + path.slice(1)
+  const path: string | null = usePathname()
+  const getPath = typeof path === 'string' ? path.slice(1) : null
+  const pathName: string | null = typeof getPath === 'string' ? getPath[0].toUpperCase() + getPath.slice(1) : null
 
   console.log(pathName)
   return (
