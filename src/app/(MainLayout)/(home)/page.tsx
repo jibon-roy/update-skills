@@ -1,4 +1,5 @@
 
+import Banner from "@/components/component/home/banner/banner";
 import axios from "axios";
 import Link from "next/link";
 
@@ -14,6 +15,7 @@ export default async function Home() {
   console.log(users)
   return (
     <main>
+      <Banner />
       {
         users.map((user: { _id: string, name: string }): any => <div key={user._id}>{user.name}</div>)
       }
