@@ -18,7 +18,7 @@ export function Navigation() {
             <span className="sr-only">Update Skills</span>
           </Link>
           <nav className="hidden md:flex gap-4">
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/">
               Home
             </Link>
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/dashboard">
