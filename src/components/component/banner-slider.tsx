@@ -24,7 +24,10 @@ export function BannerSlider() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
       <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-6">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Unleash Your Creativity
+          <div className="hover:text-glitch text-glitch-duration-normal">
+            Unleash Your Creativity
+          </div>
+
         </h1>
         <p className="max-w-3xl text-lg text-gray-300">
           Discover a world of endless possibilities with our powerful design tools. Bring your ideas to life and
