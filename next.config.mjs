@@ -4,12 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn-icons-png.freepik.com",
-        port: "",
-      },
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: ["cdn-icons-png.freepik.com", "swiperjs.com", "i.ibb.co"],
         port: "",
       },
     ],
