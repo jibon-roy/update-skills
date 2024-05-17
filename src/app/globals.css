@@ -4,6 +4,13 @@
 
   @layer base {
     :root {
+
+      --main-primary-black: #1D0776;
+      --main-secondary-black: #000000;
+
+      --main-primary-violet: #7200EA;
+      --main-secondary-violet: #2F00A8;
+
       --background: 0 0% 100%;
       --foreground: 222.2 84% 4.9%;
 

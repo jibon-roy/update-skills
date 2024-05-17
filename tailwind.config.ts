@@ -24,6 +24,10 @@ const config = {
         },
     extend: {
       colors: {
+        'main-primary-black': 'var(--main-primary-black)',
+        'main-secondary-black': 'var(--main-secondary-black)',
+        'main-primary-violet': 'var(--main-primary-violet)',
+        'main-secondary-violet': 'var(--main-secondary-violet)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
