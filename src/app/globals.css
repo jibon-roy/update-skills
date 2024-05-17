@@ -4,12 +4,13 @@
 
   @layer base {
     :root {
+    --main-primary-black: hsl(250, 90%, 25%);
+  --main-secondary-black: hsl(0, 0%, 0%);
 
-      --main-primary-black: #1D0776;
-      --main-secondary-black: #000000;
+  --main-primary-violet: hsl(264, 100%, 46%);
+  --main-secondary-violet: hsl(258, 100%, 33%);
 
-      --main-primary-violet: #7200EA;
-      --main-secondary-violet: #2F00A8;
+      --main-primary-yellow: hsl(52, 100%, 50%);
 
       --background: 0 0% 100%;
       --foreground: 222.2 84% 4.9%;
@@ -43,6 +44,13 @@
     }
 
     .dark {
+          --main-primary-black: 250, 90%, 25%;
+            --main-secondary-black: 0, 0%, 0%;
+          
+            --main-primary-violet: 264, 100%, 46%;
+            --main-secondary-violet: 258, 100%, 33%;
+          
+            --main-primary-yellow: 52, 100%, 50%;
       --background: 222.2 84% 4.9%;
       --foreground: 210 40% 98%;
 

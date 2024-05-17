@@ -32,6 +32,7 @@ const config = {
         'main-secondary-black': 'var(--main-secondary-black)',
         'main-primary-violet': 'var(--main-primary-violet)',
         'main-secondary-violet': 'var(--main-secondary-violet)',
+        'main-primary-yellow': 'var(--main-primary-yellow)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

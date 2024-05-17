@@ -17,15 +17,21 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
-import Link from "next/link"
+
 import DynamicCard from "../ui/customizeCard"
+import { Button } from "../ui/button"
+import { CarouselPlugin } from "./home/banner/slider"
+import Link from "next/link"
+
 
 export function BannerSlider() {
   return (
-    <section className="w-full bg-gradient-to-top py-12 md:py-24 lg:py-24 text-white">
+    <section className="w-full lg:flex justify-center items-center bg-gradient-to-top py-12 md:py-24 lg:py-24 text-white">
       <DynamicCard className="w-[60%]">
         <div className="container px-4 md:px-6 grid gap-7">
-          <h3 className="font-semibold text-2xl">Do not wast suitable time</h3>
+          <h3 className="font-semibold text-3xl">
+            Do not wast suitable time
+          </h3>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <div className="hover:text-glitch text-glitch-duration-normal">
               Update Your Skills
@@ -35,13 +41,15 @@ export function BannerSlider() {
           <p className="max-w-3xl text-lg text-gray-300">
             Discover a world of endless possibilities with our best courses. Bring your skills to life and grow your Job capability.
           </p>
-          <Link
-            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            href="#"
-          >
-            Get Started
+          <Link href="#">
+            <Button size={"lg"} className="font-bold text-lg hover:bg-main-primary-yellow/45">
+              Get Started
+            </Button>
           </Link>
         </div>
+      </DynamicCard>
+      <DynamicCard width="40%" className="flex justify-center items-center">
+        <CarouselPlugin />
       </DynamicCard>
     </section>
   )
