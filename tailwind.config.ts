@@ -21,7 +21,11 @@ const config = {
             fast: "1s",
             normal: "3s",
             slow: "5s",
-        },
+    },
+    backgroundImage: theme => ({
+        'gradient-to-top': 'linear-gradient(to top, var(--main-secondary-violet), var(--main-secondary-black))',
+        'gradient-to-right': 'linear-gradient(to top, var(--main-secondary-violet), var(--main-secondary-black))',
+      }),
     extend: {
       colors: {
         'main-primary-black': 'var(--main-primary-black)',

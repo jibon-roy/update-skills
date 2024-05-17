@@ -21,24 +21,26 @@ import Link from "next/link"
 
 export function BannerSlider() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
-      <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-6">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <div className="hover:text-glitch text-glitch-duration-normal">
-            Unleash Your Creativity
-          </div>
+    <section className="w-full bg-gradient-to-top py-12 md:py-24 lg:py-32 text-white">
+      <div>
+        <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-6">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <div className="hover:text-glitch text-glitch-duration-normal">
+              Unleash Your Creativity
+            </div>
 
-        </h1>
-        <p className="max-w-3xl text-lg text-gray-300">
-          Discover a world of endless possibilities with our powerful design tools. Bring your ideas to life and
-          captivate your audience.
-        </p>
-        <Link
-          className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          href="#"
-        >
-          Get Started
-        </Link>
+          </h1>
+          <p className="max-w-3xl text-lg text-gray-300">
+            Discover a world of endless possibilities with our powerful design tools. Bring your ideas to life and
+            captivate your audience.
+          </p>
+          <Link
+            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            href="#"
+          >
+            Get Started
+          </Link>
+        </div>
       </div>
     </section>
   )
