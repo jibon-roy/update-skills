@@ -7,7 +7,7 @@ type Props = {}
 function Banner({ }: Props) {
     return (
         <section>
-            <CustomizeCard className="bg-black" width="100%" height="700px">
+            <CustomizeCard className="bg-black" width="100%">
                 <BannerSlider />
             </CustomizeCard>
 
