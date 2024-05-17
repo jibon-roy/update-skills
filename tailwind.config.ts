@@ -17,6 +17,11 @@ const config = {
         "2xl": "1400px",
       },
     },
+    duration: {
+            fast: "1s",
+            normal: "3s",
+            slow: "5s",
+        },
     extend: {
       colors: {
         border: "hsl(var(--border))",
