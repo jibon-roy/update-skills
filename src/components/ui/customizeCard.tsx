@@ -19,9 +19,10 @@ type Props = {
     gridTemplateColumns?: number;
     backgroundPosition?: string;
     backgroundRepeat?: string;
+    backgroundSize?: string;
 }
 
-function CustomizeCard({ width, justifyContent, gap, backgroundPosition, backgroundRepeat, alignItems, gridTemplateColumns, height, display, padding, bgImgLink, boxShadow, background, border, borderRadius, margin, children, className }: Props) {
+function CustomizeCard({ width, justifyContent, backgroundSize, gap, backgroundPosition, backgroundRepeat, alignItems, gridTemplateColumns, height, display, padding, bgImgLink, boxShadow, background, border, borderRadius, margin, children, className }: Props) {
 
     const getPadding = padding === "none" ? '0px' : padding === "sm" ? '0px' : padding === "md" ? '0px' : padding === "lg" ? '0px' : padding;
     const getMargin = margin === "none" ? '0px' : margin === "sm" ? '0px' : margin === "md" ? '0px' : margin === "lg" ? '0px' : margin;
@@ -43,6 +44,7 @@ function CustomizeCard({ width, justifyContent, gap, backgroundPosition, backgro
                     background: background,
                     backgroundPosition: backgroundPosition ? backgroundPosition : "center",
                     backgroundRepeat: backgroundRepeat ? backgroundRepeat : "no-repeat",
+                    backgroundSize: backgroundSize ? backgroundSize : "cover",
                     backgroundImage: `url(${bgImgLink})`,
                     display: display,
                     justifyContent: justifyContent,
