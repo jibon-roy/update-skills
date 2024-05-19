@@ -19,6 +19,7 @@ function VideoHolder({ course }: any) {
     return (
         <div className="group relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
             <Image
+                priority
                 alt="Property 2"
                 className="h-60 w-full hover:brightness-90 object-cover object-center transition-all duration-300 group-hover:scale-105"
                 height={400}
