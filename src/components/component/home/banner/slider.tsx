@@ -24,7 +24,7 @@ export function CarouselPlugin({ slide }: any) {
     return (
         <Carousel
             plugins={[plugin.current]}
-            className="inline-block max-w-xs mx-auto"
+            className="inline-block min-w-0 max-w-md mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
@@ -37,7 +37,7 @@ export function CarouselPlugin({ slide }: any) {
                                     <Image priority={true} className="w-full h-full" height={content.content.height} width={content.content.width} src={content.content.src!} alt={content.key.toString() + "image"} />
                                 </CardContent>
                             </Card>
-                            <div className="flex flex-col sm:flex-row gap-5 justify-between bg-main-primary-violet rounded-b-lg p-3">
+                            <div className="flex gap-5 justify-between bg-main-primary-violet rounded-b-lg p-3">
                                 <div className="text-3xl font-bold tracking-tighter text-gray-50 ">
                                     $49
                                     <span className="ml-2 text-xl font-normal line-through text-white">$99</span>
@@ -48,8 +48,10 @@ export function CarouselPlugin({ slide }: any) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <div className="max-sm:hidden">
+                <CarouselPrevious />
+                <CarouselNext />
+            </div>
         </Carousel>
     )
 }

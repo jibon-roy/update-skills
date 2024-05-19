@@ -5,7 +5,7 @@ type Props = {}
 
 function BannerText({ }: Props) {
     return (
-        <div className="container px-4 md:px-6 grid gap-7">
+        <div className="sm:px-4 md:px-6 grid gap-7">
             <h3 className="font-semibold text-3xl">
                 It{"'"}s suitable time to
             </h3>

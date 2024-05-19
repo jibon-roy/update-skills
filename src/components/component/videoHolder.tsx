@@ -31,20 +31,20 @@ function VideoHolder({ course }: any) {
             />
             <div className="p-4">
                 <h3 className="text-lg font-semibold">{title}</h3>
-                <div className="mt-2 flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
+                <div className="mt-2 flex flex-wrap items-center justify-between">
+                    <div className="flex flex-wrap items-center space-x-2">
                         <FaBookReader className="h-5 w-5 text-gray-500 dark:text-gray-400" />
                         <span className="text-sm text-gray-500 dark:text-gray-400">{enrolled} Enrolled</span>
                     </div>
-                    <div className="text-lg font-semibold">${price}</div>
+                    <div className="text-lg font-semibold">Price: ${price}</div>
                 </div>
-                <div className="mt-4 flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between">
                     <div className="flex flex-wrap items-center gap-2">
                         {review}
                         <StarRatings readOnly review={review}></StarRatings>
                         ({review_members})
                     </div>
-                    <Button size="sm">View</Button>
+                    <Button size="sm" className="my-5">Enroll Now</Button>
                 </div>
             </div>
         </div>
