@@ -5,6 +5,8 @@ import { BannerSlider } from "../../banner-slider";
 type Props = {}
 
 function Banner({ }: Props) {
+
+
     return (
         <section className="bg-gradient-to-top">
             <DynamicCard className="container mx-auto">
