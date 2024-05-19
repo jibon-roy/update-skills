@@ -22,7 +22,7 @@ export function BannerSlider() {
     { key: 7, content: Image4 },
   ]
   return (
-    <div className="w-full lg:flex justify-between items-center py-24 text-white">
+    <div className="w-full lg:flex justify-between items-center py-28 text-white">
       <DynamicCard className="lg:w-[60%]">
         <BannerText />
       </DynamicCard>
