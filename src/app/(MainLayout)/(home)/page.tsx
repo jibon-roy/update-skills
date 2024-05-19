@@ -19,7 +19,7 @@ export default async function Home() {
       {
         users.map((user: { _id: string, name: string }): any => <div key={user._id}>{user.name}</div>)
       }
-      <Link href="/about">About page</Link>
+      {/* <Link href="/about">About page</Link> */}
     </main>
   );
 }
