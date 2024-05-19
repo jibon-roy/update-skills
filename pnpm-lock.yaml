@@ -50,15 +50,18 @@ importers:
       react:
         specifier: ^18
         version: 18.3.1
+      react-animated-rating:
+        specifier: ^1.2.0
+        version: 1.2.0(react@18.3.1)
+      react-custom-rating-component:
+        specifier: ^0.1.6
+        version: 0.1.6(react@18.3.1)
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.2.1(react@18.3.1)
-      react-stars:
-        specifier: ^2.2.5
-        version: 2.2.5
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.3.0
@@ -78,9 +81,6 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.0
-      '@types/react-stars':
-        specifier: ^2.2.4
-        version: 2.2.4
       eslint:
         specifier: ^8
         version: 8.57.0
@@ -668,9 +668,6 @@ packages:
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
-  '@types/react-stars@2.2.4':
-    resolution: {integrity: sha512-7wZNmH28ZeDSkesOmpvenLOLJ3StRdHzAbbs+ZkLEOx75Qe8vUWl+qCGnJHdKr+HCF/BSZPvw7LF96Fl+fTUSw==}
-
   '@types/react@18.3.2':
     resolution: {integrity: sha512-Btgg89dAnqD4vV7R3hlwOxgqobUQKgx3MmrQRi0yYbs/P0ym8XozIAlkqVilPqHQwXs4e9Tf63rrCgl58BcO4w==}
 
@@ -960,6 +957,9 @@ packages:
 
   class-variance-authority@0.7.0:
     resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
@@ -2032,6 +2032,16 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
+  react-animated-rating@1.2.0:
+    resolution: {integrity: sha512-nh6ucAymOpKAnK72jOW46subUdZWWKavsjSxn2F36U3f9i8JFnaEqtY1h7exrBhP5D60BMT5hLLo09dGblIpxw==}
+    peerDependencies:
+      react: '>=16'
+
+  react-custom-rating-component@0.1.6:
+    resolution: {integrity: sha512-fEtejXi+pf8nZDUVhr6Pf0aqVf2UTJTm460kE+9y9c2pTKA91GqaIPDwQSktalcTuAKoJzFKd5H2gv9ApPXFGQ==}
+    peerDependencies:
+      react: '>=16'
+
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -2064,9 +2074,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  react-stars@2.2.5:
-    resolution: {integrity: sha512-O//KS6Z9RZnUOU/r+3+wxCzNalVn/wEWIcbAQFRV3dw8WbV+ys/kgcpBPijqTiNpHGrcwZdtb/7wF/UVem20CQ==}
 
   react-style-singleton@2.2.1:
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
@@ -3144,10 +3151,6 @@ snapshots:
     dependencies:
       '@types/react': 18.3.2
 
-  '@types/react-stars@2.2.4':
-    dependencies:
-      '@types/react': 18.3.2
-
   '@types/react@18.3.2':
     dependencies:
       '@types/prop-types': 15.7.12
@@ -3511,6 +3514,8 @@ snapshots:
   class-variance-authority@0.7.0:
     dependencies:
       clsx: 2.0.0
+
+  classnames@2.5.1: {}
 
   client-only@0.0.1: {}
 
@@ -4678,6 +4683,15 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
+  react-animated-rating@1.2.0(react@18.3.1):
+    dependencies:
+      classnames: 2.5.1
+      react: 18.3.1
+
+  react-custom-rating-component@0.1.6(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -4708,8 +4722,6 @@ snapshots:
       use-sidecar: 1.1.2(@types/react@18.3.2)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.2
-
-  react-stars@2.2.5: {}
 
   react-style-singleton@2.2.1(@types/react@18.3.2)(react@18.3.1):
     dependencies:

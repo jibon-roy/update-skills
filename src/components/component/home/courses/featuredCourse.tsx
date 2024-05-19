@@ -15,7 +15,7 @@ function FeaturedCourse({ }: Props) {
         thumbnail: "thumbnail",
         enrolled: 1250,
         review_members: 1000,
-        avg_review: 5.4,
+        review: 3.4,
         price: 25
     }
 

@@ -1,20 +1,13 @@
-"use client"
-import ReactStars from 'react-stars'
-import React from 'react';
+"use client";
+import { Rating } from 'react-custom-rating-component'
+
+export default function StarRatings({ review, readonly }: any) {
 
 
-export default function StarRatings() {
     return (
+        <div >
+            <Rating size='15' defaultValue={review} readOnly={readonly} />
 
-
-        <ReactStars
-            className='-mt-2'
-            key={0}
-            count={5}
-            size={24}
-            edit={false}
-            value={4}
-            color2={'#ffd700'} />
-
-    )
-} 
+        </div>
+    );
+}

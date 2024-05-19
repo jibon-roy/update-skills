@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../ui/button";
 import { PrimaryVideoDetails } from "@/lib/utils/interfaces/components.interface";
 import { FaBookReader } from "react-icons/fa";
@@ -13,7 +12,7 @@ function VideoHolder({ course }: any) {
         thumbnail,
         enrolled,
         review_members,
-        avg_review,
+        review,
         price
     }: PrimaryVideoDetails = course;
 
@@ -40,8 +39,9 @@ function VideoHolder({ course }: any) {
                     <div className="text-lg font-semibold">${price}</div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <StarRatings />
+                    <div className="flex flex-wrap items-center gap-2">
+                        {review}
+                        <StarRatings readOnly review={review}></StarRatings>
                         ({review_members})
                     </div>
                     <Button size="sm">View</Button>

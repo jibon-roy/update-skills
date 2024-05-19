@@ -16,7 +16,7 @@ export type PrimaryVideoDetails = {
     thumbnail: string;
     enrolled: number;
     review_members: number;
-    avg_review: number;
+    review: number;
     price: number;
 
 }
