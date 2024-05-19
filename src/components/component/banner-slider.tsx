@@ -22,35 +22,18 @@ import DynamicCard from "../ui/customizeCard"
 import { Button } from "../ui/button"
 import { CarouselPlugin } from "./home/banner/slider"
 import Link from "next/link"
+import BannerText from "./home/banner/banner-text"
 
 
 export function BannerSlider() {
   return (
-    <section className="w-full lg:flex justify-center items-center bg-gradient-to-top py-12 md:py-24 lg:py-24 text-white">
+    <div className="w-full lg:flex justify-center items-center py-12 md:py-24 lg:py-24 text-white">
       <DynamicCard className="w-[60%]">
-        <div className="container px-4 md:px-6 grid gap-7">
-          <h3 className="font-semibold text-3xl">
-            Do not wast suitable time
-          </h3>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            <div className="hover:text-glitch text-glitch-duration-normal">
-              Update Your Skills
-            </div>
-
-          </h1>
-          <p className="max-w-3xl text-lg text-gray-300">
-            Discover a world of endless possibilities with our best courses. Bring your skills to life and grow your Job capability.
-          </p>
-          <Link href="#">
-            <Button size={"lg"} className="font-bold text-lg hover:bg-main-primary-yellow/45">
-              Get Started
-            </Button>
-          </Link>
-        </div>
+        <BannerText />
       </DynamicCard>
       <DynamicCard width="40%" className="flex justify-center items-center">
         <CarouselPlugin />
       </DynamicCard>
-    </section>
+    </div>
   )
 }

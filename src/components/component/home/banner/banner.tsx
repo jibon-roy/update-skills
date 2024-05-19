@@ -6,8 +6,8 @@ type Props = {}
 
 function Banner({ }: Props) {
     return (
-        <section>
-            <DynamicCard className="bg-black" width="100%">
+        <section className="bg-gradient-to-top">
+            <DynamicCard className="container mx-auto">
                 <BannerSlider />
             </DynamicCard>
         </section>
