@@ -22,7 +22,7 @@ function VideoHolder({ course }: any) {
                 alt="Property 2"
                 className="h-60 w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
                 height={400}
-                src="/placeholder.svg"
+                src={typeof thumbnail === 'string' ? thumbnail : thumbnail.src}
                 style={{
                     aspectRatio: "600/400",
                     objectFit: "cover",
