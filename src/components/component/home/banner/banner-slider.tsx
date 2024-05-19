@@ -1,9 +1,9 @@
 
 // * @see https://v0.dev/t/Zo5MIIS7YUO
 
-import DynamicCard from "../ui/customizeCard"
-import { CarouselPlugin } from "./home/banner/slider"
-import BannerText from "./home/banner/banner-text"
+import DynamicCard from "../../../ui/customizeCard"
+import { CarouselPlugin } from "./slider"
+import BannerText from "./banner-text"
 import { Slider } from "@/lib/utils/interfaces/components.interface";
 import Image1 from "@/assets/images/animation.png"
 import Image2 from "@/assets/images/banner.png"

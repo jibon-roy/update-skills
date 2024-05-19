@@ -1,5 +1,5 @@
 import DynamicCard from "@/components/ui/customizeCard";
-import { BannerSlider } from "../../banner-slider";
+import { BannerSlider } from "./banner-slider";
 
 
 type Props = {}

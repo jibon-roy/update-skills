@@ -13,7 +13,6 @@ function BannerText({ }: Props) {
                 <div className="hover:text-glitch text-glitch-duration-normal">
                     Update Your Skills
                 </div>
-
             </h1>
             <p className="max-w-3xl text-lg text-gray-300">
                 Discover a world of endless possibilities with our best courses. Bring your skills to life and grow your Job capability.

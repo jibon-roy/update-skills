@@ -8,10 +8,9 @@ import { Button } from "@/components/ui/button"
 
 export function Navigation() {
 
-
   return (
     <nav className="bg-white shadow-sm dark:bg-gray-950/90">
-      <div className="w-full max-w-7xl mx-auto px-4">
+      <div className="w-full container mx-auto px-4">
         <div className="flex justify-between h-14 items-center">
           <Link className="flex items-center" href="#">
             <MountainIcon />

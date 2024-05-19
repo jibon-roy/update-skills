@@ -20,7 +20,7 @@ export function CarouselPlugin({ slide }: any) {
     const plugin = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: false })
     )
-    console.log(slide)
+
     return (
         <Carousel
             plugins={[plugin.current]}
