@@ -19,16 +19,16 @@ export function CarouselPlugin() {
     return (
         <Carousel
             plugins={[plugin.current]}
-            className="w-full max-w-xs"
+            className="inline-block max-w-xs mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
             <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
                     <CarouselItem key={index}>
-                        <div className="p-1 bg-black">
+                        <div className="p-1 bg-black mx-auto">
                             <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
+                                <CardContent className="flex mx-auto aspect-square items-center justify-center p-6">
                                     <span className="text-4xl font-semibold">{index + 1}</span>
                                 </CardContent>
                             </Card>

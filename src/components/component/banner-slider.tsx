@@ -27,11 +27,11 @@ import BannerText from "./home/banner/banner-text"
 
 export function BannerSlider() {
   return (
-    <div className="w-full lg:flex justify-center items-center py-12 md:py-24 lg:py-24 text-white">
-      <DynamicCard className="w-[60%]">
+    <div className="w-full lg:flex justify-between items-center py-24 text-white">
+      <DynamicCard className="lg:w-[60%]">
         <BannerText />
       </DynamicCard>
-      <DynamicCard width="40%" className="flex justify-center items-center">
+      <DynamicCard className="flex lg:w-[40%] justify-center mt-20 lg:mt-0 items-center">
         <CarouselPlugin />
       </DynamicCard>
     </div>
