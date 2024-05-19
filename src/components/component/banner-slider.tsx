@@ -19,9 +19,9 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 
 import DynamicCard from "../ui/customizeCard"
-import { Button } from "../ui/button"
+// import { Button } from "../ui/button"
 import { CarouselPlugin } from "./home/banner/slider"
-import Link from "next/link"
+// import Link from "next/link"
 import BannerText from "./home/banner/banner-text"
 
 
