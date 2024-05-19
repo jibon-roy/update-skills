@@ -1,13 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { PrimaryVideoDetails } from "@/lib/utils/interfaces/components.interface";
+import { FaBookReader } from "react-icons/fa";
 
-type Props = {}
 
-function VideoHolder({ }: Props) {
+function VideoHolder({ course }: any) {
+
+    const {
+        title,
+        thumbnail,
+        enrolled,
+        review_members,
+        avg_review,
+        price
+    }: PrimaryVideoDetails = course;
+
     return (
         <div className="group relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
-            <Link className="absolute inset-0 z-10" href="#">
+            <Link className="absolute inset-0 z-10" href="/">
                 <span className="sr-only">View property</span>
             </Link>
             <Image
@@ -22,23 +33,16 @@ function VideoHolder({ }: Props) {
                 width={600}
             />
             <div className="p-4">
-                <h3 className="text-lg font-semibold">Modern Townhouse</h3>
+                <h3 className="text-lg font-semibold">{title}</h3>
                 <div className="mt-2 flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <BedIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                        <span className="text-sm text-gray-500 dark:text-gray-400">2 Beds</span>
+                        <FaBookReader className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                        <span className="text-sm text-gray-500 dark:text-gray-400">{enrolled} Enrolled</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                        <BathIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                        <span className="text-sm text-gray-500 dark:text-gray-400">2.5 Baths</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <RulerIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-                        <span className="text-sm text-gray-500 dark:text-gray-400">1,800 sqft</span>
-                    </div>
+                    <div className="text-lg font-semibold">${price}</div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                    <span className="text-lg font-semibold">$850,000</span>
+                    <div>{review_members}</div>
                     <Button size="sm">View</Button>
                 </div>
             </div>
