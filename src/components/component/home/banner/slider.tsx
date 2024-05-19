@@ -10,8 +10,11 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Slider } from "@/lib/utils/interfaces/components.interface"
 
-export function CarouselPlugin() {
+
+
+export function CarouselPlugin({ slide }: any) {
     const plugin = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: false })
     )
@@ -24,12 +27,12 @@ export function CarouselPlugin() {
             onMouseLeave={plugin.current.reset}
         >
             <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index}>
+                {slide.map((content: Slider) => (
+                    <CarouselItem key={content.key}>
                         <div className="p-1 bg-black mx-auto">
                             <Card>
                                 <CardContent className="flex mx-auto aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">{index + 1}</span>
+                                    <span className="text-4xl font-semibold">{content.key}</span>
                                 </CardContent>
                             </Card>
                         </div>
