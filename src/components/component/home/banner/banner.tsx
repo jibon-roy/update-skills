@@ -10,7 +10,6 @@ function Banner({ }: Props) {
             <DynamicCard className="bg-black" width="100%">
                 <BannerSlider />
             </DynamicCard>
-
         </section>
     )
 };

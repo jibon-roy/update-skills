@@ -45,7 +45,7 @@ function DynamicCard({ width, justifyContent, backgroundSize, gap, backgroundPos
                     backgroundPosition: backgroundPosition ? backgroundPosition : "center",
                     backgroundRepeat: backgroundRepeat ? backgroundRepeat : "no-repeat",
                     backgroundSize: backgroundSize ? backgroundSize : "cover",
-                    backgroundImage: `url(${bgImgLink})`,
+                    backgroundImage: `url(${bgImgLink ? bgImgLink : ""})`,
                     display: display,
                     justifyContent: justifyContent,
                     alignItems: alignItems,

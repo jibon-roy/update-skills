@@ -10,7 +10,7 @@ export async function GET() {
         const users = await UserData.find({})
         return NextResponse.json(users)
     } catch (error: any) {
-        return NextResponse.json({error: error.message})
+        return NextResponse.json({error: error})
     }
 };
 
