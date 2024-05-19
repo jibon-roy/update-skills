@@ -7,7 +7,7 @@ function BannerText({ }: Props) {
     return (
         <div className="container px-4 md:px-6 grid gap-7">
             <h3 className="font-semibold text-3xl">
-                Do not wast suitable time
+                It{"'"}s suitable time to
             </h3>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 <div className="hover:text-glitch text-glitch-duration-normal">
