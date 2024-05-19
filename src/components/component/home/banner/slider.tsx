@@ -11,6 +11,8 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Slider } from "@/lib/utils/interfaces/components.interface"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 
 
@@ -18,7 +20,7 @@ export function CarouselPlugin({ slide }: any) {
     const plugin = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: false })
     )
-
+    console.log(slide)
     return (
         <Carousel
             plugins={[plugin.current]}
@@ -29,12 +31,19 @@ export function CarouselPlugin({ slide }: any) {
             <CarouselContent>
                 {slide.map((content: Slider) => (
                     <CarouselItem key={content.key}>
-                        <div className="p-1 bg-black mx-auto">
-                            <Card>
-                                <CardContent className="flex mx-auto aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">{content.key}</span>
+                        <div className="mx-auto">
+                            <Card className="bg-transparent">
+                                <CardContent className="flex bg-transparent mx-auto items-center justify-center">
+                                    <Image priority={true} className="w-full h-full" height={content.content.height} width={content.content.width} src={content.content.src!} alt={content.key.toString() + "image"} />
                                 </CardContent>
                             </Card>
+                            <div className="flex flex-col sm:flex-row gap-5 justify-between bg-main-primary-violet rounded-b-lg p-3">
+                                <div className="text-3xl font-bold tracking-tighter text-gray-50 ">
+                                    $49
+                                    <span className="ml-2 text-xl font-normal line-through text-white">$99</span>
+                                </div>
+                                <Button className="h-9">Enroll now</Button>
+                            </div>
                         </div>
                     </CarouselItem>
                 ))}
