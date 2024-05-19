@@ -23,10 +23,10 @@ export function BannerSlider() {
   ]
   return (
     <div className="w-full lg:flex justify-between items-center py-28 text-white">
-      <DynamicCard className="lg:w-[60%]">
+      <DynamicCard className="sm:w-[50%] lg:w-[60%]">
         <BannerText />
       </DynamicCard>
-      <DynamicCard className="flex lg:w-[40%] justify-center mt-20 lg:mt-0 items-center">
+      <DynamicCard className="flex sm:w-[50%] lg:w-[40%] justify-center mt-20 lg:mt-0 items-center">
         <CarouselPlugin slide={SlideContent} />
       </DynamicCard>
     </div>
