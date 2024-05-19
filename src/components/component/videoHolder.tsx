@@ -20,7 +20,7 @@ function VideoHolder({ course }: any) {
         <div className="group relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
             <Image
                 alt="Property 2"
-                className="h-60 w-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                className="h-60 w-full hover:brightness-90 object-cover object-center transition-all duration-300 group-hover:scale-105"
                 height={400}
                 src={typeof thumbnail === 'string' ? thumbnail : thumbnail.src}
                 style={{
