@@ -24,7 +24,7 @@ const config = {
     },
     backgroundImage: theme => ({
         'gradient-to-top': 'linear-gradient(to top, var(--main-secondary-violet), var(--main-secondary-black))',
-        'gradient-to-right': 'linear-gradient(to top, var(--main-secondary-violet), var(--main-secondary-black))',
+        'gradient-to-right': 'linear-gradient(to right, var(--main-primary-violet), var(--main-secondary-black))',
       }),
     extend: {
       colors: {

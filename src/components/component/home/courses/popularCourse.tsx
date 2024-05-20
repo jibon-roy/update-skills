@@ -72,7 +72,7 @@ function PopularCourse({ }: Props) {
     ]
 
     return (
-        <GridSection heading="Popular Courses" description="Discover your dream home from our curated selection of featured properties.">
+        <GridSection heading="Popular Courses" headingTitle="Discover your dream home from our curated selection of featured properties.">
             {getCourse.map((course: PrimaryVideoDetails) => <VideoHolder key={course._id} course={course} />)}
         </GridSection>
     )
