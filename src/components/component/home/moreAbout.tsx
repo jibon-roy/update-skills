@@ -10,6 +10,7 @@ function MoreAbout({ }: Props) {
             className=" text-white"
             bg="bg-gradient-to-right"
             imgContent={img.src}
+            flexDirection="flex-col"
         >
             Discover a suite of cutting-edge tools designed to help you bring your ideas to life. From intuitive design
             interfaces to seamless collaboration features, weve got everything you need to elevate your creative process.
