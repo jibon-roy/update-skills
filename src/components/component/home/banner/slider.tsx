@@ -24,7 +24,7 @@ export function CarouselPlugin({ slide }: any) {
     return (
         <Carousel
             plugins={[plugin.current]}
-            className="inline-block min-w-0 max-w-md mx-auto"
+            className="flex justify-center min-w-0 max-w-[80%] mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
