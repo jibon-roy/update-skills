@@ -20,7 +20,7 @@ function BecomeATeacher({ }: Props) {
 
             We are founding that person who actively love to teach and share knowledge with others.
             <br />
-            <Button className="my-8">Start Teaching</Button>
+            <Button className="my-8 font-bold" size={"lg"}>Start Teaching</Button>
         </FlexSection>
     )
 };
