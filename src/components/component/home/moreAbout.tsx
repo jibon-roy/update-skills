@@ -5,12 +5,12 @@ type Props = {}
 function MoreAbout({ }: Props) {
     return (
         <FlexSection
-            flexDirectionMd="flex-row"
+            flexDirectionMd="row"
             head="Unleash Your Creativity with Our Powerful Tools"
-            className=" text-white"
+            textColor="white"
             bg="bg-gradient-to-right"
             imgContent={img.src}
-            flexDirection="flex-col"
+            flexDirection="row"
         >
             Discover a suite of cutting-edge tools designed to help you bring your ideas to life. From intuitive design
             interfaces to seamless collaboration features, weve got everything you need to elevate your creative process.

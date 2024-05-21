@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CustomHeader from "../component/customHeader";
 
+
 type Props = {
   children?: any;
   heading?: string;
@@ -9,20 +10,35 @@ type Props = {
   bg?: string;
   className?: string;
   imgContent: string;
-  flexDirectionMd: "flex-col" | "flex-row" | "flex-col-reverse" | "flex-row-reverse";
-  flexDirection: "flex-col" | "flex-row" | "flex-col-reverse" | "flex-row-reverse";
+  flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
+  flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
+  textColor?: string;
+}
+const style = {
+  background: 'red',
+};
+
+if (typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches) {
+  style.background = 'blue';
 }
 
-export function FlexSection({ children, bg, imgContent, className, heading, head, description, flexDirection, flexDirectionMd }: Props) {
+export function FlexSection({ children, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
+
+  const flexStyles: object = {
+    flexDirection: flexDirection
+  }
+  const flexDirections: string = "md:" + flexDirection
+
+
   return (
-    <section className={"lg:py-32 gap-8 py-12 md:py-28" + " " + bg + " " + className}>
+    <section className={"lg:py-32 gap-8 py-12 md:py-28" + " " + bg + " " + className} style={{ color: textColor }}>
       {(heading || description) && <CustomHeader heading={heading} headingTitle={description} />}
-      <div className={`lg:flex gap-8 max-lg:flex-row container lg:${flexDirectionMd} items-center justify-between`}>
+      <div style={flexStyles} className={`lg:flex gap-8 container items-center justify-between`}>
         <div className="space-y-4 mb-24 lg:mb-0 lg:max-w-[60%]">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             {head}
           </h2>
-          <p className="text-gray-200 dark:text-gray-400 text-lg md:text-xl">
+          <p className="text-lg md:text-xl">
             {children}
           </p>
         </div>

@@ -3,6 +3,7 @@ import { Footer } from "@/components/component/footer";
 import Banner from "@/components/component/home/banner/banner";
 import PopularCourse from "@/components/component/home/courses/popularCourse";
 import MoreAbout from "@/components/component/home/moreAbout";
+import BecomeATeacher from "@/components/component/home/teacher/becomeATeacher";
 import { Navigation } from "@/components/component/navigation";
 // import axios from "axios";
 
@@ -23,6 +24,7 @@ export default async function Home() {
       <Banner />
       <PopularCourse />
       <MoreAbout />
+      <BecomeATeacher />
       <Footer />
       {/* {users.map((user: { _id: string, name: string }): any => <div key={user._id}>{user.name}</div>)} */}
       {/* <Link href="/about">About page</Link> */}
