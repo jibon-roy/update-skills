@@ -5,7 +5,14 @@ type Props = {}
 
 function BecomeATeacher({ }: Props) {
     return (
-        <FlexSection head="Become A Teacher" textColor="black" imgContent={teacherImage.src} flexDirection="column" flexDirectionMd="row-reverse">
+        <FlexSection
+            head="Become A Teacher"
+            textColor="black"
+            imgContent={teacherImage.src}
+            flexDirection="column"
+            flexDirectionMd="row-reverse"
+            heading="Start Your Career With Us"
+        >
             Separate subject from body with a blank line
             Do not end the subject line with a period
             Capitalize the subject line and each paragraph

@@ -28,11 +28,8 @@ export function FlexSection({ children, bg, imgContent, className, heading, head
         setBackground(flexDirectionMd);
       }
     };
-
     updateBackground();
-
     window.addEventListener('resize', updateBackground);
-
     return () => {
       window.removeEventListener('resize', updateBackground);
     };
