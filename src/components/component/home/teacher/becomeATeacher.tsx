@@ -1,5 +1,6 @@
 import { FlexSection } from "@/components/sections/flex-section";
 import teacherImage from "@/assets/images/teacher.png"
+import { Button } from "@/components/ui/button";
 
 type Props = {}
 
@@ -9,16 +10,17 @@ function BecomeATeacher({ }: Props) {
             head="Become A Teacher"
             textColor="black"
             imgContent={teacherImage.src}
-            flexDirection="column"
+            flexDirection="column-reverse"
             flexDirectionMd="row-reverse"
-            heading="Start Your Career With Us"
+            heading="Start Your Teaching Career With Us"
+            justifyContent="center"
         >
-            Separate subject from body with a blank line
-            Do not end the subject line with a period
-            Capitalize the subject line and each paragraph
-            Use the imperative mood in the subject line
-            Wrap lines at 72 characters
-            Use the body to explain what and why you have done something. In most cases, you can leave out details about how a change has been made.
+            Teachers from around the world teach millions of learners on Update-Skills. We provide the tools and skills to teach what you love.
+            <br /> <br />
+
+            We are founding that person who actively love to teach and share knowledge with others.
+            <br />
+            <Button className="my-8">Start Teaching</Button>
         </FlexSection>
     )
 };

@@ -12,20 +12,21 @@ type Props = {
   bg?: string;
   className?: string;
   imgContent: string;
+  justifyContent: 'center' | 'space-between' | 'space-evenly' | 'space-around';
   flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
   flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
   textColor?: string;
 }
-export function FlexSection({ children, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
+export function FlexSection({ children, justifyContent, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
 
-  const [background, setBackground] = useState(flexDirection);
+  const [direction, setDirection] = useState(flexDirection);
 
   useEffect(() => {
     const updateBackground = () => {
       if (window.matchMedia('(max-width: 1024px)').matches) {
-        setBackground(flexDirection);
+        setDirection(flexDirection);
       } else {
-        setBackground(flexDirectionMd);
+        setDirection(flexDirectionMd);
       }
     };
     updateBackground();
@@ -36,17 +37,16 @@ export function FlexSection({ children, bg, imgContent, className, heading, head
   }, [flexDirection, flexDirectionMd]);
 
   const flexStyles = {
-    flexDirection: background
+    flexDirection: direction,
+    justifyContent: justifyContent
   }
-
-
 
   return (
     <section className={"lg:py-32 gap-8 py-12 md:py-28" + " " + bg + " " + className} style={{ color: textColor }}>
-      {(heading || description) && <CustomHeader heading={heading} headingTitle={description} />}
-      <div style={flexStyles} className={`lg:flex gap-8 container items-center justify-between`}>
-        <div className="space-y-4 mb-24 lg:mb-0 lg:max-w-[60%]">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+      {(heading || description) && <CustomHeader heading={heading} className="mb-24" headingTitle={description} />}
+      <div style={flexStyles} className={`flex gap-8 container items-center justify-between`}>
+        <div className="space-y-4 mb-24 lg:mb-0 lg:max-w-[60%] 2xl:max-w-[40%]">
+          <h2 className="text-3xl my-8 md:text-5xl font-bold tracking-tight">
             {head}
           </h2>
           <p className="text-lg md:text-xl">

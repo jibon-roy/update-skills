@@ -10,7 +10,8 @@ function MoreAbout({ }: Props) {
             textColor="white"
             bg="bg-gradient-to-right"
             imgContent={img.src}
-            flexDirection="row"
+            flexDirection="column-reverse"
+            justifyContent="space-between"
         >
             Discover a suite of cutting-edge tools designed to help you bring your ideas to life. From intuitive design
             interfaces to seamless collaboration features, weve got everything you need to elevate your creative process.
