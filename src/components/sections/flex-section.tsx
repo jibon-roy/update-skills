@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import CustomHeader from "../component/customHeader";
+import { useEffect, useState } from "react";
 
 
 type Props = {
@@ -14,20 +16,32 @@ type Props = {
   flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
   textColor?: string;
 }
-const style = {
-  background: 'red',
-};
-
-if (typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches) {
-  style.background = 'blue';
-}
-
 export function FlexSection({ children, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
 
-  const flexStyles: object = {
-    flexDirection: flexDirection
+  const [background, setBackground] = useState(flexDirection);
+
+  useEffect(() => {
+    const updateBackground = () => {
+      if (window.matchMedia('(max-width: 1024px)').matches) {
+        setBackground(flexDirection);
+      } else {
+        setBackground(flexDirectionMd);
+      }
+    };
+
+    updateBackground();
+
+    window.addEventListener('resize', updateBackground);
+
+    return () => {
+      window.removeEventListener('resize', updateBackground);
+    };
+  }, [flexDirection, flexDirectionMd]);
+
+  const flexStyles = {
+    flexDirection: background
   }
-  const flexDirections: string = "md:" + flexDirection
+
 
 
   return (
