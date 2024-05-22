@@ -34,7 +34,10 @@ export function Navigation() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button size="sm">Sign up</Button>
+            <Link href="">
+              <Button size="sm">Sign up</Button>
+            </Link>
+
             <Button size="sm" variant="outline">
               Sign in
             </Button>
