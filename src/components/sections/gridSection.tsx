@@ -19,7 +19,7 @@ function GridSection({ children, heading, headingTitle }: Props) {
                     {children}
                 </div>
                 <div className="flex justify-center">
-                    <Link href=''>
+                    <Link href='/courses'>
                         <Button>View More Properties</Button>
                     </Link>
                 </div>
