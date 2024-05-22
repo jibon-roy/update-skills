@@ -40,7 +40,7 @@ export function Navigation() {
 
             <Link href="/login">
               <Button size="sm" variant="outline">
-                Sign in
+                Log in
               </Button>
             </Link>
           </div>
