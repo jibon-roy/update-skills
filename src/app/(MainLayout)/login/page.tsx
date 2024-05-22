@@ -8,25 +8,29 @@ import { Player } from '@lottiefiles/react-lottie-player';
 function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
-            <div className="hidden top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block">
-                <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
-                    style={{ height: '300px', width: '300px' }}
-                    autoplay
-                    loop
-                >
-                </Player>
+            <div className="relative">
+
+                <div className="hidden top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block">
+                    <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
+                        style={{ height: '300px', width: '300px' }}
+                        autoplay
+                        loop
+                    >
+                    </Player>
+
+                </div>
+            </div>
+            <form className="flex items-center flex-col bg-gradient-to-top justify-center p-8">
                 <div className=" text-white max-w-md px-4">
                     <h1 className="text-4xl font-bold mb-4">Collaborate seamlessly with your team</h1>
                     <p className="text-lg">
                         Our platform enables your team to work together effortlessly, no matter where they are.
                     </p>
                 </div>
-            </div>
-            <form className="flex items-center justify-center p-8">
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
-                        <CardTitle className="text-2xl">Login to your account</CardTitle>
-                        <CardDescription>Enter your email and password to access your account.</CardDescription>
+                        <CardTitle className="text-2xl text-white">Login to your account</CardTitle>
+                        <CardDescription className="text-white">Enter your email and password to access your account.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="space-y-2">
