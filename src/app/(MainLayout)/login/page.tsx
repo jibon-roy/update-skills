@@ -3,22 +3,17 @@ import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card }
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
             <div className="hidden lg:block relative">
-                <img
-                    alt="Hero Image"
-                    className="h-full w-full object-cover"
-                    height="800"
-                    src="/placeholder.svg"
-                    style={{
-                        aspectRatio: "1200/800",
-                        objectFit: "cover",
-                    }}
-                    width="1200"
-                />
+                <Player src="https://lottie.host/embed/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
+                    style={{ height: '300px', width: '300px' }}
+                >
+
+                </Player>
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white max-w-md px-4">
                     <h1 className="text-4xl font-bold mb-4">Collaborate seamlessly with your team</h1>
