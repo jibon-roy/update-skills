@@ -21,12 +21,7 @@ function LoginPage() {
                 </div>
             </div>
             <form className="flex items-center flex-col bg-gradient-to-top justify-center p-8">
-                <div className=" text-white max-w-md px-4">
-                    <h1 className="text-4xl font-bold mb-4">Collaborate seamlessly with your team</h1>
-                    <p className="text-lg">
-                        Our platform enables your team to work together effortlessly, no matter where they are.
-                    </p>
-                </div>
+
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
                         <CardTitle className="text-2xl text-white">Login to your account</CardTitle>
