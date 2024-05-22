@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button"
 import CustomHeader from "../component/customHeader"
+import Link from "next/link";
 
 
 type Props = {
@@ -18,7 +19,9 @@ function GridSection({ children, heading, headingTitle }: Props) {
                     {children}
                 </div>
                 <div className="flex justify-center">
-                    <Button>View More Properties</Button>
+                    <Link href=''>
+                        <Button>View More Properties</Button>
+                    </Link>
                 </div>
             </div>
         </section>

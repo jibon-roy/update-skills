@@ -37,7 +37,6 @@ export function Navigation() {
             <Link href="/signUp">
               <Button size="sm">Sign up</Button>
             </Link>
-
             <Link href="/login">
               <Button size="sm" variant="outline">
                 Log in
