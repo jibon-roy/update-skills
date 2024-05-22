@@ -9,12 +9,13 @@ function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
             <div className="hidden lg:block relative">
-                <Player src="https://lottie.host/embed/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
+                <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
                     style={{ height: '300px', width: '300px' }}
+                    autoplay
+                    loop
                 >
                 </Player>
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-transparent" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white max-w-md px-4">
+                <div className=" text-white max-w-md px-4">
                     <h1 className="text-4xl font-bold mb-4">Collaborate seamlessly with your team</h1>
                     <p className="text-lg">
                         Our platform enables your team to work together effortlessly, no matter where they are.
