@@ -11,6 +11,9 @@ importers:
       '@lottiefiles/lottie-player':
         specifier: ^2.0.4
         version: 2.0.4
+      '@lottiefiles/react-lottie-player':
+        specifier: ^3.5.3
+        version: 3.5.3(react@18.3.1)
       '@nivo/bar':
         specifier: ^0.87.0
         version: 0.87.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -207,6 +210,11 @@ packages:
 
   '@lottiefiles/lottie-player@2.0.4':
     resolution: {integrity: sha512-OU3HxAt7noWr+kzf59paS7/f4+IT1EupJIsf4h3RxsbljDaRtCunanIjchprNFYHdG+SobnyxwWKtvTDxjI5jg==}
+
+  '@lottiefiles/react-lottie-player@3.5.3':
+    resolution: {integrity: sha512-6pGbiTMjGnPddR1ur8M/TIDCiogZMc1aKIUbMEKXKAuNeYwZ2hvqwBJ+w5KRm88ccdcU88C2cGyLVsboFlSdVQ==}
+    peerDependencies:
+      react: 16 - 18
 
   '@mongodb-js/saslprep@1.1.7':
     resolution: {integrity: sha512-dCHW/oEX0KJ4NjDULBo3JiOaK5+6axtpBbS+ao2ZInoAL9/YRQLhXzSNAFz7hP4nzLkIqsfYAK/PDE3+XHny0Q==}
@@ -2721,6 +2729,11 @@ snapshots:
       lottie-web: 5.12.2
       pako: 2.1.0
       resize-observer-polyfill: 1.5.1
+
+  '@lottiefiles/react-lottie-player@3.5.3(react@18.3.1)':
+    dependencies:
+      lottie-web: 5.12.2
+      react: 18.3.1
 
   '@mongodb-js/saslprep@1.1.7':
     dependencies:
