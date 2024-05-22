@@ -5,11 +5,12 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Player } from '@lottiefiles/react-lottie-player';
 import { FcGoogle } from "react-icons/fc";
+import { Separator } from "@/components/ui/separator"
 
 function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
-            <div className="">
+            <div className="hidden lg:flex flex-col justify-center items-center">
                 <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
                     Login your account to Update Skills.
                 </div>
@@ -26,18 +27,18 @@ function LoginPage() {
             <div className="flex items-center flex-col bg-gradient-to-top justify-center p-8">
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
-                        <CardTitle className="text-2xl text-white">Login to your account</CardTitle>
+                        <CardTitle className="text-4xl text-white">Login to your account</CardTitle>
                         <CardDescription className="text-white">Enter your email and password to access your account.</CardDescription>
                     </CardHeader>
                     <form action="">
                         <CardContent className="space-y-4 p-6">
                             <div className="space-y-2  text-white">
                                 <Label htmlFor="email">Email</Label>
-                                <Input id="email" autoComplete="email" placeholder="m@example.com" type="email" />
+                                <Input id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="m@example.com" type="email" />
                             </div>
                             <div className="space-y-2  text-white">
                                 <Label htmlFor="password">Password</Label>
-                                <Input id="password" autoComplete="current-password" type="password" />
+                                <Input id="password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
                             </div>
                         </CardContent>
                         <CardFooter>
@@ -45,7 +46,7 @@ function LoginPage() {
                         </CardFooter>
                     </form>
                     <div className="text-2xl flex justify-center font-bold mb-4 text-white">
-                        Or,
+                        <Separator aria-placeholder="or"></Separator>
                     </div>
                     <div className="flex justify-center">
                         <Button variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
