@@ -9,10 +9,10 @@ function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
             <div className="relative">
-                <div>
-                    Login your account to Update Skills.
-                </div>
                 <div className="hidden top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block">
+                    <div>
+                        Login your account to Update Skills.
+                    </div>
                     <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
                         style={{ height: '300px', width: '300px' }}
                         autoplay
