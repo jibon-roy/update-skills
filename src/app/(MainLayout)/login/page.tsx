@@ -21,7 +21,7 @@ function LoginPage() {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center justify-center p-8">
+            <form className="flex items-center justify-center p-8">
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
                         <CardTitle className="text-2xl">Login to your account</CardTitle>
@@ -41,7 +41,7 @@ function LoginPage() {
                         <Button className="w-full">Sign In</Button>
                     </CardFooter>
                 </Card>
-            </div>
+            </form>
         </div>
     )
 }
