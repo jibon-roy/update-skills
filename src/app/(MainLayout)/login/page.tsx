@@ -23,7 +23,7 @@ function LoginPage() {
             <form className="flex items-center flex-col bg-gradient-to-top justify-center p-8">
 
                 <Card className="w-full max-w-md">
-                    <CardHeader className="space-y-1">
+                    <CardHeader>
                         <CardTitle className="text-2xl text-white">Login to your account</CardTitle>
                         <CardDescription className="text-white">Enter your email and password to access your account.</CardDescription>
                     </CardHeader>
