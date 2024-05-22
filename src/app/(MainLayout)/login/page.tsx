@@ -9,7 +9,7 @@ function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
             <div className="relative">
-                <div className="text-4xl text-center max-w-sm mx-auto my-16 font-bold">
+                <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
                     Login your account to Update Skills.
                 </div>
                 <div className="hidden top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block">
@@ -17,6 +17,7 @@ function LoginPage() {
                         style={{ height: '300px', width: '300px' }}
                         autoplay
                         loop
+                        hover
                     >
                     </Player>
 
