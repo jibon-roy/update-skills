@@ -9,11 +9,11 @@ import { FcGoogle } from "react-icons/fc";
 function LoginPage() {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
-            <div className="relative">
+            <div className="">
                 <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
                     Login your account to Update Skills.
                 </div>
-                <div className="hidden top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:block">
+                <div className="hidden lg:block">
                     <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
                         style={{ height: '300px', width: '300px' }}
                         autoplay
@@ -44,7 +44,10 @@ function LoginPage() {
                             <Button className="w-full">Sign In</Button>
                         </CardFooter>
                     </form>
-                    <div>
+                    <div className="text-2xl flex justify-center font-bold mb-4 text-white">
+                        Or,
+                    </div>
+                    <div className="flex justify-center">
                         <Button variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
                     </div>
                 </Card>
