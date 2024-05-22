@@ -17,7 +17,7 @@ function LoginPage() {
                         style={{ height: '300px', width: '300px' }}
                         autoplay
                         loop
-                        hover
+
                     >
                     </Player>
 
