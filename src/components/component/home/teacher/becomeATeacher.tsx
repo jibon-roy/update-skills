@@ -1,6 +1,7 @@
 import { FlexSection } from "@/components/sections/flex-section";
 import teacherImage from "@/assets/images/teacher.png"
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type Props = {}
 
@@ -20,7 +21,9 @@ function BecomeATeacher({ }: Props) {
 
             We are founding that person who actively love to teach and share knowledge with others.
             <br />
-            <Button className="my-8 font-bold" size={"lg"}>Start Teaching</Button>
+            <Link href=''>
+                <Button className="my-8 font-bold" size={"lg"}>Start Teaching</Button>
+            </Link>
         </FlexSection>
     )
 };
