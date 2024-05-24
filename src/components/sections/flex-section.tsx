@@ -15,7 +15,7 @@ type Props = {
   justifyContent: 'center' | 'space-between' | 'space-evenly' | 'space-around';
   flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
   flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
-  textColor?: string;
+
 }
 export function FlexSection({ children, justifyContent, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
 
