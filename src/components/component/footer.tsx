@@ -11,7 +11,7 @@ export function Footer() {
             <span className="text-lg font-semibold text-gray-300">Update Skills</span>
           </div>
           <p className="text-sm leading-relaxed">
-            Updat is a leading provider of innovative solutions for businesses of all sizes.
+            Update is a leading provider of innovative solutions for businesses of all sizes.
           </p>
         </div>
         <div className="grid gap-2">
