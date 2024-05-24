@@ -55,11 +55,11 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
         </div>
         <div className="flex-1 w-full flex justify-center lg:max-w-[600px]">
           <Image
+            src={imgContent}
             priority
             alt="Creative Tools"
             className="rounded-lg mx-auto block"
             height="400"
-            src={imgContent}
             style={{
               aspectRatio: "600/400",
               objectFit: "cover",
