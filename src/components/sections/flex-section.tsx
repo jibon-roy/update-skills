@@ -61,7 +61,6 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
             className="rounded-lg mx-auto block"
             height="400"
             style={{
-              aspectRatio: "600/400",
               objectFit: "cover",
             }}
             width="600"
