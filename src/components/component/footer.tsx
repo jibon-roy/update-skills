@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid gap-4">
           <div className="flex items-center gap-2">
             <MountainIcon className="h-6 w-6 text-gray-300" />
-            <span className="text-lg font-semibold text-gray-300">Update Inc</span>
+            <span className="text-lg font-semibold text-gray-300">Update Skills</span>
           </div>
           <p className="text-sm leading-relaxed">
             Acme Inc is a leading provider of innovative solutions for businesses of all sizes.
