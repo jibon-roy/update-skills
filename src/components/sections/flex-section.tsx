@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 type Props = {
   children?: any;
   heading?: string;
-  description?: string;
   head?: string;
+  description?: string;
   bg?: string;
   className?: string;
   imgContent: string;
