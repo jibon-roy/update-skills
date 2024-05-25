@@ -1,6 +1,6 @@
 import React from "react"
 
-export function statistics() {
+export function Statistics() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-6">
