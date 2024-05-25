@@ -57,7 +57,7 @@ function ActivityIcon(props: any) {
 }
 
 
-function CreditCardIcon(props) {
+function CreditCardIcon(props: any) {
   return (
     <svg
       {...props}
