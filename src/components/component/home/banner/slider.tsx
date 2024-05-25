@@ -13,7 +13,7 @@ import {
 import { Slider } from "@/lib/utils/interfaces/components.interface"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+
 
 
 
@@ -39,10 +39,11 @@ export function CarouselPlugin({ slide }: any) {
                                     <Image
                                         priority={true}
                                         className="w-full h-full"
-                                        height={content.content.height}
-                                        width={content.content.width}
-                                        src={content.content.src!}
-                                        alt={content.key.toString() + "image"}
+                                        style={{ width: '100%', height: 'auto' }}
+                                        height={content?.content.height!}
+                                        width={content?.content.width!}
+                                        src={content?.content.src!}
+                                        alt={content?.key.toString() + "image"}
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
 
