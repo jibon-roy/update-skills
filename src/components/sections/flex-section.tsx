@@ -43,8 +43,8 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
   }
 
   return (
-    <Section className={" " + bg + " " + className} style={{ color: textColor }}>
-      {(heading || description) && <CustomHeader heading={heading} className="mb-24" headingTitle={description} />}
+    <Section className={bg + " " + className} style={{ color: textColor }}>
+      {(heading || description) && <CustomHeader heading={heading} className="mb-10" headingTitle={description} />}
       <div style={flexStyles} className={`flex gap-8 container items-center justify-between`}>
         <div className="space-y-4 mb-24 lg:mb-0 lg:max-w-[60%] 2xl:max-w-[40%]">
           <h2 className="text-3xl my-8 md:text-4xl font-bold tracking-tight">
