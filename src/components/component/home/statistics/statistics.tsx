@@ -1,36 +1,38 @@
+"use client"
 import React from "react"
+import CountUp from 'react-countup';
 
 export function Statistics() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-top">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-6">
         <div className="flex flex-col items-center text-center gap-4">
-          <div className="bg-white dark:bg-gray-950 p-4 rounded-full">
-            <DollarSignIcon className="w-8 h-8 text-gray-900 dark:text-gray-50" />
+          <div className="bg-white  p-4 rounded-full">
+            <DollarSignIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl font-bold">$45,231</div>
-          <p className="text-gray-500 dark:text-gray-400">Total Revenue</p>
+          <div className="text-4xl text-white font-bold">$<CountUp start={4000} enableScrollSpy end={4324} /></div>
+          <p className="text-gray-300">Total Revenue</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
-          <div className="bg-white dark:bg-gray-950 p-4 rounded-full">
-            <UsersIcon className="w-8 h-8 text-gray-900 dark:text-gray-50" />
+          <div className="bg-white  p-4 rounded-full">
+            <UsersIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl font-bold">+2,350</div>
-          <p className="text-gray-500 dark:text-gray-400">Subscriptions</p>
+          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={1524} /></div>
+          <p className="text-gray-300">Subscriptions</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
-          <div className="bg-white dark:bg-gray-950 p-4 rounded-full">
-            <CreditCardIcon className="w-8 h-8 text-gray-900 dark:text-gray-50" />
+          <div className="bg-white  p-4 rounded-full">
+            <CreditCardIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl font-bold">+12,234</div>
-          <p className="text-gray-500 dark:text-gray-400">Sales</p>
+          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={2164} /></div>
+          <p className="text-gray-300">Sales</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
-          <div className="bg-white dark:bg-gray-950 p-4 rounded-full">
-            <ActivityIcon className="w-8 h-8 text-gray-900 dark:text-gray-50" />
+          <div className="bg-white  p-4 rounded-full">
+            <ActivityIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl font-bold">+573</div>
-          <p className="text-gray-500 dark:text-gray-400">Active Now</p>
+          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={1433} /></div>
+          <p className="text-gray-300">Active Now</p>
         </div>
       </div>
     </section>

@@ -41,7 +41,7 @@ function FlexSimple({ flexDirection, flexDirectionMd, textColor, justifyContent,
     }
     return (
         <div style={{ backgroundColor: bg }}>
-            <div className={className + " " + "container mx-auto"} style={styles}>
+            <div className={className + " " + "container mx-auto gap-10 lg:gap-0"} style={styles}>
                 {children}
             </div>
         </div>

@@ -71,6 +71,9 @@ importers:
       react-animated-rating:
         specifier: ^1.2.0
         version: 1.2.0(react@18.3.1)
+      react-countup:
+        specifier: ^6.5.3
+        version: 6.5.3(react@18.3.1)
       react-custom-rating-component:
         specifier: ^0.1.6
         version: 0.1.6(react@18.3.1)
@@ -1076,6 +1079,9 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  countup.js@2.8.0:
+    resolution: {integrity: sha512-f7xEhX0awl4NOElHulrl4XRfKoNH3rB+qfNSZZyjSZhaAoUk6elvhH+MNxMmlmuUJ2/QNTWPSA7U4mNtIAKljQ==}
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -2138,6 +2144,11 @@ packages:
     resolution: {integrity: sha512-nh6ucAymOpKAnK72jOW46subUdZWWKavsjSxn2F36U3f9i8JFnaEqtY1h7exrBhP5D60BMT5hLLo09dGblIpxw==}
     peerDependencies:
       react: '>=16'
+
+  react-countup@6.5.3:
+    resolution: {integrity: sha512-udnqVQitxC7QWADSPDOxVWULkLvKUWrDapn5i53HE4DPRVgs+Y5rr4bo25qEl8jSh+0l2cToJgGMx+clxPM3+w==}
+    peerDependencies:
+      react: '>= 16.3.0'
 
   react-custom-rating-component@0.1.6:
     resolution: {integrity: sha512-fEtejXi+pf8nZDUVhr6Pf0aqVf2UTJTm460kE+9y9c2pTKA91GqaIPDwQSktalcTuAKoJzFKd5H2gv9ApPXFGQ==}
@@ -3734,6 +3745,8 @@ snapshots:
 
   concat-map@0.0.1: {}
 
+  countup.js@2.8.0: {}
+
   cross-spawn@7.0.3:
     dependencies:
       path-key: 3.1.1
@@ -4903,6 +4916,11 @@ snapshots:
   react-animated-rating@1.2.0(react@18.3.1):
     dependencies:
       classnames: 2.5.1
+      react: 18.3.1
+
+  react-countup@6.5.3(react@18.3.1):
+    dependencies:
+      countup.js: 2.8.0
       react: 18.3.1
 
   react-custom-rating-component@0.1.6(react@18.3.1):
