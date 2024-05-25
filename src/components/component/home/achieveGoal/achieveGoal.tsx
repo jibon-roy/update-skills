@@ -1,7 +1,7 @@
 
 import FlexSimple from "@/components/sections/flex-simple";
 import CustomHeader from "../../customHeader";
-import { FaHatCowboy } from "react-icons/fa";
+import { FaBath, FaBook, FaHatCowboy } from "react-icons/fa";
 import AchieveCard from "./achieveCard";
 
 type Props = {}
@@ -18,24 +18,24 @@ function AchieveGoal({ }: Props) {
 
   const contents: Obj[] = [
     {
-      heading: "",
+      heading: "Expert Tutors",
       boxColor: "#F1FDFF",
       shadowColor: "#C9E4E9",
       icon: <FaHatCowboy className="text-[#1BCBE3]" />,
       children: "When an unknown printer took a galley offer type and scrambled makes."
     },
     {
-      heading: "",
+      heading: "Effective Courses",
       boxColor: "#EDEAFF",
       shadowColor: "#C8C1ED",
-      icon: <FaHatCowboy className="text-[#1BCBE3]" />,
+      icon: <FaBook className="text-[#5751E1]" />,
       children: "When an unknown printer took a galley offer type and scrambled makes."
     },
     {
-      heading: "",
-      boxColor: "#F1FDFF",
-      shadowColor: "#C9E4E9",
-      icon: <FaHatCowboy className="text-[#1BCBE3]" />,
+      heading: "Earn Certificate",
+      boxColor: "#FFF7E2",
+      shadowColor: "#EBE0C4",
+      icon: <FaBath className="text-[#FFC224]" />,
       children: "When an unknown printer took a galley offer type and scrambled makes."
     }
 
@@ -54,8 +54,6 @@ specimen book has survived not only five centuries"
             {item.children}
           </AchieveCard>
         ))}
-
-
       </FlexSimple>
     </section>
   )

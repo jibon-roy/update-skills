@@ -18,7 +18,7 @@ function AchieveCard({ heading, icon, boxColor, shadowColor, children }: Props) 
             padding="lg"
             className="w-full lg:w-1/4">
             <h3 className="text-xl flex gap-2 items-center font-bold">
-                <div className="text-4xl text-[#1BCBE3]" >
+                <div style={{ border: `1px solid ${shadowColor}` }} className="text-4xl p-2 rounded-full text-[#1BCBE3]" >
                     {icon}
                 </div>
                 {heading}
