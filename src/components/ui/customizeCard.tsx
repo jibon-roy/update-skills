@@ -41,7 +41,7 @@ function DynamicCard({ width, justifyContent, backgroundSize, gap, backgroundPos
                     border: getBorder,
                     borderRadius: getBorderRadius,
                     boxShadow: getBoxShadow,
-                    background: background,
+                    backgroundColor: background,
                     backgroundPosition: backgroundPosition ? backgroundPosition : "center",
                     backgroundRepeat: backgroundRepeat ? backgroundRepeat : "no-repeat",
                     backgroundSize: backgroundSize ? backgroundSize : "cover",

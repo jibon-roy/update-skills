@@ -13,6 +13,7 @@ import {
 import { Slider } from "@/lib/utils/interfaces/components.interface"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 
 
@@ -34,7 +35,17 @@ export function CarouselPlugin({ slide }: any) {
                         <div className="mx-auto">
                             <Card className="bg-transparent">
                                 <CardContent className="flex bg-transparent mx-auto items-center justify-center">
-                                    <Image priority={true} className="w-full h-full" height={content.content.height} width={content.content.width} src={content.content.src!} alt={content.key.toString() + "image"} />
+
+                                    <Image
+                                        priority={true}
+                                        className="w-full h-full"
+                                        height={content.content.height}
+                                        width={content.content.width}
+                                        src={content.content.src!}
+                                        alt={content.key.toString() + "image"}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    />
+
                                 </CardContent>
                             </Card>
                             <div className="flex gap-5 justify-between bg-main-primary-violet rounded-b-lg p-3">
