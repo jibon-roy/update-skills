@@ -2,6 +2,7 @@
 import Image from "next/image";
 import CustomHeader from "../component/customHeader";
 import { useEffect, useState } from "react";
+import Section from "./Section";
 
 
 type Props = {
@@ -42,7 +43,7 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
   }
 
   return (
-    <section className={"lg:py-32 gap-8 py-12 md:py-28" + " " + bg + " " + className} style={{ color: textColor }}>
+    <Section className={" " + bg + " " + className} style={{ color: textColor }}>
       {(heading || description) && <CustomHeader heading={heading} className="mb-24" headingTitle={description} />}
       <div style={flexStyles} className={`flex gap-8 container items-center justify-between`}>
         <div className="space-y-4 mb-24 lg:mb-0 lg:max-w-[60%] 2xl:max-w-[40%]">
@@ -69,6 +70,6 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
           }
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -10,28 +10,64 @@ export function Statistics() {
           <div className="bg-white  p-4 rounded-full">
             <DollarSignIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl text-white font-bold">$<CountUp start={4000} enableScrollSpy end={4324} /></div>
+          <div className="text-4xl text-white font-bold">
+            <CountUp
+              start={4000}
+              suffix="$"
+              separator=","
+              enableScrollSpy end={4324}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>
+          </div>
           <p className="text-gray-300">Total Revenue</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-white  p-4 rounded-full">
             <UsersIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={1524} /></div>
+          <div className="text-4xl text-white font-bold">
+            <CountUp
+              start={1000}
+              suffix="+"
+              separator=","
+              enableScrollSpy end={2412}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>
+          </div>
           <p className="text-gray-300">Subscriptions</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-white  p-4 rounded-full">
             <CreditCardIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={2164} /></div>
+          <div className="text-4xl text-white font-bold">
+            <CountUp
+              start={1000}
+              suffix="+"
+              separator=","
+              enableScrollSpy end={1524}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>
+          </div>
           <p className="text-gray-300">Sales</p>
         </div>
         <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-white  p-4 rounded-full">
             <ActivityIcon className="w-8 h-8 text-main-primary-violet " />
           </div>
-          <div className="text-4xl text-white font-bold">+<CountUp start={1000} enableScrollSpy end={1433} /></div>
+          <div className="text-4xl text-white font-bold">
+            <CountUp
+              start={1000}
+              suffix="+"
+              separator=","
+              enableScrollSpy end={1321}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>
+          </div>
           <p className="text-gray-300">Active Now</p>
         </div>
       </div>
