@@ -31,12 +31,11 @@ export function Footer() {
               <Link className="hover:text-gray-200 transition-colors" href="#">
                 Enterprise Solutions
               </Link>
+            </li>
+            <li>
               <Link className="hover:text-gray-200 transition-colors" href="#">
                 E-commerce
               </Link>
-            </li>
-            <li>
-
             </li>
           </ul>
         </div>
