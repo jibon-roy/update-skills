@@ -11,7 +11,7 @@ type Props = {
   description?: string;
   bg?: string;
   className?: string;
-  imgContent: string;
+  imgContent?: string;
   justifyContent: 'center' | 'space-between' | 'space-evenly' | 'space-around';
   flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
   flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
@@ -49,13 +49,13 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
           <h2 className="text-3xl my-8 md:text-5xl font-bold tracking-tight">
             {head}
           </h2>
-          <p className="text-lg md:text-xl">
+          <div className="flex justify-around text-lg md:text-xl">
             {children}
-          </p>
+          </div>
         </div>
         <div className="flex-1 w-full flex justify-center lg:max-w-[600px]">
-          <Image
-            src={imgContent}
+          {imgContent && <Image
+            src={imgContent ? imgContent : ""}
             priority
             alt="Creative Tools"
             className="rounded-lg mx-auto block"
@@ -65,6 +65,8 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
             }}
             width="600"
           />
+
+          }
         </div>
       </div>
     </section>

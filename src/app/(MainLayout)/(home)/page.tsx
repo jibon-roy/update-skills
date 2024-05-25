@@ -1,5 +1,6 @@
 
 import { Footer } from "@/components/component/footer";
+import AchieveGoal from "@/components/component/home/achieveGoal/achieveGoal";
 import Banner from "@/components/component/home/banner/banner";
 import PopularCourse from "@/components/component/home/courses/popularCourse";
 import MoreAbout from "@/components/component/home/moreAbout";
@@ -25,6 +26,7 @@ export default async function Home() {
       <PopularCourse />
       <MoreAbout />
       <BecomeATeacher />
+      <AchieveGoal />
       <Footer />
       {/* {users.map((user: { _id: string, name: string }): any => <div key={user._id}>{user.name}</div>)} */}
       {/* <Link href="/about">About page</Link> */}
