@@ -99,7 +99,7 @@ function DollarSignIcon(props: any) {
 }
 
 
-function UsersIcon(props) {
+function UsersIcon(props: any) {
   return (
     <svg
       {...props}
