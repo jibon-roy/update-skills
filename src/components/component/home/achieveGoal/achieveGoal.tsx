@@ -3,6 +3,7 @@ import FlexSimple from "@/components/sections/flex-simple";
 import CustomHeader from "../../customHeader";
 import { FaBath, FaBook, FaHatCowboy } from "react-icons/fa";
 import AchieveCard from "./achieveCard";
+import Section from "@/components/sections/Section";
 
 type Props = {}
 type Obj = {
@@ -42,7 +43,7 @@ function AchieveGoal({ }: Props) {
   ]
 
   return (
-    <section>
+    <Section>
       <CustomHeader
         heading="Achieve Your Goal With Update Skills"
         headingTitle="when an unknown printer took a galley of type and scrambled make
@@ -55,7 +56,7 @@ specimen book has survived not only five centuries"
           </AchieveCard>
         ))}
       </FlexSimple>
-    </section>
+    </Section>
   )
 };
 

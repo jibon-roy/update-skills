@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import CustomHeader from "../component/customHeader"
 import Link from "next/link";
+import Section from "./Section";
 
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 
 function GridSection({ children, heading, headingTitle }: Props) {
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <Section>
             <div className="container space-y-12 px-4 md:px-6">
                 {(heading || headingTitle) && <CustomHeader heading={heading} headingTitle={headingTitle} />}
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
@@ -24,7 +25,7 @@ function GridSection({ children, heading, headingTitle }: Props) {
                     </Link>
                 </div>
             </div>
-        </section>
+        </Section>
     )
 };
 
