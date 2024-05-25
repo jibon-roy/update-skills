@@ -18,7 +18,7 @@ function FlexSimple({ flexDirection, flexDirectionMd, textColor, justifyContent,
 
     useEffect(() => {
         const updateBackground = () => {
-            if (window.matchMedia('(max-width: 1024px)').matches) {
+            if (window.matchMedia('(max-width: 924px)').matches) {
                 setDirection(flexDirection);
             } else {
                 setDirection(flexDirectionMd);

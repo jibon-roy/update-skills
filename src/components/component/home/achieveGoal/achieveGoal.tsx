@@ -1,11 +1,46 @@
 
 import FlexSimple from "@/components/sections/flex-simple";
 import CustomHeader from "../../customHeader";
-import DynamicCard from "@/components/ui/customizeCard";
+import { FaHatCowboy } from "react-icons/fa";
+import AchieveCard from "./achieveCard";
 
 type Props = {}
+type Obj = {
+  heading?: string,
+  icon?: React.ReactNode,
+  children?: string,
+  shadowColor?: string,
+  boxColor?: string
+
+}
 
 function AchieveGoal({ }: Props) {
+
+  const contents: Obj[] = [
+    {
+      heading: "",
+      boxColor: "#F1FDFF",
+      shadowColor: "#C9E4E9",
+      icon: <FaHatCowboy className="text-[#1BCBE3]" />,
+      children: "When an unknown printer took a galley offer type and scrambled makes."
+    },
+    {
+      heading: "",
+      boxColor: "#EDEAFF",
+      shadowColor: "#C8C1ED",
+      icon: <FaHatCowboy className="text-[#1BCBE3]" />,
+      children: "When an unknown printer took a galley offer type and scrambled makes."
+    },
+    {
+      heading: "",
+      boxColor: "#F1FDFF",
+      shadowColor: "#C9E4E9",
+      icon: <FaHatCowboy className="text-[#1BCBE3]" />,
+      children: "When an unknown printer took a galley offer type and scrambled makes."
+    }
+
+  ]
+
   return (
     <section>
       <CustomHeader
@@ -14,15 +49,11 @@ function AchieveGoal({ }: Props) {
 specimen book has survived not only five centuries"
       ></CustomHeader>
       <FlexSimple flexDirection="column" justifyContent="space-around" flexDirectionMd="row">
-        <DynamicCard background="#C9E4E9" className="border w-1/4 shadow-[10px 10px block]">
-          This is joy
-        </DynamicCard>
-        <DynamicCard className="border w-1/4 shadow-[10px 10px block]">
-          This is joy
-        </DynamicCard>
-        <DynamicCard className="border w-1/4 shadow-[10px 10px block]">
-          This is joy
-        </DynamicCard>
+        {contents.map((item, key) => (
+          <AchieveCard key={key} boxColor={item.boxColor} shadowColor={item.shadowColor} heading={item.heading} icon={item.icon}>
+            {item.children}
+          </AchieveCard>
+        ))}
 
 
       </FlexSimple>
