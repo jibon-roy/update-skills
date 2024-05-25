@@ -78,7 +78,7 @@ function CreditCardIcon(props: any) {
 }
 
 
-function DollarSignIcon(props) {
+function DollarSignIcon(props: any) {
   return (
     <svg
       {...props}
