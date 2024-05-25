@@ -29,10 +29,10 @@ export function Footer() {
             </li>
             <li>
               <Link className="hover:text-gray-200 transition-colors" href="#">
-                E-commerce
+                Enterprise Solutions
               </Link>
               <Link className="hover:text-gray-200 transition-colors" href="#">
-                Enterprise Solutions
+                E-commerce
               </Link>
             </li>
             <li>
