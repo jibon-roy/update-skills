@@ -49,7 +49,7 @@ function AchieveGoal({ }: Props) {
         headingTitle="when an unknown printer took a galley of type and scrambled make
 specimen book has survived not only five centuries"
       ></CustomHeader>
-      <FlexSimple flexDirection="column" justifyContent="space-around" flexDirectionMd="row">
+      <FlexSimple className="py-10" flexDirection="column" justifyContent="space-around" flexDirectionMd="row">
         {contents.map((item, key) => (
           <AchieveCard key={key} boxColor={item.boxColor} shadowColor={item.shadowColor} heading={item.heading} icon={item.icon}>
             {item.children}
