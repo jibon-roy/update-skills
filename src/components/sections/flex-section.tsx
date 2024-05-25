@@ -49,7 +49,7 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
           <h2 className="text-3xl my-8 md:text-5xl font-bold tracking-tight">
             {head}
           </h2>
-          <div className="flex justify-around text-lg md:text-xl">
+          <div className="text-lg md:text-xl">
             {children}
           </div>
         </div>

@@ -41,7 +41,7 @@ function FlexSimple({ flexDirection, flexDirectionMd, textColor, justifyContent,
     }
     return (
         <div style={{ backgroundColor: bg }}>
-            <div className={className} style={styles}>
+            <div className={className + " " + "lg:py-32 gap-8 py-12 md:py-28"} style={styles}>
                 {children}
             </div>
         </div>
