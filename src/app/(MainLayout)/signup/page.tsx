@@ -13,7 +13,7 @@ function SignUp({ }: Props) {
     return (
         <AuthPage
             headingTitle="Sign up now"
-            description=""
+            description="Read the form carefully and fill up."
             mainHeading="Achieve the job"
             lottieFilesLink="https://lottie.host/4aa0322d-d9d5-44ae-b6a8-f19db777300c/qUSgpMuJtp.json"
         >
