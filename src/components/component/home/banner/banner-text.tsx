@@ -32,7 +32,7 @@ function BannerText({ }: Props) {
             <p className="max-w-3xl text-lg text-gray-300">
                 Discover a world of endless possibilities with our best courses. Bring your skills to life and grow your Job capability.
             </p>
-            <Link href="/login">
+            <Link href="/login" className="text-black">
                 <Button size={"lg"} className="font-bold text-lg">
                     Get Started
                 </Button>
