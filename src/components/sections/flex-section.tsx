@@ -17,8 +17,9 @@ type Props = {
   flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
   flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
   textColor?: string;
+  animate?: boolean
 }
-export function FlexSection({ children, justifyContent, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
+export function FlexSection({ children, animate, justifyContent, bg, imgContent, className, heading, head, textColor, description, flexDirection, flexDirectionMd }: Props) {
 
   const [direction, setDirection] = useState(flexDirection);
 
@@ -59,14 +60,13 @@ export function FlexSection({ children, justifyContent, bg, imgContent, classNam
             src={imgContent ? imgContent : ""}
             priority
             alt="Creative Tools"
-            className="rounded-lg mx-auto block"
+            className="rounded-lg mx-auto animate-updown block duration-1000"
             height="400"
             style={{
               objectFit: "cover",
             }}
             width="600"
           />
-
           }
         </div>
       </div>

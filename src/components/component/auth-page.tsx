@@ -1,11 +1,7 @@
 "use client"
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Player } from '@lottiefiles/react-lottie-player';
-import { FcGoogle } from "react-icons/fc";
-import { Separator } from "@/components/ui/separator"
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 // import { useRouter } from 'next/router';
 import { useRouter } from "next/navigation"

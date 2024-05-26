@@ -10,6 +10,7 @@ function MoreAbout({ }: Props) {
             textColor="white"
             bg="bg-gradient-to-right"
             imgContent={img.src}
+            animate
             flexDirection="column-reverse"
             justifyContent="space-between"
         >
