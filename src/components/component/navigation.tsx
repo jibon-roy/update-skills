@@ -34,7 +34,7 @@ export function Navigation() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="/signUp">
+            <Link href="/signup">
               <Button size="sm">Sign up</Button>
             </Link>
             <Link href="/login">
