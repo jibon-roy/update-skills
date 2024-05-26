@@ -16,7 +16,7 @@ function GridSection({ children, heading, headingTitle }: Props) {
         <Section>
             <div className="container px-4 md:px-6">
                 {(heading || headingTitle) && <CustomHeader heading={heading} headingTitle={headingTitle} />}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                <div className="grid grid-cols-1 py-10 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                     {children}
                 </div>
                 <div className="flex justify-center">

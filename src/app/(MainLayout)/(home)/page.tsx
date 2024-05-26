@@ -8,13 +8,21 @@ import MoreAbout from "@/components/component/home/moreAbout";
 import { Statistics } from "@/components/component/home/statistics/statistics";
 import BecomeATeacher from "@/components/component/home/teacher/becomeATeacher";
 import { Navigation } from "@/components/component/navigation";
+// import aos from 'aos'
+// import 'aos/dist/aos.css';
 
 // import axios from "axios";
 
 
 
-
 export default async function Home() {
+
+
+  // if (typeof document === 'undefined') {
+  //   aos.init({
+  //     offset: 100,
+  //   });
+  // }
 
   // const fetchUsers = async () => {
   //   const res = await axios.get(`${process.env.HOST_URI}/api/users`)
@@ -24,6 +32,7 @@ export default async function Home() {
   // console.log(users)
   return (
     <main>
+
       <Navigation />
       <Banner />
       <PopularCourse />

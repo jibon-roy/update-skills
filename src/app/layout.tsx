@@ -9,11 +9,14 @@ export const metadata: Metadata = {
     icons: "https://cdn-icons-png.freepik.com/512/813/813741.png",
 };
 
+
+
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+
     return (
         <StoreProvider>
             <html lang="en">
