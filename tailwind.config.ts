@@ -23,16 +23,16 @@ const config = {
             slow: "5s",
     },
     backgroundImage: theme => ({
-        'gradient-to-top': 'linear-gradient(to top, var(--main-secondary-violet), var(--main-secondary-black))',
-        'gradient-to-right': 'linear-gradient(to right, var(--main-primary-violet), var(--main-secondary-black))',
+        'gradient-to-top': 'linear-gradient(to top, hsl(var(--main-secondary-violet)), hsl(var(--main-secondary-black)))',
+        'gradient-to-right': 'linear-gradient(to right, hsl(var(--main-primary-violet)), hsl(var(--main-secondary-black)))',
       }),
     extend: {
       colors: {
-        'main-primary-black': 'var(--main-primary-black)',
-        'main-secondary-black': 'var(--main-secondary-black)',
-        'main-primary-violet': 'var(--main-primary-violet)',
-        'main-secondary-violet': 'var(--main-secondary-violet)',
-        'main-primary-yellow': 'var(--main-primary-yellow)',
+        'main-primary-black': 'hsl(var(--main-primary-black))',
+        'main-secondary-black': 'hsl(var(--main-secondary-black))',
+        'main-primary-violet': 'hsl(var(--main-primary-violet))',
+        'main-secondary-violet': 'hsl(var(--main-secondary-violet))',
+        'main-primary-yellow': 'hsl(var(--main-primary-yellow))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -9,20 +9,14 @@ import { Separator } from "@/components/ui/separator"
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 // import { useRouter } from 'next/router';
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
 
 function LoginPage() {
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            console.log(window.history);
-        }
-    }, []);
 
     const router = useRouter();
 
     const handleClick = () => {
-        router.back();
+        router.push('/')
     };
 
     return (
@@ -42,7 +36,7 @@ function LoginPage() {
             </div>
             <div className="flex relative items-center flex-col bg-gradient-to-top justify-center p-8">
                 <Button onClick={handleClick} className="flex absolute top-5 right-5 gap-2 group" >
-                    <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back
+                    <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back to Home
                 </Button>
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
