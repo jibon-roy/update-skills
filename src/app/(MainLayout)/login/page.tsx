@@ -20,7 +20,7 @@ function LoginPage() {
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
+        <section className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
             <div className="hidden lg:flex flex-col justify-center items-center">
                 <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
                     Login your account to Update Skills.
@@ -66,7 +66,7 @@ function LoginPage() {
                     </div>
                 </Card>
             </div>
-        </div>
+        </section>
     )
 }
 
