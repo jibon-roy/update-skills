@@ -12,10 +12,10 @@ type Props = {}
 function SignUp({ }: Props) {
     return (
         <AuthPage
+            headingTitle="Sign up now"
             description=""
-            headingTitle=""
-            mainHeading=""
-            lottieFilesLink="https://lottie.host/6306dd5f-aab3-4ef0-8607-8f0e521e8162/k1C0bVAGqN.json"
+            mainHeading="Achieve the job"
+            lottieFilesLink="https://lottie.host/4aa0322d-d9d5-44ae-b6a8-f19db777300c/qUSgpMuJtp.json"
         >
             <form>
                 <CardContent className="space-y-4 p-6">

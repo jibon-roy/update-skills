@@ -43,7 +43,7 @@ function AuthPage({ children, description, headingTitle, lottieFilesLink, mainHe
                     <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back to Home
                 </Button>
                 <Card className="w-full max-w-md">
-                    <CardHeader className="space-y-1">
+                    <CardHeader className="space">
                         <CardTitle className="text-4xl text-white">{headingTitle}</CardTitle>
                         <CardDescription className="text-white">{description}</CardDescription>
                     </CardHeader>
