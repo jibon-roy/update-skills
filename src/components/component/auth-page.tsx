@@ -32,8 +32,8 @@ function AuthPage({ children, description, headingTitle, lottieFilesLink, mainHe
                 <div className="hidden lg:block">
                     <Player src={lottieFilesLink}
                         style={{ height: '300px', width: '300px' }}
-                        autoplay
                         loop
+                        autoplay
                     >
                     </Player>
                 </div>
