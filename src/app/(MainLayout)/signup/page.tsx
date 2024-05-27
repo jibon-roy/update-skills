@@ -66,7 +66,7 @@ function SignUp({ }: Props) {
                         <Label htmlFor="gender" className="flex gap-2 items-center">
                             <Input value="Female" name="gender" id="female" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                             Female</Label>
-                        <Label htmlFor="gender">
+                        <Label htmlFor="gender" className="flex gap-2 items-center">
                             <Input value="Others" name="gender" id="others" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                             Others</Label>
                     </div>
