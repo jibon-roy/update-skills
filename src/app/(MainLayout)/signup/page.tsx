@@ -73,9 +73,15 @@ function SignUp({ }: Props) {
     }
 
     const passStatus = (e: any) => {
-        const testPass = passwordStrength(e.target.value)
-        console.log(testPass)
-        setPassStatus(testPass.value)
+        if (e.target.value) {
+
+            const testPass = passwordStrength(e.target.value)
+            console.log(testPass)
+            setPassStatus(testPass.value)
+        } else {
+
+            setPassStatus('')
+        }
     }
 
 
@@ -89,19 +95,19 @@ function SignUp({ }: Props) {
             <form onSubmit={handleRegister}>
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="name">Name</Label>
+                        <Label htmlFor="name">Name:</Label>
                         <Input required name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="Full name" type="text" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email">Email:</Label>
                         <Input required name="email" id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="dateOfBirth">Date of Birth</Label>
+                        <Label htmlFor="dateOfBirth">Date of Birth:</Label>
                         <Input required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="text-white">
-                        <div className="text-white text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Gender</div>
+                        <div className="text-white text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Gender:</div>
                         <div className="flex justify-between">
                             <Label htmlFor="male" className="flex gap-2 items-center">
                                 <Input value="Male" required defaultChecked name="gender" id="male" className="text-black cursor-pointer w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
