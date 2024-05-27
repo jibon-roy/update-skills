@@ -39,13 +39,13 @@ function AuthPage({ children, description, headingTitle, lottieFilesLink, mainHe
                 </div>
             </div>
             <div className="flex relative items-center flex-col bg-gradient-to-top justify-center px-2 md:px-8 py-12">
-                <Button onClick={handleClick} className="flex md:absolute top-5 right-5 gap-2 group" >
+                <Button onClick={handleClick} className="flex md:absolute top-5 gap-2 right-5 mb-5 group" >
                     <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back to Home
                 </Button>
                 <Card className="w-full max-w-md">
                     <CardHeader>
-                        <CardTitle className="text-4xl mb-3 text-white">{headingTitle}</CardTitle>
-                        <CardDescription className="text-white">{description}</CardDescription>
+                        <CardTitle className="text-4xl text-center mb-3 text-white">{headingTitle}</CardTitle>
+                        <CardDescription className="text-white text-center">{description}</CardDescription>
                     </CardHeader>
                     {children}
                 </Card>

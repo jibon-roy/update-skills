@@ -108,7 +108,7 @@ function SignUp({ }: Props) {
                     </div>
                     <div className="text-white">
                         <div className="text-white text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Gender:</div>
-                        <div className="flex justify-between">
+                        <div className="flex flex-wrap justify-between">
                             <Label htmlFor="male" className="flex gap-2 items-center">
                                 <Input value="Male" required defaultChecked name="gender" id="male" className="text-black cursor-pointer w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                                 Male</Label>
