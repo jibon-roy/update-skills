@@ -16,6 +16,7 @@ type Props = {}
 
 function SignUp({ }: Props) {
     const [passType, setPassType] = useState('password')
+    const [passError, setPassError] = useState('')
 
     const handleRegister = (event: any) => {
         event.preventDefault();
@@ -25,7 +26,19 @@ function SignUp({ }: Props) {
         const dateOfBirth: string = event.currentTarget.dateOfBirth.value
         const gender: string = event.currentTarget.gender.value
 
-        console.log(passwordStrength(password))
+
+        const checkPass = passwordStrength(password)
+        if (!checkPass.contains.includes('lowercase')
+            || !checkPass.contains.includes('number')
+            || !checkPass.contains.includes('symbol')
+            || !checkPass.contains.includes('uppercase')
+        ) {
+            setPassError('Password must contain number, symbol, uppercase and lowercase.')
+            return;
+        } else {
+            setPassError('')
+        }
+
         const newUser: UserType = {
             name: name,
             password: password,
@@ -58,7 +71,20 @@ function SignUp({ }: Props) {
         }
     }
 
-    const currentDate = new Date()
+    const checkPassword = (e: any) => {
+        const checkPass = passwordStrength(e.target.value)
+        if (!checkPass.contains.includes('lowercase')
+            || !checkPass.contains.includes('number')
+            || !checkPass.contains.includes('symbol')
+            || !checkPass.contains.includes('uppercase')
+        ) {
+            setPassError('Password must contain number, symbol, uppercase and lowercase.')
+            return;
+        } else {
+            setPassError('')
+        }
+    }
+
 
     return (
         <AuthPage
@@ -99,6 +125,7 @@ function SignUp({ }: Props) {
                         <FaEye onClick={showPass} className="absolute right-3  top-11 cursor-pointer w-8 text-black"></FaEye>
                         <Label htmlFor="password">Password</Label>
                         <Input name="password" id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type={passType} />
+                        <div className={"hidden" + passError && "block w-full border-blue-500 text-red-500"}>{passError}</div>
                     </div>
                 </CardContent>
                 <CardFooter>
