@@ -8,11 +8,14 @@ import { Separator } from "@/components/ui/separator";
 import { UserType } from "@/lib/utils/interfaces/components.interface";
 import { FcGoogle } from "react-icons/fc";
 import { passwordStrength } from 'check-password-strength'
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
 
 
 type Props = {}
 
 function SignUp({ }: Props) {
+    const [passType, setPassType] = useState('password')
 
     const handleRegister = (event: any) => {
         event.preventDefault();
@@ -47,6 +50,14 @@ function SignUp({ }: Props) {
         return [year, month, day].join('-');
     }
 
+    const showPass = () => {
+        if (passType === 'password') {
+            setPassType('text')
+        } else {
+            setPassType('password')
+        }
+    }
+
     const currentDate = new Date()
     console.log(currentDate.getFullYear())
 
@@ -69,26 +80,27 @@ function SignUp({ }: Props) {
                         <Input required name="email" id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="dateOfBirth">Email</Label>
+                        <Label htmlFor="dateOfBirth">Date of Birth</Label>
                         <Input required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="text-white">
                         <Label htmlFor="" className="text-white">Gender</Label>
                         <div className="flex justify-between">
                             <Label htmlFor="gender" className="flex gap-2 items-center">
-                                <Input value="Male" required defaultChecked name="gender" id="male" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                <Input value="Male" required defaultChecked name="gender" id="male" className="text-black cursor-pointer w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                                 Male</Label>
                             <Label htmlFor="gender" className="flex gap-2 items-center">
-                                <Input value="Female" name="gender" id="female" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                <Input value="Female" name="gender" id="female" className="text-black w-5 transition-all cursor-pointer focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                                 Female</Label>
                             <Label htmlFor="gender" className="flex gap-2 items-center">
-                                <Input value="Others" name="gender" id="others" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                <Input value="Others" name="gender" id="others" className="text-black w-5 transition-all cursor-pointer focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                                 Others</Label>
                         </div>
                     </div>
-                    <div className="space-y-2  text-white">
+                    <div className="space-y-2 relative text-white">
+                        <FaEye onClick={showPass} className="absolute right-3  top-11 cursor-pointer w-8 text-black"></FaEye>
                         <Label htmlFor="password">Password</Label>
-                        <Input name="password" id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
+                        <Input name="password" id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type={passType} />
                     </div>
                 </CardContent>
                 <CardFooter>
