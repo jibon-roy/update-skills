@@ -59,8 +59,6 @@ function SignUp({ }: Props) {
     }
 
     const currentDate = new Date()
-    console.log(currentDate.getFullYear())
-
 
     return (
         <AuthPage
