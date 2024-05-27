@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { UserType } from "@/lib/utils/interfaces/components.interface";
 import { FcGoogle } from "react-icons/fc";
+import { passwordStrength } from 'check-password-strength'
 
 
 type Props = {}
@@ -15,11 +16,13 @@ function SignUp({ }: Props) {
 
     const handleRegister = (event: any) => {
         event.preventDefault();
-        const name: string = event.value.name
-        const email: string = event.value.email
-        const password: string = event.value.password
-        const dateOfBirth: string = event.value.dateOfBirth
-        const gender: string = event.value.gender
+        const name: string = event.currentTarget.name.value
+        const email: string = event.currentTarget.email.value
+        const password: string = event.currentTarget.password.value
+        const dateOfBirth: string = event.currentTarget.dateOfBirth.value
+        const gender: string = event.currentTarget.gender.value
+
+        console.log(passwordStrength(password))
         const newUser: UserType = {
             name: name,
             password: password,
@@ -28,8 +31,11 @@ function SignUp({ }: Props) {
             email: email
         }
         console.log(newUser)
-
     }
+
+    const currentDate = new Date()
+    const date = currentDate.getUTCDate()
+    console.log(date)
 
 
     return (
@@ -43,7 +49,7 @@ function SignUp({ }: Props) {
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
                         <Label htmlFor="name">Email</Label>
-                        <Input name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="name" type="email" />
+                        <Input name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="name" type="text" />
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="email">Email</Label>
@@ -54,15 +60,15 @@ function SignUp({ }: Props) {
                         <Input name="dateOfBirth" id="dateOfBirth" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="gender">
+                        <Label htmlFor="gender" className="flex gap-2 items-center">
                             <Input value="Male" name="gender" id="male" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                             Male</Label>
                         <Label htmlFor="gender">
                             <Input value="Female" name="gender" id="female" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                            Male</Label>
+                            Female</Label>
                         <Label htmlFor="gender">
                             <Input value="Others" name="gender" id="others" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                            Male</Label>
+                            Others</Label>
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="password">Password</Label>
