@@ -34,8 +34,7 @@ function SignUp({ }: Props) {
     }
 
     const currentDate = new Date()
-    const date = currentDate.getUTCDate()
-    console.log(date)
+    console.log(currentDate.getFullYear())
 
 
     return (
@@ -48,8 +47,8 @@ function SignUp({ }: Props) {
             <form onSubmit={handleRegister}>
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="name">Email</Label>
-                        <Input required name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="name" type="text" />
+                        <Label htmlFor="name">Name</Label>
+                        <Input required name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="Full name" type="text" />
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="email">Email</Label>
@@ -57,7 +56,7 @@ function SignUp({ }: Props) {
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="dateOfBirth">Email</Label>
-                        <Input required name="dateOfBirth" id="dateOfBirth" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
+                        <Input required name="dateOfBirth" id="dateOfBirth" maxLength={currentDate.getFullYear()} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="text-white">
                         <Label htmlFor="" className="text-white">Gender</Label>
