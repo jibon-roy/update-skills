@@ -14,6 +14,11 @@ function SignUp({ }: Props) {
 
     const handleRegister = (event: any) => {
         event.preventDefault();
+        const name: string = event.value.name
+        const email: string = event.value.email
+        const password: string = event.value.password
+        const dateOfBirth: string = event.value.dateOfBirth
+        const gender: string = event.value.gender
 
     }
 
@@ -40,10 +45,15 @@ function SignUp({ }: Props) {
                         <Input name="dateOfBirth" id="dateOfBirth" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="gender">Email</Label>
-                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                        <Label htmlFor="gender">
+                            <Input value="Male" name="gender" id="male" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                            Male</Label>
+                        <Label htmlFor="gender">
+                            <Input value="Female" name="gender" id="female" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                            Male</Label>
+                        <Label htmlFor="gender">
+                            <Input value="Others" name="gender" id="others" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                            Male</Label>
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="password">Password</Label>
