@@ -5,6 +5,7 @@ import { CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { UserType } from "@/lib/utils/interfaces/components.interface";
 import { FcGoogle } from "react-icons/fc";
 
 
@@ -19,6 +20,14 @@ function SignUp({ }: Props) {
         const password: string = event.value.password
         const dateOfBirth: string = event.value.dateOfBirth
         const gender: string = event.value.gender
+        const newUser: UserType = {
+            name: name,
+            password: password,
+            dateOfBirth: dateOfBirth,
+            gender: gender,
+            email: email
+        }
+        console.log(newUser)
 
     }
 

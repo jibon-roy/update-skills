@@ -21,3 +21,11 @@ export type PrimaryVideoDetails = {
     price: number;
 
 }
+
+export type UserType = {
+    name: string;
+    dateOfBirth: string;
+    email: string;
+    password: string;
+    gender: string;
+}
