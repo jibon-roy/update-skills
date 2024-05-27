@@ -33,6 +33,20 @@ function SignUp({ }: Props) {
         console.log(newUser)
     }
 
+    function formatDate(date: any) {
+        let d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
     const currentDate = new Date()
     console.log(currentDate.getFullYear())
 
@@ -56,7 +70,7 @@ function SignUp({ }: Props) {
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="dateOfBirth">Email</Label>
-                        <Input required name="dateOfBirth" id="dateOfBirth" maxLength={currentDate.getFullYear()} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
+                        <Input required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="text-white">
                         <Label htmlFor="" className="text-white">Gender</Label>
