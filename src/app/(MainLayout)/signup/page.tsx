@@ -59,17 +59,19 @@ function SignUp({ }: Props) {
                         <Label htmlFor="dateOfBirth">Email</Label>
                         <Input name="dateOfBirth" id="dateOfBirth" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
-                    <Label htmlFor="gender">Gender</Label>
-                    <div className="flex justify-between text-white">
-                        <Label htmlFor="gender" className="flex gap-2 items-center">
-                            <Input value="Male" defaultChecked name="gender" id="male" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                            Male</Label>
-                        <Label htmlFor="gender" className="flex gap-2 items-center">
-                            <Input value="Female" name="gender" id="female" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                            Female</Label>
-                        <Label htmlFor="gender" className="flex gap-2 items-center">
-                            <Input value="Others" name="gender" id="others" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
-                            Others</Label>
+                    <div className="text-white">
+                        <Label htmlFor="" className="text-white">Gender</Label>
+                        <div className="flex justify-between">
+                            <Label htmlFor="gender" className="flex gap-2 items-center">
+                                <Input value="Male" defaultChecked name="gender" id="male" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                Male</Label>
+                            <Label htmlFor="gender" className="flex gap-2 items-center">
+                                <Input value="Female" name="gender" id="female" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                Female</Label>
+                            <Label htmlFor="gender" className="flex gap-2 items-center">
+                                <Input value="Others" name="gender" id="others" className="text-black w-5 transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                                Others</Label>
+                        </div>
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="password">Password</Label>
