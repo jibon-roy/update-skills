@@ -1,3 +1,4 @@
+"use client"
 import AuthPage from "@/components/component/auth-page";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
@@ -10,6 +11,13 @@ import { FcGoogle } from "react-icons/fc";
 type Props = {}
 
 function SignUp({ }: Props) {
+
+    const handleRegister = (event: any) => {
+        event.preventDefault();
+
+    }
+
+
     return (
         <AuthPage
             headingTitle="Sign up now"
@@ -17,15 +25,29 @@ function SignUp({ }: Props) {
             mainHeading="Achieve the job"
             lottieFilesLink="https://lottie.host/4aa0322d-d9d5-44ae-b6a8-f19db777300c/qUSgpMuJtp.json"
         >
-            <form>
+            <form onSubmit={handleRegister}>
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
+                        <Label htmlFor="name">Email</Label>
+                        <Input name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="name" type="email" />
+                    </div>
+                    <div className="space-y-2  text-white">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
+                        <Input name="email" id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
+                    </div>
+                    <div className="space-y-2  text-white">
+                        <Label htmlFor="dateOfBirth">Email</Label>
+                        <Input name="dateOfBirth" id="dateOfBirth" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
+                    </div>
+                    <div className="space-y-2  text-white">
+                        <Label htmlFor="gender">Email</Label>
+                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
+                        <Input name="gender" id="gender" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" type="radio" />
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="password">Password</Label>
-                        <Input id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
+                        <Input name="password" id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
                     </div>
                 </CardContent>
                 <CardFooter>
