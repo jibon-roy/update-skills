@@ -39,3 +39,7 @@ export const authOptions: any ={
         })
     ],
 }
+
+export async function GET( req: any,res: any ) {
+return NextAuth(req,res,authOptions)
+}

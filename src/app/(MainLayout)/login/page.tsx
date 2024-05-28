@@ -15,7 +15,8 @@ function LoginPage() {
     console.log(session)
     const router = useRouter();
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
         router.push('/')
     };
 
@@ -26,7 +27,7 @@ function LoginPage() {
             description="Enter your email and password to access your account."
             lottieFilesLink="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
         >
-            <form>
+            <form onSubmit={handleSubmit}>
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
                         <Label htmlFor="email">Email</Label>
