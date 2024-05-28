@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator"
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation"
+import AuthPage from "@/components/component/auth-page"
 
 function LoginPage() {
 
@@ -19,21 +20,13 @@ function LoginPage() {
     };
 
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
-            <div className="hidden lg:flex flex-col justify-center items-center">
-                <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
-                    Login your account to Update Skills.
-                </div>
-                <div className="hidden lg:block">
-                    <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
-                        style={{ height: '300px', width: '300px' }}
-                        autoplay
-                        loop
+        <AuthPage
+            headingTitle="Sign up now"
+            description="Read the form carefully and fill up."
+            mainHeading=" Login your account to Update Skills."
+            lottieFilesLink="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
+        >
 
-                    >
-                    </Player>
-                </div>
-            </div>
             <div className="flex relative items-center flex-col bg-gradient-to-top justify-center px-2 md:px-8 py-12">
                 <Button onClick={handleClick} className="flex md:absolute top-5 right-5 gap-2 group" >
                     <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back to Home
@@ -66,7 +59,7 @@ function LoginPage() {
                     </div>
                 </Card>
             </div>
-        </section>
+        </AuthPage>
     )
 }
 
