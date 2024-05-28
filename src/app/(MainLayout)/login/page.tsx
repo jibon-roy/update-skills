@@ -10,14 +10,21 @@ import AuthPage from "@/components/component/auth-page"
 import { signIn, useSession } from 'next-auth/react'
 import Swal from "sweetalert2"
 import { useEffect } from "react"
+import { useDispatch } from 'react-redux';
+import { setUser } from "@/app/redux/slices/authReducer";
 
 function LoginPage() {
 
     const router = useRouter();
     const session = useSession()
+    const dispatch = useDispatch()
     useEffect(() => {
-        console.log(session)
+        dispatch(setUser({
+            email: session.data?.user?.email!,
+            name: session.data?.user?.name!,
+        }))
         if (session.status === 'authenticated') {
+
             Swal.fire({
                 title: 'Welcome back',
                 text: 'Successfully logged in.',
@@ -26,7 +33,7 @@ function LoginPage() {
                 confirmButtonColor: 'hsl(var(--main-primary-violet))'
             });
         }
-    }, [router, session])
+    }, [router, session, dispatch])
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
