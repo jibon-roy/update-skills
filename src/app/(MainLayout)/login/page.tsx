@@ -16,37 +16,56 @@ function LoginPage() {
     const router = useRouter();
     const session = useSession()
     useEffect(() => {
+        console.log(session)
         if (session.status === 'authenticated') {
-            router.replace('/dashboard')
-        }
 
+            Swal.fire({
+                title: 'Welcome back',
+                text: 'Successfully logged in.',
+                icon: 'success',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            });
+        }
     }, [router, session])
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault()
-        const email = e.currentTarget.name.value
-        const password = e.currentTarget.password.value
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const email = form.email.value;
+        const password = form.password.value;
+        // const router = useRouter();
 
-        const loginUser = await signIn('credentials', {
-            redirect: false,
-            email,
-            password
-        })
+        try {
+            const loginUser = await signIn('credentials', {
+                redirect: false,
+                email,
+                password
+            });
 
-        if (loginUser?.error) {
+
+            if (loginUser?.error) {
+                Swal.fire({
+                    title: 'Oops!',
+                    text: loginUser.error,
+                    icon: 'error',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: 'hsl(var(--main-primary-violet))'
+                });
+            } else if (loginUser?.ok) {
+                // Optional: Add logic to redirect to a specific page after successful login
+                router.push('/dashboard');
+            }
+        } catch (error) {
+            console.error('Error during sign-in:', error);
             Swal.fire({
-                title: 'Opps!',
-                text: await loginUser?.error,
+                title: 'Oops!',
+                text: 'An unexpected error occurred. Please try again later.',
                 icon: 'error',
                 confirmButtonText: 'Okay',
                 confirmButtonColor: 'hsl(var(--main-primary-violet))'
-            })
-            if (loginUser?.url) {
-                return router.replace('/dashboard')
-            }
+            });
         }
-
-        router.push('/')
     };
 
     return (
