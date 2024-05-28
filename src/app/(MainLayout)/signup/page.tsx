@@ -10,11 +10,14 @@ import { FcGoogle } from "react-icons/fc";
 import { passwordStrength } from 'check-password-strength'
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 
 
 type Props = {}
 
 function SignUp({ }: Props) {
+    const axiosPublic = useAxiosPublic()
+
     const [passType, setPassType] = useState('password')
     const [passError, setPassError] = useState('')
     const [passwordStatus, setPassStatus] = useState('')
@@ -45,9 +48,12 @@ function SignUp({ }: Props) {
             password: password,
             dateOfBirth: dateOfBirth,
             gender: gender,
-            email: email
+            email: email,
         }
-        console.log(newUser)
+
+        axiosPublic.post('/api/users', newUser)
+            .then(data => console.log(data))
+            .catch(err => console.error(err))
     }
 
     function formatDate(date: any) {
