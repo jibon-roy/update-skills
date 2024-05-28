@@ -7,7 +7,6 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator"
 import { FaArrowAltCircleLeft } from "react-icons/fa";
-// import { useRouter } from 'next/router';
 import { useRouter } from "next/navigation"
 
 function LoginPage() {
