@@ -18,7 +18,6 @@ function LoginPage() {
     useEffect(() => {
         console.log(session)
         if (session.status === 'authenticated') {
-
             Swal.fire({
                 title: 'Welcome back',
                 text: 'Successfully logged in.',
