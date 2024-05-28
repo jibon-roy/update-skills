@@ -28,6 +28,8 @@ function LoginPage() {
                     <Player src="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
                         style={{ height: '300px', width: '300px' }}
                         autoplay
+                        loop
+
                     >
                     </Player>
                 </div>
