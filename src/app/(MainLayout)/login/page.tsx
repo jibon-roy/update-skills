@@ -101,7 +101,7 @@ function LoginPage() {
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
             <div className="flex justify-center">
-                <Button variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
+                <Button onClick={() => { signIn('google') }} variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
             </div>
         </AuthPage>
     )
