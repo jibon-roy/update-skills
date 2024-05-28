@@ -9,7 +9,7 @@ import { UserType } from "@/lib/utils/interfaces/components.interface";
 import { FcGoogle } from "react-icons/fc";
 import { passwordStrength } from 'check-password-strength'
 import { useState } from "react";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaSpinner } from "react-icons/fa";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useRouter } from "next/navigation";
 
@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 type Props = {}
 
 function SignUp({ }: Props) {
+    const [loading, setLoading] = useState(true)
     const axiosPublic = useAxiosPublic()
     const router = useRouter()
     const [passType, setPassType] = useState('password')
@@ -64,8 +65,6 @@ function SignUp({ }: Props) {
 
             })
             .catch(err => console.error(err))
-
-
     }
 
     function formatDate(date: any) {
@@ -143,7 +142,7 @@ function SignUp({ }: Props) {
                     </div>
                 </CardContent>
                 <CardFooter>
-                    <Button className="w-full">Sign In</Button>
+                    <Button className="w-full">{loading ? <FaSpinner className="animation-spin"></FaSpinner> : 'Sign In'}</Button>
                 </CardFooter>
             </form>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
