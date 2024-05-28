@@ -19,6 +19,7 @@ function LoginPage() {
     const session = useSession()
     const dispatch = useDispatch()
     useEffect(() => {
+        console.log(session)
         dispatch(setUser({
             email: session.data?.user?.email!,
             name: session.data?.user?.name!,

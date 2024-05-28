@@ -18,12 +18,14 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 import { useSession } from "next-auth/react"
-
+import { useSelector } from "react-redux"
 export function Dashboard() {
-  const session = useSession()
-  console.log(session)
-  const path: string | null = usePathname()
-  const getPath = typeof path === 'string' ? path.slice(1) : null
+
+  const user = useSelector((state: any) => state.auth.user)
+
+
+  // const path: string | null = usePathname()
+  // const getPath = typeof path === 'string' ? path.slice(1) : null
   // const pathName: string | null = typeof getPath === 'string' ? getPath[0].toUpperCase() + getPath.slice(1) : null
 
   // console.log(pathName)
@@ -72,7 +74,7 @@ export function Dashboard() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>

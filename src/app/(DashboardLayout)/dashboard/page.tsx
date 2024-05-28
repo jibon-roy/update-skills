@@ -4,6 +4,7 @@ import { Dashboard } from "@/components/component/dashboard/dashboard";
 type Props = {}
 
 function DashboardPage({ }: Props) {
+
     return (
         <div>
             <Dashboard />
