@@ -12,7 +12,8 @@ import { useState } from "react";
 import { FaEye, FaSpinner } from "react-icons/fa";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useRouter } from "next/navigation";
-
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 
 type Props = {}
 
@@ -63,11 +64,24 @@ function SignUp({ }: Props) {
                     event.target.password.value = '';
                     event.target.dateOfBirth.value = '';
                     event.target.gender.value = '';
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Do you want to continue',
+                        icon: 'error',
+                        confirmButtonText: 'Okay'
+                    })
                 }
 
             })
-            .catch(err => {
+            .catch(async (err) => {
                 setLoading(false)
+                Swal.fire({
+                    title: 'Error!',
+                    text: await err.response.data,
+                    icon: 'error',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: 'hsl(var(--main-primary-violet))'
+                })
                 console.error(err)
             })
     }

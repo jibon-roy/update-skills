@@ -25,7 +25,7 @@ export function Dashboard() {
   const getPath = typeof path === 'string' ? path.slice(1) : null
   const pathName: string | null = typeof getPath === 'string' ? getPath[0].toUpperCase() + getPath.slice(1) : null
 
-  console.log(pathName)
+  // console.log(pathName)
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
       <DashboardNavigation />
