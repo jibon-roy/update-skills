@@ -80,9 +80,7 @@ function SignUp({ }: Props) {
 
     const passStatus = (e: any) => {
         if (e.target.value) {
-
             const testPass = passwordStrength(e.target.value)
-            console.log(testPass)
             setPassStatus(testPass.value)
         } else {
 
