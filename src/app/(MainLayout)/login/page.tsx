@@ -21,9 +21,9 @@ function LoginPage() {
 
     return (
         <AuthPage
-            headingTitle="Sign up now"
-            description="Read the form carefully and fill up."
             mainHeading=" Login your account to Update Skills."
+            headingTitle="Login to your account"
+            description="Enter your email and password to access your account."
             lottieFilesLink="https://lottie.host/6dfbcf18-59a0-4b14-b66c-36d54c7256fd/WNjGwIBInf.json"
         >
 
@@ -33,8 +33,8 @@ function LoginPage() {
                 </Button>
                 <Card className="w-full max-w-md">
                     <CardHeader className="space-y-1">
-                        <CardTitle className="text-4xl text-white">Login to your account</CardTitle>
-                        <CardDescription className="text-white">Enter your email and password to access your account.</CardDescription>
+                        <CardTitle className="text-4xl text-white"></CardTitle>
+                        <CardDescription className="text-white"></CardDescription>
                     </CardHeader>
                     <form>
                         <CardContent className="space-y-4 p-6">
