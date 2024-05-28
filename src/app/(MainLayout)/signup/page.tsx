@@ -65,10 +65,11 @@ function SignUp({ }: Props) {
                     event.target.dateOfBirth.value = '';
                     event.target.gender.value = '';
                     Swal.fire({
-                        title: 'Error!',
-                        text: 'Do you want to continue',
-                        icon: 'error',
-                        confirmButtonText: 'Okay'
+                        title: 'Welcome!',
+                        text: "Account has been created!",
+                        icon: 'success',
+                        confirmButtonText: 'Okay',
+                        confirmButtonColor: 'hsl(var(--main-primary-violet))'
                     })
                 }
 
@@ -76,7 +77,7 @@ function SignUp({ }: Props) {
             .catch(async (err) => {
                 setLoading(false)
                 Swal.fire({
-                    title: 'Error!',
+                    title: 'Opps!',
                     text: await err.response.data,
                     icon: 'error',
                     confirmButtonText: 'Okay',
