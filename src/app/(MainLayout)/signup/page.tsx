@@ -50,9 +50,9 @@ function SignUp({ }: Props) {
             gender: gender,
             email: email,
         }
-
+        console.log(newUser)
         axiosPublic.post('/api/users', newUser)
-            .then(data => console.log(data))
+            .then(data => console.log(data.data))
             .catch(err => console.error(err))
     }
 
