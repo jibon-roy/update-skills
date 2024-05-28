@@ -11,13 +11,14 @@ import { passwordStrength } from 'check-password-strength'
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
+import { useRouter } from "next/navigation";
 
 
 type Props = {}
 
 function SignUp({ }: Props) {
     const axiosPublic = useAxiosPublic()
-
+    const router = useRouter()
     const [passType, setPassType] = useState('password')
     const [passError, setPassError] = useState('')
     const [passwordStatus, setPassStatus] = useState('')
@@ -50,10 +51,21 @@ function SignUp({ }: Props) {
             gender: gender,
             email: email,
         }
-        console.log(newUser)
         axiosPublic.post('/api/users', newUser)
-            .then(data => console.log(data.data))
+            .then(data => {
+                if (data.data) {
+                    router.push('/');
+                    event.target.name.value = '';
+                    event.target.email.value = '';
+                    event.target.password.value = '';
+                    event.target.dateOfBirth.value = '';
+                    event.target.gender.value = '';
+                }
+
+            })
             .catch(err => console.error(err))
+
+
     }
 
     function formatDate(date: any) {
@@ -83,7 +95,6 @@ function SignUp({ }: Props) {
             const testPass = passwordStrength(e.target.value)
             setPassStatus(testPass.value)
         } else {
-
             setPassStatus('')
         }
     }
