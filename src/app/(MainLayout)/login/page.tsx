@@ -1,21 +1,21 @@
 "use client"
-import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
+import { CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Player } from '@lottiefiles/react-lottie-player';
 import { FcGoogle } from "react-icons/fc";
 import { Separator } from "@/components/ui/separator"
-import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useRouter } from "next/navigation"
 import AuthPage from "@/components/component/auth-page"
+import { signIn, useSession } from 'next-auth/react'
 
 function LoginPage() {
 
-
+    const session = useSession()
+    console.log(session)
     const router = useRouter();
 
-    const handleClick = () => {
+    const handleSubmit = () => {
         router.push('/')
     };
 
