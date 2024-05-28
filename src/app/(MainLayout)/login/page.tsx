@@ -8,15 +8,44 @@ import { Separator } from "@/components/ui/separator"
 import { useRouter } from "next/navigation"
 import AuthPage from "@/components/component/auth-page"
 import { signIn, useSession } from 'next-auth/react'
+import Swal from "sweetalert2"
+import { useEffect } from "react"
 
 function LoginPage() {
 
-    const session = useSession()
-    console.log(session)
     const router = useRouter();
+    const session = useSession()
+    useEffect(() => {
+        if (session.status === 'authenticated') {
+            router.replace('/dashboard')
+        }
 
-    const handleSubmit = (e: any) => {
+    }, [router, session])
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault()
+        const email = e.currentTarget.name.value
+        const password = e.currentTarget.password.value
+
+        const loginUser = await signIn('credentials', {
+            redirect: false,
+            email,
+            password
+        })
+
+        if (loginUser?.error) {
+            Swal.fire({
+                title: 'Opps!',
+                text: await loginUser?.error,
+                icon: 'error',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            })
+            if (loginUser?.url) {
+                return router.replace('/dashboard')
+            }
+        }
+
         router.push('/')
     };
 
@@ -31,11 +60,11 @@ function LoginPage() {
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
+                        <Input id="email" name="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="password">Password</Label>
-                        <Input id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
+                        <Input id="password" name="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
                     </div>
                 </CardContent>
                 <CardFooter>
