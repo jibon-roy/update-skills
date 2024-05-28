@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 type Props = {}
 
 function SignUp({ }: Props) {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const axiosPublic = useAxiosPublic()
     const router = useRouter()
     const [passType, setPassType] = useState('password')
@@ -25,6 +25,7 @@ function SignUp({ }: Props) {
     const [passwordStatus, setPassStatus] = useState('')
 
     const handleRegister = (event: any) => {
+        setLoading(true)
         event.preventDefault();
         const name: string = event.currentTarget.name.value
         const email: string = event.currentTarget.email.value
@@ -55,6 +56,7 @@ function SignUp({ }: Props) {
         axiosPublic.post('/api/users', newUser)
             .then(data => {
                 if (data.data) {
+                    setLoading(false)
                     router.push('/');
                     event.target.name.value = '';
                     event.target.email.value = '';
@@ -64,7 +66,10 @@ function SignUp({ }: Props) {
                 }
 
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                setLoading(false)
+                console.error(err)
+            })
     }
 
     function formatDate(date: any) {
@@ -142,7 +147,7 @@ function SignUp({ }: Props) {
                     </div>
                 </CardContent>
                 <CardFooter>
-                    <Button className="w-full">{loading ? <FaSpinner className="animation-spin"></FaSpinner> : 'Sign In'}</Button>
+                    <Button className="w-full">{loading ? <FaSpinner className="animate-spin"></FaSpinner> : 'Sign In'}</Button>
                 </CardFooter>
             </form>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
