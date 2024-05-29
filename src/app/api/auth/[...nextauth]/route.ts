@@ -40,8 +40,38 @@ export const authOptions: any = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
+            
         })
     ],
+    callbacks: {
+        async signIn({ user, account }: { user: AuthUser, account: Account }) {
+            if (account?.provider == 'credentials')
+            {
+                return true;
+            }
+            if (account?.provider == 'google') {
+                await connectDB()
+                try {
+                    const existingUser = await User.findOne({ email: user.email })
+                    if (!existingUser) {
+                        const newUser = new User({
+                            email: user.email,
+                            name: user.name,
+                            image: user.image,
+                            dateOfBirth: '',
+                            password: '',
+                            gender: '',
+                        })
+                        await newUser.save();
+                        return true;
+                    }
+                    return true
+                } catch (err: any) {
+                    console.log(err)
+                }
+            }
+        }
+    },
     pages: {
         signIn: '/login', 
     },

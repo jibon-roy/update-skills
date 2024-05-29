@@ -80,20 +80,16 @@ function LoginPage() {
     const handleGoogleLogin = async () => {
         const googleUser = await signIn('google')
 
-        const newGoogleUser: UserInterface = {
-            email: session.data?.user?.email!,
-            image: session.data?.user?.image!,
-            name: session.data?.user?.name!,
-            gender: '',
-            password: '',
-            dateOfBirth: '',
+        if (session.status === 'authenticated') {
+            Swal.fire({
+                title: 'Welcome back',
+                text: 'Successfully logged in.',
+                icon: 'success',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            });
         }
 
-        await axiosPublic.post('/api/users', newGoogleUser).then(res => {
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
-        })
         if (googleUser?.error) {
             Swal.fire({
                 title: 'Oops!',
