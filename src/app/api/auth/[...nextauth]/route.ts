@@ -30,9 +30,9 @@ export const authOptions: any = {
                         }
                     }
                     
-                    return null; // Return null if user not found or password is incorrect
+                    return null; 
                 } catch (error) {
-                    console.error(error); // Log the error instead of throwing it
+                    console.error(error); 
                     return null;
                 }
             }
@@ -40,19 +40,17 @@ export const authOptions: any = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
-            
         })
     ],
     callbacks: {
         async signIn({ user, account }: { user: AuthUser, account: Account }) {
-            if (account?.provider == 'credentials')
-            {
+            if (account?.provider === 'credentials') {
                 return true;
             }
-            if (account?.provider == 'google') {
-                await connectDB()
+            if (account?.provider === 'google') {
+                await connectDB();
                 try {
-                    const existingUser = await User.findOne({ email: user.email })
+                    const existingUser = await User.findOne({ email: user.email });
                     if (!existingUser) {
                         const newUser = new User({
                             email: user.email,
@@ -61,15 +59,19 @@ export const authOptions: any = {
                             dateOfBirth: '',
                             password: '',
                             gender: '',
-                        })
+                        });
                         await newUser.save();
-                        return true;
+                        console.log('New user created:', newUser);
+                    } else {
+                        console.log('Existing user found:', existingUser);
                     }
-                    return true
+                    return true; 
                 } catch (err: any) {
-                    console.log(err)
+                    console.log('Error in signIn callback:', err);
+                    return false; 
                 }
             }
+            return false; 
         }
     },
     pages: {
