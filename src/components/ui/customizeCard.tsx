@@ -7,7 +7,7 @@ type Props = {
     boxShadow?: "none" | "sm" | "md" | "lg" | string;
     display?: "grid" | "flex" | "block" | "inline-block";
     gap?: "none" | "sm" | "md" | "lg" | string;
-    position?: string;
+    position?: 'absolute' | 'fixed' | 'relative';
     width?: string;
     height?: string;
     children?: any;
@@ -20,9 +20,10 @@ type Props = {
     backgroundPosition?: string;
     backgroundRepeat?: string;
     backgroundSize?: string;
+    style?: object;
 }
 
-function DynamicCard({ width, justifyContent, backgroundSize, gap, backgroundPosition, backgroundRepeat, alignItems, gridTemplateColumns, height, display, padding, bgImgLink, boxShadow, background, border, borderRadius, margin, children, className }: Props) {
+function DynamicCard({ width, style, position, justifyContent, backgroundSize, gap, backgroundPosition, backgroundRepeat, alignItems, gridTemplateColumns, height, display, padding, bgImgLink, boxShadow, background, border, borderRadius, margin, children, className }: Props) {
 
     const getPadding = padding === "none" ? '0px' : padding === "sm" ? '8px' : padding === "md" ? '16px' : padding === "lg" ? '32px' : padding;
     const getMargin = margin === "none" ? '0px' : margin === "sm" ? '12px' : margin === "md" ? '36px' : margin === "lg" ? '48px' : margin;
@@ -49,8 +50,10 @@ function DynamicCard({ width, justifyContent, backgroundSize, gap, backgroundPos
                     display: display,
                     justifyContent: justifyContent,
                     alignItems: alignItems,
+                    position: position ? position : 'static',
                     gap: gap,
-                    gridTemplateColumns: `repeat(${gridTemplateColumns}, minmax(0, 1fr))`
+                    gridTemplateColumns: `repeat(${gridTemplateColumns}, minmax(0, 1fr))`,
+                    ...style
                 }
             }
             className={className ? className : ""}>
