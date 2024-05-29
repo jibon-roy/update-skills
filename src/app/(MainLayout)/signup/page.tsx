@@ -87,7 +87,7 @@ function SignUp({ }: Props) {
                     confirmButtonText: 'Okay',
                     confirmButtonColor: 'hsl(var(--main-primary-violet))'
                 })
-                console.error(err)
+                // console.error(err)
             })
     }
 

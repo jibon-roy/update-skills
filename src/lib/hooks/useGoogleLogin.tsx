@@ -11,7 +11,7 @@ function useLogin() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log(session)
+        // console.log(session)
         if (session.status === 'authenticated') {
             router.replace('/dashboard')
         }
