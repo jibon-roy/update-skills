@@ -14,7 +14,7 @@ function DashboardNavigation({ }: Props) {
                 <div className="flex h-[60px] items-center border-b px-6">
                     <Link className="flex items-center gap-2 font-semibold" href="/">
                         <Logo />
-                        <span className="">UC Dashboard</span>
+                        <span className="">UP Dashboard</span>
                     </Link>
                     <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
                         <BellIcon />

@@ -5,7 +5,7 @@
 * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 * 
 */
-
+import userIcon from '@/assets/userplaceholder.png'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
@@ -17,8 +17,8 @@ import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
 import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 import { signOut, useSession } from "next-auth/react"
-import { useSelector } from "react-redux"
 import { useRouter } from "next/navigation"
+import Logo from '../logo'
 export function Dashboard() {
 
   type User = {
@@ -51,9 +51,9 @@ export function Dashboard() {
       <DashboardNavigation />
       <div className="flex flex-col">
         <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
-          <Link className="lg:hidden" href="/">
-            <MountainIcon />
-            <span className="sr-only">Home</span>
+          <Link className="flex lg:hidden items-center gap-2 font-semibold" href="/">
+            <Logo />
+            <span className="">UP Dashboard</span>
           </Link>
           <div className="w-full flex-1">
             <form>
@@ -80,7 +80,7 @@ export function Dashboard() {
                   alt="Avatar"
                   className="rounded-full"
                   height="32"
-                  src="https://cdn-icons-png.freepik.com/512/813/813741.png"
+                  src={data?.user?.image ? data?.user?.image : userIcon.src}
                   style={{
                     aspectRatio: "32/32",
                     objectFit: "cover",
