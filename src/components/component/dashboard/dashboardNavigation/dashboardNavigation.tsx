@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
+import Logo from "../../logo"
 
 
 
@@ -12,7 +13,7 @@ function DashboardNavigation({ }: Props) {
             <div className="flex h-full max-h-screen flex-col gap-2">
                 <div className="flex h-[60px] items-center border-b px-6">
                     <Link className="flex items-center gap-2 font-semibold" href="/">
-                        <MountainIcon />
+                        <Logo />
                         <span className="">UC Dashboard</span>
                     </Link>
                     <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
