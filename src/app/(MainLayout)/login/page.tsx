@@ -20,20 +20,11 @@ function LoginPage() {
     const dispatch = useDispatch()
     useEffect(() => {
         console.log(session)
+        router.replace('/dashboard')
         dispatch(setUser({
             email: session.data?.user?.email!,
             name: session.data?.user?.name!,
         }))
-        if (session.status === 'authenticated') {
-
-            Swal.fire({
-                title: 'Welcome back',
-                text: 'Successfully logged in.',
-                icon: 'success',
-                confirmButtonText: 'Okay',
-                confirmButtonColor: 'hsl(var(--main-primary-violet))'
-            });
-        }
     }, [router, session, dispatch])
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,8 +41,15 @@ function LoginPage() {
                 password
             });
 
-
-            if (loginUser?.error) {
+            if (session.status === 'authenticated') {
+                Swal.fire({
+                    title: 'Welcome back',
+                    text: 'Successfully logged in.',
+                    icon: 'success',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: 'hsl(var(--main-primary-violet))'
+                });
+            } else if (loginUser?.error) {
                 Swal.fire({
                     title: 'Oops!',
                     text: loginUser.error,
@@ -74,6 +72,20 @@ function LoginPage() {
             });
         }
     };
+
+    const handleGoogleLogin = async () => {
+        const googleUser = await signIn('google')
+        if (googleUser?.error) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'An unexpected error occurred. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            });
+        }
+
+    }
 
     return (
         <AuthPage
@@ -101,7 +113,7 @@ function LoginPage() {
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
             <div className="flex justify-center">
-                <Button onClick={() => { signIn('google') }} variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
+                <Button onClick={handleGoogleLogin} variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
             </div>
         </AuthPage>
     )
