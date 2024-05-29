@@ -90,8 +90,8 @@ function SignUp({ }: Props) {
 
     function formatDate(date: any) {
         let d = new Date(date),
-            month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
+            month = '' + (d.getMonth() + 1),
             year = d.getFullYear();
 
         if (month.length < 2)
@@ -99,7 +99,7 @@ function SignUp({ }: Props) {
         if (day.length < 2)
             day = '0' + day;
 
-        return [year, month, day].join('-');
+        return [day, month, year].join('-');
     }
 
     const showPass = () => {
@@ -118,7 +118,6 @@ function SignUp({ }: Props) {
             setPassStatus('')
         }
     }
-
 
     return (
         <AuthPage
@@ -139,7 +138,7 @@ function SignUp({ }: Props) {
                     </div>
                     <div className="space-y-2  text-white">
                         <Label htmlFor="dateOfBirth">Date of Birth:</Label>
-                        <Input required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
+                        <Input placeholder="dd-mm-yyyy" data-format="DD-MM-YYYY" required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
                     <div className="text-white">
                         <div className="text-white text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Gender:</div>
