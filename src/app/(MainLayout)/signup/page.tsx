@@ -14,6 +14,7 @@ import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
 import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
+import Link from "next/link";
 
 type Props = {}
 
@@ -128,15 +129,15 @@ function SignUp({ }: Props) {
         >
             <form onSubmit={handleRegister}>
                 <CardContent className="space-y-4 p-6">
-                    <div className="space-y-2  text-white">
+                    <div className="space-y-1  text-white">
                         <Label htmlFor="name">Name:</Label>
                         <Input required name="name" id="name" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="name" placeholder="Full name" type="text" />
                     </div>
-                    <div className="space-y-2  text-white">
+                    <div className="space-y-1  text-white">
                         <Label htmlFor="email">Email:</Label>
                         <Input required name="email" id="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
                     </div>
-                    <div className="space-y-2  text-white">
+                    <div className="space-y-1  text-white">
                         <Label htmlFor="dateOfBirth">Date of Birth:</Label>
                         <Input placeholder="dd-mm-yyyy" data-format="DD-MM-YYYY" required name="dateOfBirth" id="dateOfBirth" max={formatDate(new Date())} className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="date" type="date" />
                     </div>
@@ -154,7 +155,7 @@ function SignUp({ }: Props) {
                                 Others</Label>
                         </div>
                     </div>
-                    <div className="space-y-2 relative text-white">
+                    <div className="space-y-1 relative text-white">
                         <FaEye onClick={showPass} className="absolute right-3  top-11 cursor-pointer w-8 text-black"></FaEye>
                         <Label htmlFor="password" className="">Password: <span className={passwordStatus === 'Strong' ? 'text-green-400' : passwordStatus === 'Medium' ? 'text-main-primary-yellow' : passwordStatus === 'Weak' ? 'text-orange-400' : 'text-red-500'}>{passwordStatus}</span></Label>
                         <Input onChange={passStatus} name="password" id="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type={passType} />
@@ -165,7 +166,9 @@ function SignUp({ }: Props) {
                     <Button className="w-full">{loading ? <FaSpinner className="animate-spin"></FaSpinner> : 'Sign In'}</Button>
                 </CardFooter>
             </form>
-            <div>Already have an account? login here.</div>
+            <div className="text-white flex justify-center font-semibold -mt-2">
+                <Link href="/login" >Already have an account? Login here.</Link>
+            </div>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
