@@ -12,7 +12,10 @@ function useLogin() {
 
     useEffect(() => {
         console.log(session)
-        if (session.status === 'authenticated') router.replace('/dashboard')
+        if (session.status === 'authenticated') {
+            router.replace('/dashboard')
+        }
+
         dispatch(setUser({
             email: session.data?.user?.email!,
             name: session.data?.user?.name!,
