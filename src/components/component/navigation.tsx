@@ -5,6 +5,7 @@
 */
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import TextLogo from "./logo/textLogo"
 
 export function Navigation() {
 
@@ -12,10 +13,7 @@ export function Navigation() {
     <nav className="bg-white shadow-sm dark:bg-gray-950/90">
       <div className="w-full container mx-auto px-4">
         <div className="flex justify-between h-14 items-center">
-          <Link className="flex items-center" href="#">
-            <MountainIcon />
-            <span className="sr-only">Update Skills</span>
-          </Link>
+          <TextLogo />
           <nav className="hidden md:flex gap-4">
             <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/">
               Home

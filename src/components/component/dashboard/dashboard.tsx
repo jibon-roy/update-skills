@@ -18,7 +18,7 @@ import Image from "next/image"
 import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
-import Logo from '../logo'
+import Logo from '../logo/logo'
 export function Dashboard() {
 
   type User = {
