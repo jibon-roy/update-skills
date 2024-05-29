@@ -165,6 +165,7 @@ function SignUp({ }: Props) {
                     <Button className="w-full">{loading ? <FaSpinner className="animate-spin"></FaSpinner> : 'Sign In'}</Button>
                 </CardFooter>
             </form>
+            <div>Already have an account? login here.</div>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
