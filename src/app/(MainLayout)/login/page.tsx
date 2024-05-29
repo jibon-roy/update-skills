@@ -13,6 +13,7 @@ import { useEffect } from "react"
 import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic"
+import { UserInterface } from "@/lib/utils/interfaces/components.interface"
 
 function LoginPage() {
 
@@ -79,10 +80,19 @@ function LoginPage() {
     const handleGoogleLogin = async () => {
         const googleUser = await signIn('google')
 
-        await axiosPublic.post('/api/users', {
-            email: session.data?.user?.email,
-            image: session.data?.user?.image,
-            name: session.data?.user?.name,
+        const newGoogleUser: UserInterface = {
+            email: session.data?.user?.email!,
+            image: session.data?.user?.image!,
+            name: session.data?.user?.name!,
+            gender: '',
+            password: '',
+            dateOfBirth: '',
+        }
+
+        await axiosPublic.post('/api/users', newGoogleUser).then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err)
         })
         if (googleUser?.error) {
             Swal.fire({

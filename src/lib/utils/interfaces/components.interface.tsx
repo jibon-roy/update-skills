@@ -22,10 +22,11 @@ export type PrimaryVideoDetails = {
 
 }
 
-export type UserType = {
+export interface UserInterface {
     name: string;
     dateOfBirth: string;
     email: string;
     password: string;
     gender: string;
+    image: string;
 }

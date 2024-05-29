@@ -16,7 +16,7 @@ export async function GET() {
 };
 
 export async function POST(req: any) {
-    const { email, password, gender, dateOfBirth, name } = await req.json()
+    const { email, password, gender, image, dateOfBirth, name } = await req.json()
     await connectDB();
 
     const existingUser = await User.findOne({ email })
@@ -30,6 +30,7 @@ export async function POST(req: any) {
         name: name,
         email: email,
         gender: gender,
+        image: image,
         password: hashPassword,
         dateOfBirth: dateOfBirth
     })
