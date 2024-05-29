@@ -6,6 +6,7 @@ export interface UserInterface extends Document {
   email: string;
   password: string;
   gender: string;
+  image: string
 }
 
 const UserSchema: Schema = new Schema({
@@ -21,11 +22,16 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true
   },
+  
   password: {
-    type: String,
+  type: String,
     required: false
   },
   gender: {
+    type: String,
+    required: false
+  },
+  image: {
     type: String,
     required: false
   }

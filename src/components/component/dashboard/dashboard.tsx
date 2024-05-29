@@ -15,14 +15,23 @@ import { ResponsiveBar } from "@nivo/bar"
 import { ResponsiveLine } from "@nivo/line"
 import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
 import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import { useSelector } from "react-redux"
+import { useRouter } from "next/navigation"
 export function Dashboard() {
 
-  const user = useSelector((state: any) => state.auth.user)
+  const router = useRouter()
 
+  const user = useSelector((state: any) => state.auth.user)
+  const loggedUser = useSession()
+  console.log(loggedUser)
+  const handleSignOut = async () => {
+    await signOut({ redirect: false }).then(() => {
+      router.push("/"); // Redirect to the home page after signing out
+    });
+
+  }
 
   // const path: string | null = usePathname()
   // const getPath = typeof path === 'string' ? path.slice(1) : null
@@ -79,7 +88,7 @@ export function Dashboard() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>

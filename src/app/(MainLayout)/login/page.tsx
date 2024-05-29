@@ -12,15 +12,18 @@ import Swal from "sweetalert2"
 import { useEffect } from "react"
 import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
+import useAxiosPublic from "@/lib/hooks/useAxiosPublic"
 
 function LoginPage() {
 
     const router = useRouter();
     const session = useSession()
     const dispatch = useDispatch()
+    const axiosPublic = useAxiosPublic()
+
     useEffect(() => {
         console.log(session)
-        router.replace('/dashboard')
+        if (session.status === 'authenticated') router.replace('/dashboard')
         dispatch(setUser({
             email: session.data?.user?.email!,
             name: session.data?.user?.name!,
@@ -75,6 +78,12 @@ function LoginPage() {
 
     const handleGoogleLogin = async () => {
         const googleUser = await signIn('google')
+
+        await axiosPublic.post('/api/users', {
+            email: session.data?.user?.email,
+            image: session.data?.user?.image,
+            name: session.data?.user?.name,
+        })
         if (googleUser?.error) {
             Swal.fire({
                 title: 'Oops!',
