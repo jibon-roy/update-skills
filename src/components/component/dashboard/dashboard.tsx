@@ -21,11 +21,19 @@ import { useSelector } from "react-redux"
 import { useRouter } from "next/navigation"
 export function Dashboard() {
 
+  type User = {
+    user: {
+      name: string,
+      email: string,
+    }
+  }
+
   const router = useRouter()
 
-  const user = useSelector((state: any) => state.auth.user)
-  const loggedUser = useSession()
-  console.log(loggedUser)
+  // const user = useSelector((state: any) => state.auth.user)
+  const { data } = useSession()
+
+  // console.log(loggedUser)
   const handleSignOut = async () => {
     await signOut({ redirect: false }).then(() => {
       router.push("/"); // Redirect to the home page after signing out
@@ -83,7 +91,7 @@ export function Dashboard() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
+              <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
