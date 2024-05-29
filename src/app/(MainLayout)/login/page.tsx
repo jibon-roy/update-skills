@@ -12,16 +12,16 @@ import Swal from "sweetalert2"
 import { useEffect } from "react"
 import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
-import useAxiosPublic from "@/lib/hooks/useAxiosPublic"
-import { UserInterface } from "@/lib/utils/interfaces/components.interface"
 import Link from "next/link"
+import useLogin from "@/lib/hooks/useGoogleLogin"
 
 function LoginPage() {
+    const { handleGoogleLogin } = useLogin()
 
     const router = useRouter();
     const session = useSession()
     const dispatch = useDispatch()
-    const axiosPublic = useAxiosPublic()
+
 
     useEffect(() => {
         console.log(session)
@@ -78,30 +78,29 @@ function LoginPage() {
         }
     };
 
-    const handleGoogleLogin = async () => {
-        const googleUser = await signIn('google')
+    // const handleGoogleLogin = async () => {
+    //     const googleUser = await signIn('google')
 
-        if (session.status === 'authenticated') {
-            Swal.fire({
-                title: 'Welcome back',
-                text: 'Successfully logged in.',
-                icon: 'success',
-                confirmButtonText: 'Okay',
-                confirmButtonColor: 'hsl(var(--main-primary-violet))'
-            });
-        }
+    //     if (session.status === 'authenticated') {
+    //         Swal.fire({
+    //             title: 'Welcome back',
+    //             text: 'Successfully logged in.',
+    //             icon: 'success',
+    //             confirmButtonText: 'Okay',
+    //             confirmButtonColor: 'hsl(var(--main-primary-violet))'
+    //         });
+    //     }
 
-        if (googleUser?.error) {
-            Swal.fire({
-                title: 'Oops!',
-                text: 'An unexpected error occurred. Please try again later.',
-                icon: 'error',
-                confirmButtonText: 'Okay',
-                confirmButtonColor: 'hsl(var(--main-primary-violet))'
-            });
-        }
-
-    }
+    //     if (googleUser?.error) {
+    //         Swal.fire({
+    //             title: 'Oops!',
+    //             text: 'An unexpected error occurred. Please try again later.',
+    //             icon: 'error',
+    //             confirmButtonText: 'Okay',
+    //             confirmButtonColor: 'hsl(var(--main-primary-violet))'
+    //         });
+    //     }
+    // }
 
     return (
         <AuthPage

@@ -15,12 +15,14 @@ import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import Link from "next/link";
+import useLogin from "@/lib/hooks/useGoogleLogin";
 
 type Props = {}
 
 function SignUp({ }: Props) {
     const [loading, setLoading] = useState(false)
     const axiosPublic = useAxiosPublic()
+    const { handleGoogleLogin } = useLogin()
     const router = useRouter()
     const [passType, setPassType] = useState('password')
     const [passError, setPassError] = useState('')
@@ -60,7 +62,7 @@ function SignUp({ }: Props) {
             .then(data => {
                 if (data.data) {
                     setLoading(false)
-                    router.push('/');
+                    router.push('/login');
                     event.target.name.value = '';
                     event.target.email.value = '';
                     event.target.password.value = '';
@@ -68,7 +70,7 @@ function SignUp({ }: Props) {
                     event.target.gender.value = '';
                     Swal.fire({
                         title: 'Welcome!',
-                        text: "Account has been created!",
+                        text: "Account has been created! Please login.",
                         icon: 'success',
                         confirmButtonText: 'Okay',
                         confirmButtonColor: 'hsl(var(--main-primary-violet))'
@@ -88,6 +90,7 @@ function SignUp({ }: Props) {
                 console.error(err)
             })
     }
+
 
     function formatDate(date: any) {
         let d = new Date(date),
@@ -173,7 +176,7 @@ function SignUp({ }: Props) {
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
             <div className="flex justify-center">
-                <Button variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
+                <Button onClick={handleGoogleLogin} variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>
             </div>
         </AuthPage>
     )
