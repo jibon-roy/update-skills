@@ -1,10 +1,14 @@
 "use client"
 import React from "react"
 import CountUp from 'react-countup';
+import CustomHeader from "../../customHeader";
 
 export function Statistics() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-top">
+    <section className="w-full py-12 md:pb-24 lg:pb-32 bg-gradient-to-top">
+      <CustomHeader className="text-white my-10"
+        heading="Our Statistics"
+        headingTitle="View our statistics. We have rich to"></CustomHeader>
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 md:px-6">
         <div className="flex flex-col items-center text-center gap-4">
           <div className="bg-white  p-4 rounded-full">
