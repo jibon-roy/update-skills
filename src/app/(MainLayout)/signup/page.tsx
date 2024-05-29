@@ -167,7 +167,7 @@ function SignUp({ }: Props) {
                 </CardFooter>
             </form>
             <div className="text-white flex justify-center font-semibold -mt-2">
-                <Link href="/login" >Already have an account? Login here.</Link>
+                <Link href="/login" className="hover:text-main-primary-yellow hover:underline" >Already have an account? Login here.</Link>
             </div>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
