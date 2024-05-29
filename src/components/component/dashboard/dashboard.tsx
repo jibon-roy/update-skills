@@ -39,7 +39,7 @@ export function Dashboard() {
 
   // console.log(pathName)
   return (
-    <div className="grid min-h-screen w-full lg:grid-cols-[280px_1fr]">
+    <div className="flex min-h-screen w-full">
       <DashboardNavigation />
       <div className="flex flex-col">
         <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
