@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic"
 import { UserInterface } from "@/lib/utils/interfaces/components.interface"
+import Link from "next/link"
 
 function LoginPage() {
 
@@ -124,6 +125,9 @@ function LoginPage() {
                     <Button className="w-full">Sign In</Button>
                 </CardFooter>
             </form>
+            <div className="text-white flex justify-center font-semibold -mt-2">
+                <Link href="/signup" className="hover:text-main-primary-yellow hover:underline" >Do not have an account? Sign up here.</Link>
+            </div>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>
             </div>
