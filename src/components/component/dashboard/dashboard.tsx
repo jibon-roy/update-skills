@@ -19,14 +19,8 @@ import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Logo from '../logo/logo'
+import Swal from 'sweetalert2'
 export function Dashboard() {
-
-  type User = {
-    user: {
-      name: string,
-      email: string,
-    }
-  }
 
   const router = useRouter()
 
@@ -36,7 +30,14 @@ export function Dashboard() {
   // console.log(loggedUser)
   const handleSignOut = async () => {
     await signOut({ redirect: false }).then(() => {
-      router.push("/"); // Redirect to the home page after signing out
+      Swal.fire({
+        title: 'See you!',
+        text: 'Log out successful.',
+        icon: 'success',
+        confirmButtonText: 'Okay',
+        confirmButtonColor: 'hsl(var(--main-primary-violet))'
+      });
+      router.push("/");
     });
 
   }
