@@ -11,12 +11,14 @@ import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, Dropdown
 import Image from "next/image"
 import { signOut, useSession } from "next-auth/react"
 import userIcon from '@/assets/userplaceholder.png'
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import Swal from "sweetalert2"
 
 export function Navigation() {
   const { data } = useSession()
   const router = useRouter()
+  const pathname = usePathname()
+
   const handleSignOut = async () => {
     await signOut({ redirect: false }).then(() => {
       Swal.fire({
@@ -26,11 +28,11 @@ export function Navigation() {
         confirmButtonText: 'Okay',
         confirmButtonColor: 'hsl(var(--main-primary-violet))'
       });
-      router.push("/"); // Redirect to the home page after signing out
+      router.push("/");
     });
-
   }
 
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="bg-white shadow-sm dark:bg-gray-950/90">
@@ -38,68 +40,69 @@ export function Navigation() {
         <div className="flex justify-between h-14 items-center">
           <TextLogo />
           <nav className="hidden md:flex gap-4">
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/">
+            <Link href="/" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/') ?
+              ` before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
+              :
+              `before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet  before:transition-transform before:duration-300 before:ease-in-out`}`}>
               Home
             </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/dashboard">
+            <Link href="/dashboard" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/dashboard') ? 'font-bold underline' : ''}`}>
               Dashboard
             </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="/about">
+            <Link href="/about" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/about') ? 'font-bold underline' : ''}`}>
               About
             </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+            <Link href="/services" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/services') ? 'font-bold underline' : ''}`}>
               Services
             </Link>
-            <Link className="font-medium flex items-center text-sm transition-colors hover:underline" href="#">
+            <Link href="/contact" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/contact') ? 'font-bold' : ''}`}>
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            {
-              data ?
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-                      size="icon"
-                      variant="ghost"
-                    >
-                      <Image
-                        alt="Avatar"
-                        className="rounded-full"
-                        height="32"
-                        src={data?.user?.image ? data?.user?.image : userIcon.src}
-                        style={{
-                          aspectRatio: "32/32",
-                          objectFit: "cover",
-                        }}
-                        width="32"
-                      />
-                      <span className="sr-only">Toggle user menu</span>
-                    </Button>
-                  </DropdownMenuTrigger >
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Settings</DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                :
-                <>
-                  <Link href="/signup">
-                    <Button size="sm">Sign up</Button>
-                  </Link>
-                  <Link href="/login">
-                    <Button size="sm" variant="outline">
-                      Log in
-                    </Button>
-                  </Link>
-                </>
-            }
+            {data ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
+                    size="icon"
+                    variant="ghost"
+                  >
+                    <Image
+                      alt="Avatar"
+                      className="rounded-full"
+                      height="32"
+                      src={data?.user?.image ? data?.user?.image : userIcon.src}
+                      style={{
+                        aspectRatio: "32/32",
+                        objectFit: "cover",
+                      }}
+                      width="32"
+                    />
+                    <span className="sr-only">Toggle user menu</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                  <DropdownMenuItem>Support</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Link href="/signup">
+                  <Button size="sm">Sign up</Button>
+                </Link>
+                <Link href="/login">
+                  <Button size="sm" variant="outline">
+                    Log in
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -107,22 +110,4 @@ export function Navigation() {
   )
 }
 
-function MountainIcon(props: {}) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-6 w-6"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
-}
+
