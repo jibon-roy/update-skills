@@ -32,8 +32,6 @@ export default async function Home() {
   // console.log(users)
   return (
     <main>
-
-      <Navigation />
       <Banner />
       <PopularCourse />
       <MoreAbout />

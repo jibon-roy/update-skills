@@ -47,7 +47,6 @@ export function Navigation() {
   ]
 
 
-
   const isActive = (path: string) => pathname === path;
 
   return (
