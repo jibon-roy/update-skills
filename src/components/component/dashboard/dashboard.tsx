@@ -15,7 +15,6 @@ import { ResponsiveBar } from "@nivo/bar"
 import { ResponsiveLine } from "@nivo/line"
 import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
-import DashboardNavigation from "./dashboardNavigation/dashboardNavigation"
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Logo from '../logo/logo'
@@ -48,129 +47,126 @@ export function Dashboard() {
 
   // console.log(pathName)
   return (
-    <div className="flex min-h-screen w-full">
-      <DashboardNavigation />
-      <div className="flex flex-col">
-        <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
-          <Link className="flex lg:hidden items-center gap-2 font-semibold" href="/">
-            <Logo />
-            <span className="">UP Dashboard</span>
-          </Link>
-          <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <div className="absolute top-1/2 -translate-y-1/2 left-1">
-                  <SearchIcon />
-                </div>
-                <Input
-                  className="w-full bg-white shadow-none appearance-none pl-8 md:w-2/3 lg:w-1/3 dark:bg-gray-950"
-                  placeholder="Search..."
-                  type="search"
-                />
+    <div className="flex flex-col">
+      <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
+        <Link className="flex lg:hidden items-center gap-2 font-semibold" href="/">
+          <Logo />
+          <span className="">UP Dashboard</span>
+        </Link>
+        <div className="w-full flex-1">
+          <form>
+            <div className="relative">
+              <div className="absolute top-1/2 -translate-y-1/2 left-1">
+                <SearchIcon />
               </div>
-            </form>
-          </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-                size="icon"
-                variant="ghost"
-              >
-                <Image
-                  alt="Avatar"
-                  className="rounded-full"
-                  height="32"
-                  src={data?.user?.image ? data?.user?.image : userIcon.src}
-                  style={{
-                    aspectRatio: "32/32",
-                    objectFit: "cover",
-                  }}
-                  width="32"
-                />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Total Revenue</CardTitle>
-                <CardDescription>The total revenue generated this month.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-4xl font-bold">$125,000</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>New Customers</CardTitle>
-                <CardDescription>The number of new customers this month.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-4xl font-bold">1,234</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Conversion Rate</CardTitle>
-                <CardDescription>The conversion rate for this month.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-4xl font-bold">12.5%</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Bounce Rate</CardTitle>
-                <CardDescription>The bounce rate for this month.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-4xl font-bold">25%</div>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle>Sales by Product</CardTitle>
-                <CardDescription>A breakdown of sales by product category.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <BarChart />
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>User Acquisition</CardTitle>
-                <CardDescription>A chart showing user acquisition over time.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <LineChart />
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Top Referrers</CardTitle>
-                <CardDescription>A chart showing the top referrers to the site.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <LabelledpieChart />
-              </CardContent>
-            </Card>
-          </div>
-        </main>
-      </div>
+              <Input
+                className="w-full bg-white shadow-none appearance-none pl-8 md:w-2/3 lg:w-1/3 dark:bg-gray-950"
+                placeholder="Search..."
+                type="search"
+              />
+            </div>
+          </form>
+        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
+              size="icon"
+              variant="ghost"
+            >
+              <Image
+                alt="Avatar"
+                className="rounded-full"
+                height="32"
+                src={data?.user?.image ? data?.user?.image : userIcon.src}
+                style={{
+                  aspectRatio: "32/32",
+                  objectFit: "cover",
+                }}
+                width="32"
+              />
+              <span className="sr-only">Toggle user menu</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>Support</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </header>
+      <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Total Revenue</CardTitle>
+              <CardDescription>The total revenue generated this month.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold">$125,000</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>New Customers</CardTitle>
+              <CardDescription>The number of new customers this month.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold">1,234</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Conversion Rate</CardTitle>
+              <CardDescription>The conversion rate for this month.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold">12.5%</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Bounce Rate</CardTitle>
+              <CardDescription>The bounce rate for this month.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold">25%</div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <Card>
+            <CardHeader>
+              <CardTitle>Sales by Product</CardTitle>
+              <CardDescription>A breakdown of sales by product category.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <BarChart />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>User Acquisition</CardTitle>
+              <CardDescription>A chart showing user acquisition over time.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <LineChart />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Top Referrers</CardTitle>
+              <CardDescription>A chart showing the top referrers to the site.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <LabelledpieChart />
+            </CardContent>
+          </Card>
+        </div>
+      </main>
     </div>
   )
 }

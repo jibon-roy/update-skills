@@ -24,7 +24,7 @@ function AuthPage({ children, description, headingTitle, lottieFilesLink, mainHe
     };
 
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-2 h-[100dvh]">
+        <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[100dvh]">
             <div className="hidden lg:flex flex-col justify-center items-center">
                 <div className="text-4xl text-center max-w-sm leading-10 mx-auto my-16 font-bold">
                     {mainHeading}
@@ -42,7 +42,7 @@ function AuthPage({ children, description, headingTitle, lottieFilesLink, mainHe
                 <Button onClick={handleClick} className="flex md:absolute top-5 gap-2 right-5 mb-5 group" >
                     <FaArrowAltCircleLeft className="group-hover:-translate-x-1" /> Back to Home
                 </Button>
-                <Card className="w-full max-w-md">
+                <Card className="w-full my-20 max-w-md">
                     <CardHeader>
                         <CardTitle className="text-4xl text-center mb-3 text-white">{headingTitle}</CardTitle>
                         <CardDescription className="text-white text-center">{description}</CardDescription>

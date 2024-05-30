@@ -19,7 +19,7 @@ export const authOptions: any = {
                 await connectDB();
                 try {
                     const user = await User.findOne({ email: credentials.email });
-                    
+
                     if (user) {
                         const isPasswordCorrect = await bcrypt.compare(
                             credentials.password,
@@ -29,10 +29,10 @@ export const authOptions: any = {
                             return user;
                         }
                     }
-                    
-                    return null; 
+
+                    return null;
                 } catch (error) {
-                    console.error(error); 
+                    // console.error(error); 
                     return null;
                 }
             }
@@ -61,21 +61,22 @@ export const authOptions: any = {
                             gender: '',
                         });
                         await newUser.save();
-                        console.log('New user created:', newUser);
+
                     } else {
-                        console.log('Existing user found:', existingUser);
+                        return;
+                        // console.log('Existing user found:', existingUser);
                     }
-                    return true; 
+                    return true;
                 } catch (err: any) {
-                    console.log('Error in signIn callback:', err);
-                    return false; 
+                    // console.log('Error in signIn callback:', err);
+                    return false;
                 }
             }
-            return false; 
+            return false;
         }
     },
     pages: {
-        signIn: '/login', 
+        signIn: ['/login', '/', '/signup'],
     },
 };
 

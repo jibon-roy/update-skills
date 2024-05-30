@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { notFound, useRouter } from "next/navigation"; // Correct import for useRouter
 import { ReactNode, useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 type Props = {
     children: ReactNode;
@@ -12,7 +12,7 @@ type Props = {
 function PrivateRoute({ children }: Props) {
     const router = useRouter();
     const { data: session, status } = useSession();
-    const user = useSelector((state: { auth: { user: any } }) => state.auth.user);
+    // const user = useSelector((state: { auth: { user: any } }) => state.auth.user);
 
 
     useEffect(() => {

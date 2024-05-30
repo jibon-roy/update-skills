@@ -25,10 +25,10 @@ function DashboardNavigation({ }: Props) {
                     <nav className="grid items-start px-4 text-sm font-medium">
                         <Link
                             className="flex items-center gap-3 rounded-lg bg-gray-100 px-3 py-2 text-gray-900 transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50"
-                            href="#"
+                            href="/dashboard"
                         >
                             <HomeIcon />
-                            Overview
+                            Dashboard
                         </Link>
                         <Link
                             className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -39,10 +39,10 @@ function DashboardNavigation({ }: Props) {
                         </Link>
                         <Link
                             className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                            href="#"
+                            href="/dashboard/allusers"
                         >
                             <LineChartIcon />
-                            Analytics
+                            All Users
                         </Link>
                         <Link
                             className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
