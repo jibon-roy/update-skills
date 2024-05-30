@@ -8,12 +8,15 @@ import useLogin from "@/lib/hooks/useGoogleLogin";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaRegWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 
-type Props = {}
+type Props = {
+    handleOpen: any
+}
 
-function SimpleLogin({ }: Props) {
+function SimpleLogin({ handleOpen }: Props) {
     const { handleGoogleLogin } = useLogin()
     const session = useSession()
     const router = useRouter()
@@ -67,6 +70,9 @@ function SimpleLogin({ }: Props) {
         <div>
             <div className="flex min-h-dvh w-full max-w-3xl items-center flex-col bg-gradient-to-top justify-center px-2 md:px-8 py-12">
                 <Card className="w-full">
+                    <Button onClick={handleOpen} className="rounded-none bg-transparent p-0 hover:bg-transparent absolute top-5 right-5 mb-5 group" >
+                        <FaRegWindowClose className="text-4xl text-white transition hover:text-main-primary-yellow" />
+                    </Button>
                     <CardHeader>
                         <CardTitle className="text-4xl text-center mb-3 text-white">Login to your account</CardTitle>
                         <CardDescription className="text-white text-center">Enter your email and password to access your account.</CardDescription>

@@ -22,7 +22,7 @@ export function Navigation() {
   const pathname = usePathname()
   const [showHide, setShowHide] = useState(false)
 
-  const handleShow = () => {
+  const handleOpen = () => {
     setShowHide(!showHide)
   }
 
@@ -107,11 +107,11 @@ export function Navigation() {
                   <Button size="sm">Sign up</Button>
                 </Link>
 
-                <Button onClick={handleShow} size="sm" variant="outline">
+                <Button onClick={handleOpen} size="sm" variant="outline">
                   Log in
                 </Button>
                 <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHide ? '' : '-mx-[500px]'}`}>
-                  <SimpleLogin />
+                  <SimpleLogin handleOpen={handleOpen} />
                 </div>
               </>
             )}
