@@ -64,7 +64,10 @@ export function Navigation() {
               `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
               Services
             </Link>
-            <Link href="/contact" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/contact') ? 'font-bold' : ''}`}>
+            <Link href="/contact" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/contact') ?
+              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
+              :
+              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
               Contact
             </Link>
           </nav>
