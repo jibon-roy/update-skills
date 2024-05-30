@@ -25,5 +25,5 @@ function Custom404() {
     )
 
 }
-
+Custom404.custom404 = true
 export default Custom404;

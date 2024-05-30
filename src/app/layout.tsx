@@ -25,7 +25,6 @@ export default async function RootLayout({
             <html lang="en">
                 <body className="bg-primary-foreground">
                     <AuthProvider session={session}>
-
                         {children}
                     </AuthProvider>
                 </body>
