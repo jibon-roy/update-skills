@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation"; // Correct import for useRouter
+import { notFound, useRouter } from "next/navigation"; // Correct import for useRouter
 import { ReactNode, useEffect } from "react";
 import { useSelector } from "react-redux";
 
@@ -14,9 +14,11 @@ function PrivateRoute({ children }: Props) {
     const { data: session, status } = useSession();
     const user = useSelector((state: { auth: { user: any } }) => state.auth.user);
 
+
     useEffect(() => {
         if (status === "unauthenticated") {
-            router.push("/"); // Redirect to home if not authenticated
+            notFound()
+
         }
     }, [status, router]);
 

@@ -1,6 +1,7 @@
 
 import PrivetRoute from "@/app/routes/privetRoute";
 import { Dashboard } from "@/components/component/dashboard/dashboard";
+import { notFound } from "next/navigation";
 // import Link from "next/link";
 
 type Props = {}

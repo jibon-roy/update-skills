@@ -2,6 +2,7 @@
 import { Navigation } from '@/components/component/navigation'
 import { SessionProvider } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
+import { notFound } from 'next/navigation'
 type Props = {
     children: any,
     session: any,
@@ -12,7 +13,7 @@ function AuthProvider({ children, session }: Props) {
     const dashboard = path.split('/')[1]
 
     return <SessionProvider session={session}>
-        {dashboard ? '' : <Navigation></Navigation>}
+        {dashboard === 'dashboard' ? '' : <Navigation></Navigation>}
         {children}
     </SessionProvider>
 };
