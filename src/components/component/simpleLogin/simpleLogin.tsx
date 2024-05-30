@@ -1,16 +1,68 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import useLogin from "@/lib/hooks/useGoogleLogin";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 type Props = {}
 
 function SimpleLogin({ }: Props) {
     const { handleGoogleLogin } = useLogin()
+    const session = useSession()
+    const router = useRouter()
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const email = form.email.value;
+        const password = form.password.value;
+        // const router = useRouter();
+
+        try {
+            const loginUser = await signIn('credentials', {
+                redirect: false,
+                email,
+                password
+            });
+
+            if (session.status === 'authenticated') {
+                Swal.fire({
+                    title: 'Welcome back',
+                    text: 'Successfully logged in.',
+                    icon: 'success',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: 'hsl(var(--main-primary-violet))'
+                });
+            } else if (loginUser?.error) {
+                Swal.fire({
+                    title: 'Oops!',
+                    text: loginUser.error,
+                    icon: 'error',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: 'hsl(var(--main-primary-violet))'
+                });
+            } else if (loginUser?.ok) {
+                // Optional: Add logic to redirect to a specific page after successful login
+                router.push('/');
+            }
+        } catch (error) {
+
+            Swal.fire({
+                title: 'Oops!',
+                text: 'An unexpected error occurred. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            });
+        }
+    };
 
     return (
         <div>
@@ -20,7 +72,7 @@ function SimpleLogin({ }: Props) {
                         <CardTitle className="text-4xl text-center mb-3 text-white"></CardTitle>
                         <CardDescription className="text-white text-center"></CardDescription>
                     </CardHeader>
-                    <form >
+                    <form onSubmit={handleSubmit} >
                         <CardContent className="space-y-4 p-6">
                             <div className="space-y-2  text-white">
                                 <Label htmlFor="email">Email</Label>
