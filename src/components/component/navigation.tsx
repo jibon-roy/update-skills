@@ -31,6 +31,22 @@ export function Navigation() {
       router.push("/");
     });
   }
+  type NavMenu = {
+    id: string | number;
+    name: string;
+    path: string;
+  }
+
+  const menu: NavMenu[] = [
+    { id: 1, name: 'Home', path: '/' },
+    { id: 3, name: 'All courses', path: '/allcourses' },
+    { id: 2, name: 'Dashboard', path: '/dashboard' },
+    { id: 4, name: 'Services', path: '/services' },
+    { id: 5, name: 'About', path: '/about' },
+    { id: 6, name: 'Contact', path: '/contact' },
+  ]
+
+
 
   const isActive = (path: string) => pathname === path;
 
@@ -40,36 +56,12 @@ export function Navigation() {
         <div className="flex justify-between h-14 items-center">
           <TextLogo />
           <nav className="hidden md:flex gap-4">
-            <Link href="/" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/') ?
-              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
+            {menu.map((link) => <Link href={link.path} key={link.id} className={`font-medium flex items-center text-sm transition-colors relative  ${isActive(link.path) ?
+              ` before:content-[''] before:absolute before:rounded-full before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-200 before:ease-in-out`
               :
-              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:scale-x-0 before:origin-left  before:transition-transform before:duration-300 before:ease-in-out`}`}>
-              Home
-            </Link>
-            <Link href="/dashboard" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/dashboard') ?
-              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
-              :
-              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
-              Dashboard
-            </Link>
-            <Link href="/about" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/about') ?
-              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
-              :
-              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
-              About
-            </Link>
-            <Link href="/services" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/services') ?
-              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
-              :
-              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
-              Services
-            </Link>
-            <Link href="/contact" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/contact') ?
-              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
-              :
-              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
-              Contact
-            </Link>
+              `before:content-[''] before:absolute before:rounded-full before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-200 before:ease-in-out`}`}>
+              {link.name}
+            </Link>)}
           </nav>
           <div className="flex items-center gap-4">
             {data ? (
