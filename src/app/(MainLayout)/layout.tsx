@@ -11,7 +11,5 @@ export default async function RootLayout({
             <Navigation />
             {children}
         </main>
-
-
     );
 }

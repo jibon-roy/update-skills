@@ -24,7 +24,7 @@ function LoginPage() {
 
 
     useEffect(() => {
-        console.log(session)
+
         if (session.status === 'authenticated') router.replace('/dashboard')
         dispatch(setUser({
             email: session.data?.user?.email!,
@@ -67,7 +67,7 @@ function LoginPage() {
                 router.push('/dashboard');
             }
         } catch (error) {
-            console.error('Error during sign-in:', error);
+
             Swal.fire({
                 title: 'Oops!',
                 text: 'An unexpected error occurred. Please try again later.',
@@ -78,29 +78,6 @@ function LoginPage() {
         }
     };
 
-    // const handleGoogleLogin = async () => {
-    //     const googleUser = await signIn('google')
-
-    //     if (session.status === 'authenticated') {
-    //         Swal.fire({
-    //             title: 'Welcome back',
-    //             text: 'Successfully logged in.',
-    //             icon: 'success',
-    //             confirmButtonText: 'Okay',
-    //             confirmButtonColor: 'hsl(var(--main-primary-violet))'
-    //         });
-    //     }
-
-    //     if (googleUser?.error) {
-    //         Swal.fire({
-    //             title: 'Oops!',
-    //             text: 'An unexpected error occurred. Please try again later.',
-    //             icon: 'error',
-    //             confirmButtonText: 'Okay',
-    //             confirmButtonColor: 'hsl(var(--main-primary-violet))'
-    //         });
-    //     }
-    // }
 
     return (
         <AuthPage
