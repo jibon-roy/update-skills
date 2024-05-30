@@ -67,17 +67,20 @@ function SimpleLogin({ handleOpen }: Props) {
     };
 
     return (
-
-        <SimpleAuth handleOpen={handleOpen}>
+        <SimpleAuth
+            headingTitle="Login to your account"
+            description="Enter your email and password to access your account."
+            handleOpen={handleOpen}
+        >
             <form onSubmit={handleSubmit} >
                 <CardContent className="space-y-4 p-6">
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" name="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
+                        <Label htmlFor="login-email">Email</Label>
+                        <Input id="login-email" name="email" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="email" placeholder="example@mail.com" type="email" />
                     </div>
                     <div className="space-y-2  text-white">
-                        <Label htmlFor="password">Password</Label>
-                        <Input id="password" name="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
+                        <Label htmlFor="login-password">Password</Label>
+                        <Input id="login-password" name="password" placeholder="Password" className="text-black transition-all focus:outline-main-primary-yellow focus-within:outline-main-primary-yellow focus-visible:outline-main-primary-yellow" autoComplete="current-password" type="password" />
                     </div>
                 </CardContent>
                 <CardFooter>

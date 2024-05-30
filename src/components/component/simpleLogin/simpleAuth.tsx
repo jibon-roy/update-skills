@@ -1,21 +1,22 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import useLogin from "@/lib/hooks/useGoogleLogin";
-import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import Swal from "sweetalert2";
+
 
 type Props = {
     handleOpen: any;
     children: ReactNode;
+    headingTitle: string;
+    description: string;
 }
 
-function SimpleAuth({ handleOpen, children }: Props) {
+function SimpleAuth({ handleOpen, children, headingTitle, description }: Props) {
     const { handleGoogleLogin } = useLogin()
+
 
     return (
         <div>
@@ -24,6 +25,10 @@ function SimpleAuth({ handleOpen, children }: Props) {
                     <Button onClick={handleOpen} className="rounded-none bg-transparent p-0 hover:bg-transparent absolute top-5 left-5 mb-10 group" >
                         <FaRegWindowClose className="text-4xl text-white transition hover:text-main-primary-yellow" />
                     </Button>
+                    <CardHeader>
+                        <CardTitle className="text-4xl text-center mb-3 text-white">{headingTitle}</CardTitle>
+                        <CardDescription className="text-white text-center">{description}</CardDescription>
+                    </CardHeader>
                     {children}
                     <div className="flex justify-center">
                         <Button onClick={handleGoogleLogin} variant={"secondary"}><FcGoogle className="text-xl mr-2" /> Continue With Google</Button>

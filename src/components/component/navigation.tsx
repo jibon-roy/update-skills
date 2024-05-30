@@ -15,15 +15,20 @@ import { useRouter, usePathname } from "next/navigation"
 import Swal from "sweetalert2"
 import SimpleLogin from "./simpleLogin/simpleLogin"
 import { useState } from "react"
+import SimpleSignUp from "./simpleLogin/simpleSignup"
 
 export function Navigation() {
   const { data } = useSession()
   const router = useRouter()
   const pathname = usePathname()
-  const [showHide, setShowHide] = useState(false)
+  const [showHideLogin, setShowHideLogin] = useState(false)
+  const [showHideSignUp, setShowHideSignUp] = useState(false)
 
-  const handleOpen = () => {
-    setShowHide(!showHide)
+  const handleLoginOpen = () => {
+    setShowHideLogin(!showHideLogin)
+  }
+  const handleSignUpOpen = () => {
+    setShowHideSignUp(!showHideSignUp)
   }
 
   const handleSignOut = async () => {
@@ -65,7 +70,7 @@ export function Navigation() {
             {menu.map((link) => <Link href={link.path} key={link.id} className={`font-medium flex items-center text-sm transition-colors relative  ${isActive(link.path) ?
               ` before:content-[''] before:absolute before:rounded-full before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-200 before:ease-in-out`
               :
-              `before:content-[''] before:absolute before:rounded-full before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-200 before:ease-in-out`}`}>
+              `before:content-[''] before:absolute before:rounded-full before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-right hover:before:origin-left before:transition-transform before:duration-200 before:ease-in-out`}`}>
               {link.name}
             </Link>)}
           </nav>
@@ -103,15 +108,15 @@ export function Navigation() {
               </DropdownMenu>
             ) : (
               <>
-                <Link href="/signup">
-                  <Button size="sm">Sign up</Button>
-                </Link>
-
-                <Button onClick={handleOpen} size="sm" variant="outline">
+                <Button onClick={handleSignUpOpen} size="sm">Sign up</Button>
+                <Button onClick={handleLoginOpen} size="sm" variant="outline">
                   Log in
                 </Button>
-                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHide ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
-                  <SimpleLogin handleOpen={handleOpen} />
+                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHideSignUp ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
+                  <SimpleSignUp handleOpen={handleSignUpOpen} />
+                </div>
+                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHideLogin ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
+                  <SimpleLogin handleOpen={handleLoginOpen} />
                 </div>
               </>
             )}
