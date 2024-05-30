@@ -110,7 +110,7 @@ export function Navigation() {
                 <Button onClick={handleOpen} size="sm" variant="outline">
                   Log in
                 </Button>
-                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHide ? '' : '-mx-[500px]'}`}>
+                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHide ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
                   <SimpleLogin handleOpen={handleOpen} />
                 </div>
               </>
