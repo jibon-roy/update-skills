@@ -9,11 +9,11 @@ import { passwordStrength } from 'check-password-strength'
 import { useState } from "react";
 import { FaEye, FaSpinner } from "react-icons/fa";
 import useAxiosPublic from "@/lib/hooks/useAxiosPublic";
-import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import Link from "next/link";
 import SimpleAuth from "./simpleAuth";
+import { useSession } from "next-auth/react";
 
 type Props = {
     handleOpen: any;
@@ -26,7 +26,11 @@ function SimpleSignUp({ handleOpen }: Props) {
     const [passType, setPassType] = useState('password')
     const [passError, setPassError] = useState('')
     const [passwordStatus, setPassStatus] = useState('')
+    const session = useSession();
 
+    if (session.status === 'authenticated') {
+        return;
+    }
 
     const handleRegister = (event: any) => {
         setLoading(true)
@@ -62,14 +66,13 @@ function SimpleSignUp({ handleOpen }: Props) {
             .then(data => {
                 if (data.data) {
                     setLoading(false)
-
                     Swal.fire({
                         title: 'Welcome!',
                         text: "Account has been created! Please login.",
                         icon: 'success',
                         confirmButtonText: 'Okay',
                         confirmButtonColor: 'hsl(var(--main-primary-violet))'
-                    }).then(handleOpen())
+                    })
                 }
 
             })
@@ -164,7 +167,7 @@ function SimpleSignUp({ handleOpen }: Props) {
                 </CardFooter>
             </form>
             <div className="text-white flex justify-center font-semibold -mt-2">
-                <Link href="/login" className="hover:text-main-primary-yellow hover:underline" >Already have an account? Login here.</Link>
+                <Link href="/login" className="hover:text-main-primary-yellow hover:underline text-center" >Already have an account? Login here.</Link>
             </div>
             <div className="text-2xl flex justify-center items-center gap-4 font-bold mb-4 text-white">
                 <Separator className="w-20" aria-placeholder="or"></Separator>or<Separator className="w-20" aria-placeholder="or"></Separator>

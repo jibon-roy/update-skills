@@ -14,7 +14,7 @@ import userIcon from '@/assets/userplaceholder.png'
 import { useRouter, usePathname } from "next/navigation"
 import Swal from "sweetalert2"
 import SimpleLogin from "./simpleLogin/simpleLogin"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import SimpleSignUp from "./simpleLogin/simpleSignup"
 
 export function Navigation() {
@@ -23,6 +23,15 @@ export function Navigation() {
   const pathname = usePathname()
   const [showHideLogin, setShowHideLogin] = useState(false)
   const [showHideSignUp, setShowHideSignUp] = useState(false)
+  const session = useSession()
+
+  useEffect(() => {
+    if (session.status === 'authenticated') {
+      setShowHideLogin(false);
+      setShowHideSignUp(false)
+    }
+  }, [session])
+
 
   const handleLoginOpen = () => {
     setShowHideLogin(!showHideLogin)

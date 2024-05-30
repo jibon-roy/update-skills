@@ -1,3 +1,4 @@
+import { Footer } from "@/components/component/footer/footer";
 import { Navigation } from "@/components/component/navigation";
 
 export default async function RootLayout({
@@ -10,6 +11,7 @@ export default async function RootLayout({
         <main>
             <Navigation />
             {children}
+            <Footer />
         </main>
     );
 }

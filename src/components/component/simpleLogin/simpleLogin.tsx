@@ -42,6 +42,7 @@ function SimpleLogin({ handleOpen }: Props) {
                     confirmButtonText: 'Okay',
                     confirmButtonColor: 'hsl(var(--main-primary-violet))'
                 });
+                return;
             } else if (loginUser?.error) {
                 Swal.fire({
                     title: 'Oops!',
