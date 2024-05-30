@@ -63,7 +63,7 @@ export const authOptions: any = {
                         await newUser.save();
 
                     } else {
-                        return;
+
                         // console.log('Existing user found:', existingUser);
                     }
                     return true;
@@ -75,9 +75,9 @@ export const authOptions: any = {
             return false;
         }
     },
-    pages: {
-        signIn: ['/login', '/', '/signup'],
-    },
+    // pages: {
+    //     signIn: ['/login', '/', '/signup'],
+    // },
 };
 
 export const handler = NextAuth(authOptions);

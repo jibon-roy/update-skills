@@ -14,13 +14,9 @@ function PrivateRoute({ children }: Props) {
     const { data: session, status } = useSession();
     // const user = useSelector((state: { auth: { user: any } }) => state.auth.user);
 
-
-    useEffect(() => {
-        if (status === "unauthenticated") {
-            notFound()
-
-        }
-    }, [status, router]);
+    if (status === "unauthenticated") {
+        notFound()
+    }
 
     if (status === "loading") {
         return <p>Loading...</p>; // Show a loading state while the session is being fetched

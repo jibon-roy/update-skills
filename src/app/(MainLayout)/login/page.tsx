@@ -13,10 +13,10 @@ import { useEffect } from "react"
 import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
 import Link from "next/link"
-import useLogin from "@/lib/hooks/useGoogleLogin"
+import useAuth from "@/lib/hooks/useAuth"
 
 function LoginPage() {
-    const { handleGoogleLogin } = useLogin()
+    const { handleGoogleLogin } = useAuth()
 
     const router = useRouter();
     const session = useSession()

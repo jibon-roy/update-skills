@@ -15,31 +15,17 @@ import { ResponsiveBar } from "@nivo/bar"
 import { ResponsiveLine } from "@nivo/line"
 import { ResponsivePie } from "@nivo/pie"
 import Image from "next/image"
-import { signOut, useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Logo from '../logo/logo'
-import Swal from 'sweetalert2'
+import useAuth from '@/lib/hooks/useAuth'
 export function Dashboard() {
-
-  const router = useRouter()
 
   // const user = useSelector((state: any) => state.auth.user)
   const { data } = useSession()
 
   // console.log(loggedUser)
-  const handleSignOut = async () => {
-    await signOut({ redirect: false }).then(() => {
-      Swal.fire({
-        title: 'See you!',
-        text: 'Log out successful.',
-        icon: 'success',
-        confirmButtonText: 'Okay',
-        confirmButtonColor: 'hsl(var(--main-primary-violet))'
-      });
-      router.push("/");
-    });
-
-  }
+  const { handleSignOut } = useAuth()
 
   // const path: string | null = usePathname()
   // const getPath = typeof path === 'string' ? path.slice(1) : null

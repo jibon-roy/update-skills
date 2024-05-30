@@ -1,26 +1,21 @@
 "use client"
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { setUser } from "@/app/redux/slices/authReducer";
-function useLogin() {
+function useAuth() {
     const session = useSession();
     const router = useRouter()
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        // console.log(session)
-        if (session.status === 'authenticated') {
-            router.replace('/dashboard')
-        }
 
-        dispatch(setUser({
-            email: session.data?.user?.email!,
-            name: session.data?.user?.name!,
-        }))
-    }, [router, session, dispatch])
+    dispatch(setUser({
+        email: session.data?.user?.email!,
+        name: session.data?.user?.name!,
+    }))
+
 
 
     const handleGoogleLogin = async () => {
@@ -47,7 +42,22 @@ function useLogin() {
         }
 
     }
-    return { handleGoogleLogin }
+
+    const handleSignOut = async () => {
+        router.push("/");
+        await signOut({ redirect: false }).then(() => {
+            Swal.fire({
+                title: 'See you!',
+                text: 'Log out successful.',
+                icon: 'success',
+                confirmButtonText: 'Okay',
+                confirmButtonColor: 'hsl(var(--main-primary-violet))'
+            });
+        });
+
+    }
+
+    return { handleGoogleLogin, handleSignOut }
 };
 
-export default useLogin;
+export default useAuth;

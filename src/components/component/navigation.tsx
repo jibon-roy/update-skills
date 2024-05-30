@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button"
 import TextLogo from "./logo/textLogo"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
-import { signOut, useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import userIcon from '@/assets/userplaceholder.png'
 import { useRouter, usePathname } from "next/navigation"
-import Swal from "sweetalert2"
 import SimpleLogin from "./simpleLogin/simpleLogin"
 import { useEffect, useState } from "react"
 import SimpleSignUp from "./simpleLogin/simpleSignup"
+import useAuth from "@/lib/hooks/useAuth"
 
 export function Navigation() {
   const { data } = useSession()
@@ -24,10 +24,11 @@ export function Navigation() {
   const [showHideLogin, setShowHideLogin] = useState(false)
   const [showHideSignUp, setShowHideSignUp] = useState(false)
   const session = useSession()
+  const { handleSignOut } = useAuth()
 
   useEffect(() => {
     if (session.status === 'authenticated') {
-      setShowHideLogin(false);
+      setShowHideLogin(true);
       setShowHideSignUp(false)
     }
   }, [session])
@@ -40,18 +41,18 @@ export function Navigation() {
     setShowHideSignUp(!showHideSignUp)
   }
 
-  const handleSignOut = async () => {
-    await signOut({ redirect: false }).then(() => {
-      Swal.fire({
-        title: 'See you!',
-        text: 'Log out successful.',
-        icon: 'success',
-        confirmButtonText: 'Okay',
-        confirmButtonColor: 'hsl(var(--main-primary-violet))'
-      });
-      router.push("/");
-    });
-  }
+  // const handleSignOut = async () => {
+  //   await signOut({ redirect: false }).then(() => {
+  //     Swal.fire({
+  //       title: 'See you!',
+  //       text: 'Log out successful.',
+  //       icon: 'success',
+  //       confirmButtonText: 'Okay',
+  //       confirmButtonColor: 'hsl(var(--main-primary-violet))'
+  //     });
+  //     router.push("/");
+  //   });
+  // }
   type NavMenu = {
     id: string | number;
     name: string;
@@ -121,10 +122,10 @@ export function Navigation() {
                 <Button onClick={handleLoginOpen} size="sm" variant="outline">
                   Log in
                 </Button>
-                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHideSignUp ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
+                <div className={`absolute lg:fixed z-50 top-0 right-0 duration-300 transform ${showHideSignUp ? '' : '-mx-[100vw] md:-mx-[510px] 2xl:-mx-[810px]'}`}>
                   <SimpleSignUp handleOpen={handleSignUpOpen} />
                 </div>
-                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHideLogin ? '' : '-mx-[510px] 2xl:-mx-[810px]'}`}>
+                <div className={`absolute lg:fixed z-50 top-0 right-0 duration-300 transform ${showHideLogin ? '' : '-mx-[100vw] md:-mx-[510px] 2xl:-mx-[810px]'}`}>
                   <SimpleLogin handleOpen={handleLoginOpen} />
                 </div>
               </>

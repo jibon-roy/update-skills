@@ -15,14 +15,14 @@ import { useRouter } from "next/navigation";
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 import Link from "next/link";
-import useLogin from "@/lib/hooks/useGoogleLogin";
+import useAuth from "@/lib/hooks/useAuth";
 
 type Props = {}
 
 function SignUp({ }: Props) {
     const [loading, setLoading] = useState(false)
     const axiosPublic = useAxiosPublic()
-    const { handleGoogleLogin } = useLogin()
+    const { handleGoogleLogin } = useAuth()
     const router = useRouter()
     const [passType, setPassType] = useState('password')
     const [passError, setPassError] = useState('')
