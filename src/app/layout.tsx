@@ -4,7 +4,6 @@ import StoreProvider from "./redux/storeProvider";
 import AuthProvider from "@/lib/utils/SessionProvider";
 import { getServerSession } from "next-auth";
 import icon from "@/assets/icon.png"
-import { Navigation } from "@/components/component/navigation";
 
 export const metadata: Metadata = {
     title: "Update Skills",
@@ -23,7 +22,7 @@ export default async function RootLayout({
     return (
         <StoreProvider>
             <html lang="en">
-                <body className="bg-primary-foreground">
+                <body className="bg-primary-foreground overflow-x-hidden">
                     <AuthProvider session={session}>
                         {children}
                     </AuthProvider>

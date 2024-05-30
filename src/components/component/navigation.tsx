@@ -13,11 +13,18 @@ import { signOut, useSession } from "next-auth/react"
 import userIcon from '@/assets/userplaceholder.png'
 import { useRouter, usePathname } from "next/navigation"
 import Swal from "sweetalert2"
+import SimpleLogin from "./simpleLogin/simpleLogin"
+import { useState } from "react"
 
 export function Navigation() {
   const { data } = useSession()
   const router = useRouter()
   const pathname = usePathname()
+  const [showHide, setShowHide] = useState(false)
+
+  const handleShow = () => {
+    setShowHide(!showHide)
+  }
 
   const handleSignOut = async () => {
     await signOut({ redirect: false }).then(() => {
@@ -50,9 +57,9 @@ export function Navigation() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-white shadow-sm dark:bg-gray-950/90">
+    <nav className="bg-white overflow-hidden max-w-[100vw] shadow-sm dark:bg-gray-950/90">
       <div className="w-full container mx-auto px-4">
-        <div className="flex justify-between h-14 items-center">
+        <div className="flex overflow-hidden justify-between h-14 items-center">
           <TextLogo />
           <nav className="hidden md:flex gap-4">
             {menu.map((link) => <Link href={link.path} key={link.id} className={`font-medium flex items-center text-sm transition-colors relative  ${isActive(link.path) ?
@@ -62,7 +69,7 @@ export function Navigation() {
               {link.name}
             </Link>)}
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex overflow-hidden items-center gap-4">
             {data ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -99,16 +106,19 @@ export function Navigation() {
                 <Link href="/signup">
                   <Button size="sm">Sign up</Button>
                 </Link>
-                <Link href="/login">
-                  <Button size="sm" variant="outline">
-                    Log in
-                  </Button>
-                </Link>
+
+                <Button onClick={handleShow} size="sm" variant="outline">
+                  Log in
+                </Button>
+                <div className={`absolute z-50 top-0 right-0 duration-300 transform ${showHide ? '' : '-mx-[500px]'}`}>
+                  <SimpleLogin />
+                </div>
               </>
             )}
           </div>
         </div>
       </div>
+
     </nav>
   )
 }

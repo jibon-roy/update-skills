@@ -23,7 +23,6 @@ function SimpleLogin({ }: Props) {
         const form = e.currentTarget;
         const email = form.email.value;
         const password = form.password.value;
-        // const router = useRouter();
 
         try {
             const loginUser = await signIn('credentials', {
@@ -66,11 +65,11 @@ function SimpleLogin({ }: Props) {
 
     return (
         <div>
-            <div className="flex relative items-center flex-col bg-gradient-to-top justify-center px-2 md:px-8 py-12">
-                <Card className="w-full max-w-md">
+            <div className="flex min-h-dvh w-full max-w-3xl items-center flex-col bg-gradient-to-top justify-center px-2 md:px-8 py-12">
+                <Card className="w-full">
                     <CardHeader>
-                        <CardTitle className="text-4xl text-center mb-3 text-white"></CardTitle>
-                        <CardDescription className="text-white text-center"></CardDescription>
+                        <CardTitle className="text-4xl text-center mb-3 text-white">Login to your account</CardTitle>
+                        <CardDescription className="text-white text-center">Enter your email and password to access your account.</CardDescription>
                     </CardHeader>
                     <form onSubmit={handleSubmit} >
                         <CardContent className="space-y-4 p-6">
