@@ -41,12 +41,15 @@ export function Navigation() {
           <TextLogo />
           <nav className="hidden md:flex gap-4">
             <Link href="/" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/') ?
-              ` before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
+              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
               :
-              `before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet  before:transition-transform before:duration-300 before:ease-in-out`}`}>
+              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:scale-x-0 before:origin-left  before:transition-transform before:duration-300 before:ease-in-out`}`}>
               Home
             </Link>
-            <Link href="/dashboard" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/dashboard') ? 'font-bold underline' : ''}`}>
+            <Link href="/dashboard" className={`font-medium flex items-center text-sm transition-colors relative  ${isActive('/dashboard') ?
+              ` before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet before:duration-300 before:ease-in-out`
+              :
+              `before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-main-primary-violet hover:before:scale-x-100 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 before:ease-in-out`}`}>
               Dashboard
             </Link>
             <Link href="/about" className={`font-medium flex items-center text-sm transition-colors hover:underline ${isActive('/about') ? 'font-bold underline' : ''}`}>
