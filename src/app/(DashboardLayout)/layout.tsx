@@ -25,7 +25,7 @@ export default function RootDashboardLayout({
             <PrivateRoute>
                 <div className="lg:flex relative overflow-x-hidden min-h-screen w-full">
                     <div className={`inset-y-0 left-0 bg-white shadow-lg z-10 transform ${isMenuOpen ? 'w-64' : 'w-14'
-                        } absolute transition-all duration-300 ease-in-out`} >
+                        } absolute transition-all px-2 bg-slate-700 duration-300 ease-in-out`} >
                         <DashboardNavigation />
                     </div>
                     <div className={`flex-1 overflow-hidden ${isMenuOpen ? 'md:ml-64' : 'ml-12'} transition-all duration-300 ease-in-out`}>

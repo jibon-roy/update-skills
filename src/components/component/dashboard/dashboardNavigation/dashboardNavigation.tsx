@@ -9,9 +9,9 @@ type Props = {}
 
 function DashboardNavigation({ }: Props) {
     return (
-        <div className="border-r min-h-full overflow-x-hidden bg-gray-700 text-white max-w-[280px] lg:block ">
+        <div className="min-h-full overflow-x-hidden bg-slate-700 text-white max-w-[280px] lg:block ">
             <div className="flex h-full min-h-screen flex-col gap-2">
-                <div className="flex h-[60px] items-center border-b px-3">
+                <div className="flex h-[60px] items-center border-b px-1">
                     <Link className="flex h-14 lg:h-[60px] items-center gap-4 font-semibold" href="/">
                         <Logo sm />
                         <span>Dashboard</span>
@@ -24,91 +24,91 @@ function DashboardNavigation({ }: Props) {
                 <div className="flex-1 overflow-auto py-2">
                     <nav className="grid overflow-x-hidden items-start text-sm font-medium">
                         <Link
-                            className="flex items-center gap-5 bg-gray-600 px-4 py-2 text-gray-100 transition-all hover:text-gray-300"
+                            className="flex items-center gap-5 bg-gray-600 px-2 py-2 text-gray-100 transition-all hover:text-gray-300"
                             href="/dashboard"
                         >
                             <HomeIcon />
                             Dashboard
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="/dashboard/allusers"
                         >
                             <LineChartIcon />
                             All Users
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-4 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
                             href="#"
                         >
                             <SettingsIcon />
