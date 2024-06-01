@@ -9,8 +9,8 @@ type Props = {}
 
 function DashboardNavigation({ }: Props) {
     return (
-        <div className="border-r min-h-screen max-w-[280px] bg-gray-100/40 lg:block dark:bg-gray-800/40">
-            <div className="flex h-full max-h-screen flex-col gap-2">
+        <div className="border-r min-h-screen bg-white max-w-[280px] lg:block ">
+            <div className="flex h-full flex-col gap-2">
                 <div className="flex h-[60px] items-center border-b px-6">
                     <Link className="flex h-20 items-center gap-2 font-semibold" href="/">
                         <Logo />

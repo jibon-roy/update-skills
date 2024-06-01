@@ -20,14 +20,14 @@ export default async function RootLayout({
     const session = await getServerSession()
 
     return (
-        <StoreProvider>
-            <html lang="en">
-                <body className="bg-primary-foreground overflow-x-hidden">
+        <html lang="en">
+            <body className="bg-primary-foreground overflow-x-hidden">
+                <StoreProvider>
                     <AuthProvider session={session}>
                         {children}
                     </AuthProvider>
-                </body>
-            </html>
-        </StoreProvider>
+                </StoreProvider>
+            </body>
+        </html>
     );
 }

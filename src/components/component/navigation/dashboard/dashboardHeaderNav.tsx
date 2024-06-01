@@ -3,14 +3,22 @@ import { Input } from "@/components/ui/input";
 import UserIconDropdown from "../userDropdownNav/userIconDropdown";
 import { FaBars } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+// import { useDispatch, useSelector } from "react-redux";
+// import { setIsMenuOpen } from "@/app/redux/slices/handleDashboardMenu";
+// import { RootState } from "@/app/redux/store/store";
 
-type Props = {}
 
-function DashboardHeaderNav({ }: Props) {
+type Props = {
+    handleOpenNav: any
+}
+
+function DashboardHeaderNav({ handleOpenNav }: Props) {
+
+
     return (
         <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
             <div>
-                <Button className="rounded-none bg-transparent p-0 hover:bg-transparent group" >
+                <Button onClick={handleOpenNav} className="rounded-none bg-transparent p-0 hover:bg-transparent group" >
                     <FaBars className="text-2xl text-black transition hover:text-main-primary-violet" />
                 </Button>
             </div>

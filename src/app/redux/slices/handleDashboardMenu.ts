@@ -1,23 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserState {
-    isOpen: boolean
+    isMenuOpen: boolean;
 }
 
 const initialState: UserState = {
-    isOpen: true,
+    isMenuOpen: true,
 };
 
 const handleDashboardMenu = createSlice({
     name: 'handleDashboardMenu',
     initialState,
     reducers: {
-        setIsOpen(state, action: PayloadAction<boolean>) {
-            state.isOpen = action.payload;
-        }
+        setIsMenuOpen(state, action: PayloadAction<boolean>) {
+            state.isMenuOpen = action.payload;
+        },
     },
 });
 
-export const { setIsOpen } = handleDashboardMenu.actions;
+export const { setIsMenuOpen } = handleDashboardMenu.actions;
 
 export default handleDashboardMenu.reducer;
