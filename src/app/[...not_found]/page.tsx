@@ -2,8 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Link from "next/link";
-// import { notFound } from "next/navigation"
-
 
 function Custom404() {
     return (
