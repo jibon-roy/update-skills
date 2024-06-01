@@ -50,11 +50,10 @@ export function Navigation() {
 
   const menu: NavMenu[] = [
     { id: 1, name: 'Home', path: '/' },
-    { id: 3, name: 'All courses', path: '/allcourses' },
-    session?.data && { id: 2, name: 'Dashboard', path: '/dashboard' },
-    { id: 4, name: 'Services', path: '/services' },
-    { id: 5, name: 'About', path: '/about' },
-    { id: 6, name: 'Contact', path: '/contact' },
+    { id: 2, name: 'All courses', path: '/allcourses' },
+    { id: 3, name: 'Services', path: '/services' },
+    { id: 4, name: 'About', path: '/about' },
+    { id: 5, name: 'Contact', path: '/contact' },
   ]
 
 
@@ -99,6 +98,7 @@ export function Navigation() {
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
+                  <DropdownMenuItem>Home</DropdownMenuItem>
                   <DropdownMenuItem>Settings</DropdownMenuItem>
                   <DropdownMenuItem>Support</DropdownMenuItem>
                   <DropdownMenuSeparator />
