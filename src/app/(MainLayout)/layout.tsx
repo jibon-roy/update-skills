@@ -1,5 +1,5 @@
 import { Footer } from "@/components/component/footer/footer";
-import { Navigation } from "@/components/component/navigation";
+import { Navigation } from "@/components/component/navigation/navigation";
 
 export default async function RootLayout({
     children,

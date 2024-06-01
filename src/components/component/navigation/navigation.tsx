@@ -6,12 +6,12 @@
 */
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import TextLogo from "./logo/textLogo"
+import TextLogo from "../logo/textLogo"
 import { useSession } from "next-auth/react"
 import { useRouter, usePathname } from "next/navigation"
-import SimpleLogin from "./simpleLogin/simpleLogin"
+import SimpleLogin from "../simpleLogin/simpleLogin"
 import { useEffect, useState } from "react"
-import SimpleSignUp from "./simpleLogin/simpleSignup"
+import SimpleSignUp from "../simpleLogin/simpleSignup"
 import UserIconDropdown from "./userDropdownNav/userIconDropdown"
 
 export function Navigation() {

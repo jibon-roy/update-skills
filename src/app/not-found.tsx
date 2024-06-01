@@ -1,5 +1,5 @@
 "use client"
-import { Navigation } from "@/components/component/navigation";
+import { Navigation } from "@/components/component/navigation/navigation";
 import { Button } from "@/components/ui/button";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Link from "next/link";
