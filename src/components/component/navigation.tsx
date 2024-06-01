@@ -10,12 +10,12 @@ import TextLogo from "./logo/textLogo"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import Image from "next/image"
 import { useSession } from "next-auth/react"
-import userIcon from '@/assets/userplaceholder.png'
 import { useRouter, usePathname } from "next/navigation"
 import SimpleLogin from "./simpleLogin/simpleLogin"
 import { useEffect, useState } from "react"
 import SimpleSignUp from "./simpleLogin/simpleSignup"
 import useAuth from "@/lib/hooks/useAuth"
+import UserIconDropdown from "./userDropdownNav/userIconDropdown"
 
 export function Navigation() {
   const { data } = useSession()
@@ -74,37 +74,7 @@ export function Navigation() {
           </nav>
           <div className="flex overflow-hidden items-center gap-4">
             {data ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-                    size="icon"
-                    variant="ghost"
-                  >
-                    <Image
-                      alt="Avatar"
-                      className="rounded-full"
-                      height="32"
-                      src={data?.user?.image ? data?.user?.image : userIcon.src}
-                      style={{
-                        aspectRatio: "32/32",
-                        objectFit: "cover",
-                      }}
-                      width="32"
-                    />
-                    <span className="sr-only">Toggle user menu</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Home</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                  <DropdownMenuItem>Support</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <UserIconDropdown />
             ) : (
               <>
                 <Button onClick={handleSignUpOpen} size="sm">Sign up</Button>
