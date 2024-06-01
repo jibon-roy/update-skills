@@ -12,13 +12,14 @@ function CarouselSmItem({ children }: Props) {
         <Carousel
             additionalTransfrom={0}
             arrows
+            autoPlaySpeed={3000}
             centerMode={false}
             className=""
-            containerClass="container-with-dots"
+            containerClass="container"
             dotListClass=""
             draggable
             focusOnSelect={false}
-            infinite
+            infinite={false}
             itemClass=""
             keyBoardControl
             minimumTouchDrag={80}
@@ -35,11 +36,18 @@ function CarouselSmItem({ children }: Props) {
                     items: 5,
                     partialVisibilityGutter: 40
                 },
-
                 mobile: {
                     breakpoint: {
                         max: 464,
-                        min: 0
+                        min: 360
+                    },
+                    items: 2,
+                    partialVisibilityGutter: 30
+                },
+                mobilesm: {
+                    breakpoint: {
+                        max: 360,
+                        min: 1
                     },
                     items: 2,
                     partialVisibilityGutter: 30
@@ -59,7 +67,7 @@ function CarouselSmItem({ children }: Props) {
             shouldResetAutoplay
             showDots={false}
             sliderClass=""
-            slidesToSlide={2}
+            slidesToSlide={1}
             swipeable
         >
             {children}
