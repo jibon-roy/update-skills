@@ -28,7 +28,7 @@ export default function RootDashboardLayout({
                         } absolute transition-all px-2 bg-slate-700 duration-300 ease-in-out`} >
                         <DashboardNavigation />
                     </div>
-                    <div className={`flex-1 overflow-hidden ${isMenuOpen ? 'md:ml-64' : 'ml-12'} transition-all duration-300 ease-in-out`}>
+                    <div className={`flex-1 overflow-hidden ${isMenuOpen ? 'md:ml-64' : 'ml-12 pl-4'} transition-all duration-300 ease-in-out`}>
                         <DashboardHeaderNav handleOpenNav={handleOpenNav} />
                         {children}
                     </div>
