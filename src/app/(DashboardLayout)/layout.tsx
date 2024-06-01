@@ -2,17 +2,19 @@
 import DashboardNavigation from "@/components/component/dashboard/dashboardNavigation/dashboardNavigation";
 import PrivateRoute from "../routes/privetRoute";
 import DashboardHeaderNav from "@/components/component/navigation/dashboard/dashboardHeaderNav";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store/store";
 import { useState } from "react";
-
+import { useHotkeys } from 'react-hotkeys-hook'
 
 export default function RootDashboardLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const [isMenuOpen, setIsMenuOpen] = useState(true)
+    const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+    useHotkeys('esc', () => {
+        setIsMenuOpen(false)
+    })
 
     const handleOpenNav = () => {
         setIsMenuOpen(!isMenuOpen)

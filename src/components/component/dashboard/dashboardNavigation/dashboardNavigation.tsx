@@ -10,11 +10,11 @@ type Props = {}
 function DashboardNavigation({ }: Props) {
     return (
         <div className="border-r min-h-screen bg-white max-w-[280px] lg:block ">
-            <div className="flex h-full flex-col gap-2">
+            <div className="flex h-full max-h-screen flex-col gap-2">
                 <div className="flex h-[60px] items-center border-b px-6">
-                    <Link className="flex h-20 items-center gap-2 font-semibold" href="/">
+                    <Link className="flex h-14 lg:h-[60px] items-center gap-2 font-semibold" href="/">
                         <Logo />
-                        <span className="">UP Dashboard</span>
+                        <span className="">Dashboard</span>
                     </Link>
                     <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
                         <BellIcon />
@@ -116,7 +116,7 @@ function DashboardNavigation({ }: Props) {
                         </Link>
                     </nav>
                 </div>
-                <div className="mt-auto p-4">
+                {/* <div className="mt-auto p-4">
                     <Card>
                         <CardHeader className="pb-4">
                             <CardTitle>Upgrade to Pro</CardTitle>
@@ -128,7 +128,7 @@ function DashboardNavigation({ }: Props) {
                             </Button>
                         </CardContent>
                     </Card>
-                </div>
+                </div> */}
             </div>
         </div>
     )
