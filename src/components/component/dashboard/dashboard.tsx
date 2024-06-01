@@ -19,6 +19,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Logo from '../logo/logo'
 import useAuth from '@/lib/hooks/useAuth'
+import UserIconDropdown from '../navigation/userDropdownNav/userIconDropdown'
 export function Dashboard() {
 
   // const user = useSelector((state: any) => state.auth.user)
@@ -53,36 +54,7 @@ export function Dashboard() {
             </div>
           </form>
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-              size="icon"
-              variant="ghost"
-            >
-              <Image
-                alt="Avatar"
-                className="rounded-full"
-                height="32"
-                src={data?.user?.image ? data?.user?.image : userIcon.src}
-                style={{
-                  aspectRatio: "32/32",
-                  objectFit: "cover",
-                }}
-                width="32"
-              />
-              <span className="sr-only">Toggle user menu</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleSignOut}>Logout</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <UserIconDropdown />
       </header>
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
