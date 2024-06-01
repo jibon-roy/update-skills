@@ -11,6 +11,9 @@ function AllCourses({ }: Props) {
     return (
         <section>
             <PageHeader heading="Explore Our Online Courses With Certificates">
+                <div className="mb-5">
+                    Explore Categories:
+                </div>
                 <CarouselSmItem>
                     <DynamicCard>
                         <Image
