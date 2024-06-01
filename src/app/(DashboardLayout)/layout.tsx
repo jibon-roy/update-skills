@@ -11,8 +11,10 @@ export default async function RootLayout({
     return (
         <main>
             <PrivateRoute>
-                <div className="flex min-h-screen w-full">
-                    <DashboardNavigation />
+                <div className="lg:flex overflow-x-hidden min-h-screen w-full">
+                    <div >
+                        <DashboardNavigation />
+                    </div>
                     <div className="flex-1">
                         <DashboardHeaderNav />
                         {children}
