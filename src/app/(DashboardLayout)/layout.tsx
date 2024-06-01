@@ -24,11 +24,11 @@ export default function RootDashboardLayout({
         <main>
             <PrivateRoute>
                 <div className="lg:flex relative overflow-x-hidden min-h-screen w-full">
-                    <div className={`inset-y-0 left-0 w-64 bg-white shadow-lg z-10 transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-                        } md:fixed absolute transition-transform duration-300 ease-in-out`} >
+                    <div className={`inset-y-0 left-0 bg-white shadow-lg z-10 transform ${isMenuOpen ? 'w-64' : 'w-14'
+                        } absolute transition-all duration-300 ease-in-out`} >
                         <DashboardNavigation />
                     </div>
-                    <div className={`flex-1 ${isMenuOpen ? 'md:ml-64' : 'ml-0'} transition-all duration-300 ease-in-out`}>
+                    <div className={`flex-1 overflow-hidden ${isMenuOpen ? 'md:ml-64' : 'ml-12'} transition-all duration-300 ease-in-out`}>
                         <DashboardHeaderNav handleOpenNav={handleOpenNav} />
                         {children}
                     </div>
