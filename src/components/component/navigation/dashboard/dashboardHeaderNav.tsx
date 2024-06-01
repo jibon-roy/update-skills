@@ -14,7 +14,6 @@ function DashboardHeaderNav({ }: Props) {
             <div>
                 <Button className="rounded-none bg-transparent p-0 hover:bg-transparent group" >
                     <FaBars className="text-3xl text-black transition hover:text-main-primary-violet" />
-                    <FaRegWindowClose className="text-3xl text-black transition hover:text-main-primary-violet" />
                 </Button>
             </div>
             <div className="w-full flex-1">
