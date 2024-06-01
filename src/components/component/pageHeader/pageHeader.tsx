@@ -7,6 +7,7 @@ const PageHeader: React.FC = ({ }: Props) => {
         <div>
             some text
             some text 2
+            some text 3
         </div>
     )
 }
