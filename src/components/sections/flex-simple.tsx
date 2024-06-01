@@ -5,9 +5,10 @@ type Props = {
     children?: any;
     bg?: string;
     className?: string;
-    justifyContent: 'center' | 'space-between' | 'space-evenly' | 'space-around';
-    flexDirectionMd: "column" | "row" | "column-reverse" | "row-reverse";
-    flexDirection: "column" | "row" | "column-reverse" | "row-reverse";
+    alignItems?: 'center' | 'stretch' | 'flex-start' | 'flex-end' | 'start' | 'baseline' | 'inherit';
+    justifyContent?: 'center' | 'space-between' | 'space-evenly' | 'space-around';
+    flexDirectionMd?: "column" | "row" | "column-reverse" | "row-reverse";
+    flexDirection?: "column" | "row" | "column-reverse" | "row-reverse";
     textColor?: string;
 }
 
