@@ -1,13 +1,15 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
 import Logo from "../../logo/logo"
+import { FaArrowLeft } from "react-icons/fa"
 
 
 
-type Props = {}
+type Props = {
+    handleOpenNav: any;
+}
 
-function DashboardNavigation({ }: Props) {
+function DashboardNavigation({ handleOpenNav }: Props) {
     return (
         <div className="min-h-full overflow-x-hidden bg-slate-700 text-white max-w-[280px] lg:block ">
             <div className="flex h-full min-h-screen flex-col gap-2">
@@ -16,8 +18,8 @@ function DashboardNavigation({ }: Props) {
                         <Logo sm />
                         <span>Dashboard</span>
                     </Link>
-                    <Button className="ml-auto h-8 w-8" size="icon" variant="outline">
-                        <BellIcon />
+                    <Button onClick={handleOpenNav} className="ml-auto h-8 w-8" size="icon" variant="outline">
+                        <FaArrowLeft className="text-slate-700" />
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
                 </div>
