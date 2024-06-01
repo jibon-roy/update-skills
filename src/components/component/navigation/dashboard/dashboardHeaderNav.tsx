@@ -3,7 +3,7 @@ import Logo from "../../logo/logo";
 import { SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import UserIconDropdown from "../userDropdownNav/userIconDropdown";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaRegWindowClose } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 type Props = {}
@@ -12,8 +12,9 @@ function DashboardHeaderNav({ }: Props) {
     return (
         <header className="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40">
             <div>
-                <Button>
-                    <FaBars />
+                <Button className="rounded-none bg-transparent p-0 hover:bg-transparent group" >
+                    <FaBars className="text-3xl text-black transition hover:text-main-primary-violet" />
+                    <FaRegWindowClose className="text-3xl text-black transition hover:text-main-primary-violet" />
                 </Button>
             </div>
             <div className="w-full flex-1">
