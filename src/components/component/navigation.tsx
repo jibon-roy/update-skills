@@ -7,14 +7,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import TextLogo from "./logo/textLogo"
-import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
-import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { useRouter, usePathname } from "next/navigation"
 import SimpleLogin from "./simpleLogin/simpleLogin"
 import { useEffect, useState } from "react"
 import SimpleSignUp from "./simpleLogin/simpleSignup"
-import useAuth from "@/lib/hooks/useAuth"
 import UserIconDropdown from "./userDropdownNav/userIconDropdown"
 
 export function Navigation() {
@@ -24,7 +21,6 @@ export function Navigation() {
   const [showHideLogin, setShowHideLogin] = useState(false)
   const [showHideSignUp, setShowHideSignUp] = useState(false)
   const session = useSession()
-  const { handleSignOut } = useAuth()
 
   useEffect(() => {
     if (session.status === 'authenticated') {
