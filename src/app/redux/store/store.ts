@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '../slices/authReducer';
+import handleDashboardMenuReducer from '../slices/handleDashboardMenu';
 
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
+        handleDashboardMenu: handleDashboardMenuReducer,
     },
 });
 

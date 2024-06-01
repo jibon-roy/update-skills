@@ -1,8 +1,9 @@
+"use client"
 import DashboardNavigation from "@/components/component/dashboard/dashboardNavigation/dashboardNavigation";
 import PrivateRoute from "../routes/privetRoute";
 import DashboardHeaderNav from "@/components/component/navigation/dashboard/dashboardHeaderNav";
 
-export default async function RootLayout({
+export default function RootDashboardLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
