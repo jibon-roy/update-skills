@@ -15,7 +15,7 @@ function CarouselSmItem({ children }: Props) {
             autoPlaySpeed={3000}
             centerMode={false}
             className=""
-            containerClass="container"
+            containerClass=""
             dotListClass=""
             draggable
             focusOnSelect={false}
@@ -39,19 +39,12 @@ function CarouselSmItem({ children }: Props) {
                 mobile: {
                     breakpoint: {
                         max: 464,
-                        min: 360
+                        min: 0
                     },
-                    items: 2,
+                    items: 1,
                     partialVisibilityGutter: 30
                 },
-                mobilesm: {
-                    breakpoint: {
-                        max: 360,
-                        min: 1
-                    },
-                    items: 2,
-                    partialVisibilityGutter: 30
-                },
+
                 tablet: {
                     breakpoint: {
                         max: 1024,
