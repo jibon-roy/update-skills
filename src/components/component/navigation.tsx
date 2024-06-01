@@ -41,18 +41,7 @@ export function Navigation() {
     setShowHideSignUp(!showHideSignUp)
   }
 
-  // const handleSignOut = async () => {
-  //   await signOut({ redirect: false }).then(() => {
-  //     Swal.fire({
-  //       title: 'See you!',
-  //       text: 'Log out successful.',
-  //       icon: 'success',
-  //       confirmButtonText: 'Okay',
-  //       confirmButtonColor: 'hsl(var(--main-primary-violet))'
-  //     });
-  //     router.push("/");
-  //   });
-  // }
+
   type NavMenu = {
     id: string | number;
     name: string;
@@ -62,7 +51,7 @@ export function Navigation() {
   const menu: NavMenu[] = [
     { id: 1, name: 'Home', path: '/' },
     { id: 3, name: 'All courses', path: '/allcourses' },
-    { id: 2, name: 'Dashboard', path: '/dashboard' },
+    session?.data && { id: 2, name: 'Dashboard', path: '/dashboard' },
     { id: 4, name: 'Services', path: '/services' },
     { id: 5, name: 'About', path: '/about' },
     { id: 6, name: 'Contact', path: '/contact' },
