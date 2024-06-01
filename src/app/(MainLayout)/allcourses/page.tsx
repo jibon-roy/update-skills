@@ -3,7 +3,7 @@ import CarouselSmItem from "@/components/component/carousel/carouselSmItem";
 import PageHeader from "@/components/component/pageHeader/pageHeader";
 import DynamicCard from "@/components/ui/customizeCard";
 import Image from "next/image";
-import { FaBrain } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 
 
 type Props = {}
@@ -16,47 +16,106 @@ function AllCourses({ }: Props) {
                     Explore Categories:
                 </div>
                 <CarouselSmItem>
-                    <DynamicCard className="bg-white text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
-                        <div>
-                            <FaBrain />
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
                         </div>
                     </DynamicCard>
-                    <DynamicCard>
-                        <Image
-                            src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            width={300}
-                            height={300}
-                            priority
-                            alt="React Carousel with Server Side Rendering Support Part 2"
-                        />
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
                     </DynamicCard>
-                    <DynamicCard>
-                        <Image
-                            src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            width={300}
-                            height={300}
-                            priority
-                            alt="React Carousel with Server Side Rendering Support Part 2"
-                        />
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
                     </DynamicCard>
-                    <DynamicCard>
-                        <Image
-                            src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            width={300}
-                            height={300}
-                            priority
-                            alt="React Carousel with Server Side Rendering Support Part 2"
-                        />
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
                     </DynamicCard>
-                    <DynamicCard>
-                        <Image
-                            src="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            width={300}
-                            height={300}
-                            priority
-                            alt="React Carousel with Server Side Rendering Support Part 2"
-                        />
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
                     </DynamicCard>
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
+                    </DynamicCard>
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
+                    </DynamicCard>
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
+                    </DynamicCard>
+                    <DynamicCard className="bg-white group text-black rounded-lg transition cursor-pointer p-4 m-2 hover:bg-main-primary-yellow">
+                        <div className="flex text-left gap-3">
+                            <div className="p-2 rounded-lg bg-main-primary-yellow group-hover:bg-white">
+                                <FaGlobe className="text-2xl" />
+                            </div>
+                            <div className="flex-1">
+                                <div className="font-semibold">IT</div>
+                                <div className="text-xs">1,250 Courses</div>
+                            </div>
+                        </div>
+                    </DynamicCard>
+
                 </CarouselSmItem>
             </PageHeader>
         </section>
