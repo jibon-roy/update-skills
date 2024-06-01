@@ -1,10 +1,17 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import useAuth from "@/lib/hooks/useAuth";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import userIcon from '@/assets/userplaceholder.png'
 
 type Props = {}
 
 function UserIconDropdown({ }: Props) {
+    const { handleSignOut } = useAuth()
+    const { data } = useSession()
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
