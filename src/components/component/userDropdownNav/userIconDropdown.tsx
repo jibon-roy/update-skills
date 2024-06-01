@@ -5,12 +5,16 @@ import useAuth from "@/lib/hooks/useAuth";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import userIcon from '@/assets/userplaceholder.png'
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Props = {}
 
 function UserIconDropdown({ }: Props) {
     const { handleSignOut } = useAuth()
     const { data } = useSession()
+    const path = usePathname()
+    const dashboard = path.split('/')[1] === 'dashboard'
 
     return (
         <DropdownMenu>
@@ -37,7 +41,7 @@ function UserIconDropdown({ }: Props) {
             <DropdownMenuContent align="end">
                 <DropdownMenuLabel>{data?.user?.name}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Home</DropdownMenuItem>
+                <DropdownMenuItem>{dashboard ? <Link href='/'>Home</Link> : <Link href='/dashboard'>Dashboard</Link>}</DropdownMenuItem>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuItem>Support</DropdownMenuItem>
                 <DropdownMenuSeparator />
