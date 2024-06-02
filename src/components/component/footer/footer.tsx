@@ -1,15 +1,17 @@
 
 import Link from "next/link"
+import Logo from "../logo/logo"
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 w-full text-gray-400 py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
         <div className="grid gap-4">
-          <div className="flex items-center gap-2">
-            <MountainIcon className="h-6 w-6 text-gray-300" />
-            <span className="text-lg font-semibold text-gray-300">Update Skills</span>
-          </div>
+          <Link href='/'>
+            <div className="flex items-center text-xl font-semibold gap-2">
+              <Logo /> Update Skills
+            </div>
+          </Link>
           <p className="text-sm leading-relaxed">
             Update skills is a leading provider of innovative skill development courses for businesses of all sizes.
           </p>
