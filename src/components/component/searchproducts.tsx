@@ -1,9 +1,9 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/awln6ErvOO4
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 "use client"
+import Image1 from "@/assets/images/animation.png"
+import Image2 from "@/assets/images/banner.png"
+import Image3 from "@/assets/images/uiux.png"
+import Image4 from "@/assets/images/wordpress.png"
 
 import { useState, useMemo } from "react"
 import Link from "next/link"
@@ -13,7 +13,7 @@ import { Slider } from "@/components/ui/slider"
 import { Calendar } from "@/components/ui/calendar"
 
 export default function Component() {
-  const products = [
+  const courses = [
     {
       id: 1,
       name: "Coding Masterclass",
@@ -21,7 +21,7 @@ export default function Component() {
       price: 99.99,
       date: "2023-04-15",
       mentor: "John Doe",
-      image: "/placeholder.svg",
+      image: Image1,
       description: "Learn to code from the best in the industry.",
     },
     {
@@ -31,7 +31,7 @@ export default function Component() {
       price: 79.99,
       date: "2023-03-20",
       mentor: "Jane Smith",
-      image: "/placeholder.svg",
+      image: Image2,
       description: "Unlock your design potential with our expert-led workshop.",
     },
     {
@@ -41,7 +41,7 @@ export default function Component() {
       price: 149.99,
       date: "2023-05-01",
       mentor: "Michael Johnson",
-      image: "/placeholder.svg",
+      image: Image3,
       description: "Embark on your entrepreneurial journey with our intensive bootcamp.",
     },
     {
@@ -51,7 +51,7 @@ export default function Component() {
       price: 89.99,
       date: "2023-02-28",
       mentor: "Emily Davis",
-      image: "/placeholder.svg",
+      image: Image4,
       description: "Dive into the world of data science with our comprehensive course.",
     },
     {
@@ -61,7 +61,7 @@ export default function Component() {
       price: 119.99,
       date: "2023-06-10",
       mentor: "David Lee",
-      image: "/placeholder.svg",
+      image: Image1,
       description: "Elevate your digital marketing skills with our expert-led masterclass.",
     },
     {
@@ -71,7 +71,7 @@ export default function Component() {
       price: 69.99,
       date: "2023-01-25",
       mentor: "Sarah Wilson",
-      image: "/placeholder.svg",
+      image: Image2,
       description: "Master the fundamentals of project management with our comprehensive course.",
     },
     {
@@ -81,7 +81,7 @@ export default function Component() {
       price: 59.99,
       date: "2023-07-01",
       mentor: "Alex Thompson",
-      image: "/placeholder.svg",
+      image: Image3,
       description: "Unleash your creative writing potential with our expert-led workshop.",
     },
     {
@@ -91,17 +91,17 @@ export default function Component() {
       price: 99.99,
       date: "2023-05-15",
       mentor: "Olivia Martinez",
-      image: "/placeholder.svg",
+      image: Image4,
       description: "Conquer your fear of public speaking with our transformative masterclass.",
     },
   ]
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState([])
   const [priceRange, setPriceRange] = useState([0, 200])
-  const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState()
   const [selectedMentor, setSelectedMentor] = useState([])
   const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
+    return courses.filter((product) => {
       const nameMatch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
       const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
       const priceMatch = product.price >= priceRange[0] && product.price <= priceRange[1]
@@ -118,7 +118,7 @@ export default function Component() {
             <div key={product.id} className="bg-white dark:bg-gray-950 rounded-lg shadow-md overflow-hidden">
               <Link href="#" prefetch={false}>
                 <img
-                  src="/placeholder.svg"
+                  src={product.image.src}
                   alt={product.name}
                   width={300}
                   height={200}

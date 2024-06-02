@@ -1,9 +1,9 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/jAPez41qA8a
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 "use client"
+import Image1 from "@/assets/images/animation.png"
+import Image2 from "@/assets/images/banner.png"
+import Image3 from "@/assets/images/uiux.png"
+import Image4 from "@/assets/images/wordpress.png"
 
 import { useState, useMemo } from "react"
 import { Input } from "@/components/ui/input"
@@ -15,70 +15,86 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Image from "next/image"
 
 export default function AllCoursesFilter() {
-    const products = [
+    const courses = [
         {
             id: 1,
-            name: "Wireless Headphones",
-            category: "Electronics",
+            name: "Coding Masterclass",
+            category: "Courses",
             price: 99.99,
             date: "2023-04-15",
             mentor: "John Doe",
+            image: Image1,
+            description: "Learn to code from the best in the industry.",
         },
         {
             id: 2,
-            name: "Leather Backpack",
-            category: "Bags",
+            name: "UI/UX Design Workshop",
+            category: "Courses",
             price: 79.99,
             date: "2023-03-20",
             mentor: "Jane Smith",
+            image: Image2,
+            description: "Unlock your design potential with our expert-led workshop.",
         },
         {
             id: 3,
-            name: "Outdoor Camping Gear",
-            category: "Sports",
+            name: "Entrepreneurship Bootcamp",
+            category: "Courses",
             price: 149.99,
             date: "2023-05-01",
             mentor: "Michael Johnson",
+            image: Image3,
+            description: "Embark on your entrepreneurial journey with our intensive bootcamp.",
         },
         {
             id: 4,
-            name: "Ergonomic Office Chair",
-            category: "Furniture",
-            price: 199.99,
+            name: "Data Science Fundamentals",
+            category: "Courses",
+            price: 89.99,
             date: "2023-02-28",
-            mentor: "Sarah Lee",
+            mentor: "Emily Davis",
+            image: Image4,
+            description: "Dive into the world of data science with our comprehensive course.",
         },
         {
             id: 5,
-            name: "Luxury Silk Scarf",
-            category: "Accessories",
-            price: 59.99,
-            date: "2023-06-01",
-            mentor: "David Kim",
+            name: "Digital Marketing Masterclass",
+            category: "Courses",
+            price: 119.99,
+            date: "2023-06-10",
+            mentor: "David Lee",
+            image: Image1,
+            description: "Elevate your digital marketing skills with our expert-led masterclass.",
         },
         {
             id: 6,
-            name: "High-Performance Blender",
-            category: "Kitchen",
-            price: 129.99,
-            date: "2023-04-10",
-            mentor: "Emily Chen",
+            name: "Project Management Essentials",
+            category: "Courses",
+            price: 69.99,
+            date: "2023-01-25",
+            mentor: "Sarah Wilson",
+            image: Image2,
+            description: "Master the fundamentals of project management with our comprehensive course.",
         },
         {
             id: 7,
-            name: "Vintage Leather Wallet",
-            category: "Accessories",
-            price: 49.99,
-            date: "2023-03-15",
-            mentor: "John Doe",
+            name: "Creative Writing Workshop",
+            category: "Courses",
+            price: 59.99,
+            date: "2023-07-01",
+            mentor: "Alex Thompson",
+            image: Image3,
+            description: "Unleash your creative writing potential with our expert-led workshop.",
         },
         {
             id: 8,
-            name: "Outdoor Camping Tent",
-            category: "Sports",
-            price: 199.99,
-            date: "2023-05-05",
-            mentor: "Jane Smith",
+            name: "Public Speaking Masterclass",
+            category: "Courses",
+            price: 99.99,
+            date: "2023-05-15",
+            mentor: "Olivia Martinez",
+            image: Image4,
+            description: "Conquer your fear of public speaking with our transformative masterclass.",
         },
     ]
     const [searchTerm, setSearchTerm] = useState("")
@@ -87,8 +103,8 @@ export default function AllCoursesFilter() {
     const [sortBy, setSortBy] = useState("date")
     const [sortOrder, setSortOrder] = useState("desc")
     const [selectedMentor, setSelectedMentor] = useState([])
-    const filteredProducts = useMemo(() => {
-        return products
+    const filteredCourses = useMemo(() => {
+        return courses
             .filter((product) => {
                 const nameMatch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
                 const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
@@ -110,15 +126,15 @@ export default function AllCoursesFilter() {
             })
     }, [searchTerm, selectedCategory, priceRange, sortBy, sortOrder, selectedMentor])
     const uniqueCategories = useMemo(() => {
-        return [...new Set(products.map((product) => product.category))]
+        return [...new Set(courses.map((product) => product.category))]
     }, [])
     const uniqueMentors = useMemo(() => {
-        return [...new Set(products.map((product) => product.mentor))]
+        return [...new Set(courses.map((product) => product.mentor))]
     }, [])
     return (
         <div className="grid container mx-auto grid-cols-1 md:grid-cols-[300px_1fr] gap-8 p-8">
             <div className="bg-white rounded-lg shadow-md p-6">
-                <h2 className="text-lg font-semibold mb-4">Filters</h2>
+                <h2 className="text-lg font-semibold mb-4">Search and filters</h2>
                 <div className="grid gap-4">
                     <div>
                         <label htmlFor="search" className="block text-sm font-medium text-gray-700">
@@ -130,7 +146,7 @@ export default function AllCoursesFilter() {
                                 type="text"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                placeholder="Search products..."
+                                placeholder="Search courses..."
                                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                             />
                         </div>
@@ -223,11 +239,11 @@ export default function AllCoursesFilter() {
                 </div>
             </div>
             <div>
-                <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-                    {filteredProducts.map((product) => (
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+                    {filteredCourses.map((product) => (
                         <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                             <Image
-                                src="/placeholder.svg"
+                                src={product.image.src}
                                 alt={product.name}
                                 width={300}
                                 height={200}

@@ -2,6 +2,7 @@
 import CarouselSmItem from "@/components/component/carousel/carouselSmItem";
 import SmCard from "@/components/component/carousel/smCard";
 import AllCoursesFilter from "@/components/component/courses/courseFilter";
+import CustomHeader from "@/components/component/customHeader";
 import PageHeader from "@/components/component/pageHeader/pageHeader";
 
 
@@ -23,6 +24,9 @@ function AllCourses({ }: Props) {
                     <SmCard />
                 </CarouselSmItem>
             </PageHeader>
+            <CustomHeader headingTitle="You can search or filter courses" className="mt-10" heading="All Courses">
+
+            </CustomHeader>
             <AllCoursesFilter />
         </section>
     )
