@@ -48,9 +48,17 @@ function CarouselSmItem({ children }: Props) {
                 tablet: {
                     breakpoint: {
                         max: 1024,
-                        min: 464
+                        min: 620
                     },
                     items: 3,
+                    partialVisibilityGutter: 30
+                },
+                tablet2: {
+                    breakpoint: {
+                        max: 620,
+                        min: 464
+                    },
+                    items: 2,
                     partialVisibilityGutter: 30
                 }
             }}
