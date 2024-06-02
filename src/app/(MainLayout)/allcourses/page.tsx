@@ -1,6 +1,7 @@
 "use client"
 import CarouselSmItem from "@/components/component/carousel/carouselSmItem";
 import SmCard from "@/components/component/carousel/smCard";
+import AllCoursesFilter from "@/components/component/courses/courseFilter";
 import PageHeader from "@/components/component/pageHeader/pageHeader";
 
 
@@ -22,6 +23,7 @@ function AllCourses({ }: Props) {
                     <SmCard />
                 </CarouselSmItem>
             </PageHeader>
+            <AllCoursesFilter />
         </section>
     )
 };
