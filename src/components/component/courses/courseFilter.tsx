@@ -101,8 +101,8 @@ export default function AllCoursesFilter() {
     const [selectedCategory, setSelectedCategory] = useState([])
     const [priceRange, setPriceRange] = useState([0, 500])
     const [sortBy, setSortBy] = useState("date")
-    const [sortOrder, setSortOrder] = useState("desc")
     const [selectedMentor, setSelectedMentor] = useState([])
+    const [sortOrder, setSortOrder] = useState("desc")
     const filteredCourses = useMemo(() => {
         return courses
             .filter((product) => {
@@ -133,7 +133,7 @@ export default function AllCoursesFilter() {
     }, [])
     return (
         <div className="grid container mx-auto grid-cols-1 md:grid-cols-[300px_1fr] gap-8 p-8">
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-white h-fit rounded-lg shadow-md p-6">
                 <h2 className="text-lg font-semibold mb-4">Search and filters</h2>
                 <div className="grid gap-4">
                     <div>
@@ -241,13 +241,13 @@ export default function AllCoursesFilter() {
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
                     {filteredCourses.map((product) => (
-                        <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div key={product.id} className="bg-white max-sm:max-w-16  rounded-lg shadow-md overflow-hidden">
                             <Image
                                 src={product.image.src}
                                 alt={product.name}
                                 width={300}
                                 height={200}
-                                className="w-full h-48 object-cover"
+                                className="w-full aspect-video object-cover"
                             />
                             <div className="p-4">
                                 <h3 className="text-lg font-semibold">{product.name}</h3>
