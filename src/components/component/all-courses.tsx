@@ -4,6 +4,8 @@
 * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
 */
 
+import React from "react";
+
 /** Add fonts into your Next.js project:
 
 import { Libre_Franklin } from 'next/font/google'
