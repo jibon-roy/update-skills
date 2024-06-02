@@ -18,7 +18,7 @@ function DashboardNavigation({ handleOpenNav }: Props) {
                         <Logo sm />
                         <span>Dashboard</span>
                     </Link>
-                    <Button onClick={handleOpenNav} className="ml-auto h-8 w-8" size="icon" variant="outline">
+                    <Button onClick={handleOpenNav} className="ml-auto bg-slate-500  rounded-full border-0 h-8 w-8" size="icon">
                         <FaArrowLeft className="text-slate-700" />
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
@@ -26,91 +26,91 @@ function DashboardNavigation({ handleOpenNav }: Props) {
                 <div className="flex-1 overflow-auto py-2">
                     <nav className="grid overflow-x-hidden items-start text-sm font-medium">
                         <Link
-                            className="flex items-center gap-5 bg-gray-600 px-2 py-2 text-gray-100 transition-all hover:text-gray-300"
+                            className="flex items-center gap-5 bg-slate-600 px-2 py-2 text-slate-100 transition-all hover:text-slate-300"
                             href="/dashboard"
                         >
                             <HomeIcon />
                             Dashboard
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="/dashboard/allusers"
                         >
                             <LineChartIcon />
                             All Users
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <LineChartIcon />
                             Analytics
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
                             Settings
                         </Link>
                         <Link
-                            className="flex items-center gap-5 px-2 py-2 text-gray-100 transition-all hover:text-gray-300 "
+                            className="flex items-center gap-5 px-2 py-2 text-slate-100 transition-all hover:text-slate-300 "
                             href="#"
                         >
                             <SettingsIcon />
