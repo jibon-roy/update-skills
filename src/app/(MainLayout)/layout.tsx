@@ -8,9 +8,11 @@ export default async function RootMainLayout({
 }>) {
 
     return (
-        <main>
-            <Navigation />
-            {children}
+        <main className="flex flex-col justify-between min-h-screen">
+            <div>
+                <Navigation />
+                {children}
+            </div>
             <Footer />
         </main>
     );
