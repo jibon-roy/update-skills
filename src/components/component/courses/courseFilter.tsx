@@ -24,7 +24,7 @@ export default function AllCoursesFilter() {
             price: 99.99,
             date: "2023-04-15",
             mentor: "John Doe",
-            image: Image1,
+            thumbnail: Image1,
             description: "Learn to code from the best in the industry.",
         },
         {
@@ -34,7 +34,7 @@ export default function AllCoursesFilter() {
             price: 79.99,
             date: "2023-03-20",
             mentor: "Jane Smith",
-            image: Image2,
+            thumbnail: Image2,
             description: "Unlock your design potential with our expert-led workshop.",
         },
         {
@@ -44,7 +44,7 @@ export default function AllCoursesFilter() {
             price: 149.99,
             mentor: "Michael Johnson",
             date: "2023-05-01",
-            image: Image3,
+            thumbnail: Image3,
             description: "Embark on your entrepreneurial journey with our intensive bootcamp.",
         },
         {
@@ -54,7 +54,7 @@ export default function AllCoursesFilter() {
             price: 89.99,
             mentor: "Emily Davis",
             date: "2023-02-28",
-            image: Image4,
+            thumbnail: Image4,
             description: "Dive into the world of data science with our comprehensive course.",
         },
         {
@@ -64,7 +64,7 @@ export default function AllCoursesFilter() {
             price: 119.99,
             mentor: "David Lee",
             date: "2023-06-10",
-            image: Image1,
+            thumbnail: Image1,
             description: "Elevate your digital marketing skills with our expert-led masterclass.",
         },
         {
@@ -74,7 +74,7 @@ export default function AllCoursesFilter() {
             price: 69.99,
             mentor: "Sarah Wilson",
             date: "2023-01-25",
-            image: Image2,
+            thumbnail: Image2,
             description: "Master the fundamentals of project management with our comprehensive course.",
         },
         {
@@ -84,7 +84,7 @@ export default function AllCoursesFilter() {
             price: 59.99,
             mentor: "Alex Thompson",
             date: "2023-07-01",
-            image: Image3,
+            thumbnail: Image3,
             description: "Unleash your creative writing potential with our expert-led workshop.",
         },
         {
@@ -107,8 +107,9 @@ export default function AllCoursesFilter() {
     const filteredCourses = useMemo(() => {
         return courses
             .filter((product) => {
+                const category: any = product.category
                 const nameMatch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
-                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
+                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(category)
                 const priceMatch = product.price >= priceRange[0] && product.price <= priceRange[1]
                 const mentorMatch = selectedMentor.length === 0 || selectedMentor.includes(product.mentor)
                 return nameMatch && categoryMatch && priceMatch && mentorMatch
@@ -119,7 +120,7 @@ export default function AllCoursesFilter() {
                 } else if (sortBy === "price") {
                     return sortOrder === "asc" ? a.price - b.price : b.price - a.price
                 } else if (sortBy === "date") {
-                    return sortOrder === "asc" ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date)
+                    return sortOrder === "asc" ? new Date(a.date).valueOf() - new Date(b.date).valueOf() : new Date(b.date).valueOf() - new Date(a.date).valueOf()
                 } else if (sortBy === "mentor") {
                     return sortOrder === "asc" ? a.mentor.localeCompare(b.mentor) : b.mentor.localeCompare(a.mentor)
                 }
@@ -193,7 +194,7 @@ export default function AllCoursesFilter() {
                         </label>
                         <div className="mt-1">
                             <Select
-                                id="sort"
+                                id={'sort'}
                                 value={sortBy}
                                 onValueChange={setSortBy}
                                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
