@@ -107,9 +107,8 @@ export default function AllCoursesFilter() {
     const filteredCourses = useMemo(() => {
         return courses
             .filter((product) => {
-                const category: any = product.category
                 const nameMatch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
-                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(category)
+                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
                 const priceMatch = product.price >= priceRange[0] && product.price <= priceRange[1]
                 const mentorMatch = selectedMentor.length === 0 || selectedMentor.includes(product.mentor)
                 return nameMatch && categoryMatch && priceMatch && mentorMatch
@@ -194,10 +193,10 @@ export default function AllCoursesFilter() {
                         </label>
                         <div className="mt-1">
                             <Select
-                                id={'sort'}
+
                                 value={sortBy}
                                 onValueChange={setSortBy}
-                                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+
                             >
                                 <SelectTrigger>
                                     <SelectValue placeholder="Select sort option" />
