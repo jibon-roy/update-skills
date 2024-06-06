@@ -13,6 +13,7 @@ import { Slider } from "@/components/ui/slider"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Image from "next/image"
+import VideoHolder from "../videoHolder"
 
 export default function AllCoursesFilter() {
     const courses = [
@@ -93,7 +94,7 @@ export default function AllCoursesFilter() {
             price: 99.99,
             mentor: "Olivia Martinez",
             date: "2023-05-15",
-            image: Image4,
+            thumbnail: Image4,
             description: "Conquer your fear of public speaking with our transformative masterclass.",
         },
     ]
@@ -241,22 +242,7 @@ export default function AllCoursesFilter() {
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
                     {filteredCourses.map((product) => (
-                        <div key={product.id} className="bg-white max-sm:max-w-16  rounded-lg shadow-md overflow-hidden">
-                            <Image
-                                src={product.image.src}
-                                alt={product.name}
-                                width={300}
-                                height={200}
-                                className="w-full aspect-video object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold">{product.name}</h3>
-                                <p className="text-gray-500 text-sm">{product.category}</p>
-                                <p className="text-gray-700 font-bold">${product.price.toFixed(2)}</p>
-                                <p className="text-gray-500 text-sm">Mentor: {product.mentor}</p>
-                                <p className="text-gray-500 text-sm">Date: {new Date(product.date).toLocaleDateString()}</p>
-                            </div>
-                        </div>
+                        <VideoHolder key={product.id} course={product} />
                     ))}
                 </div>
             </div>
