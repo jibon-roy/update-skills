@@ -13,86 +13,87 @@ import { Slider } from "@/components/ui/slider"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import VideoHolder from "../videoHolder"
+import { PrimaryVideoDetails } from "@/lib/utils/interfaces/components.interface"
 
 export default function AllCoursesFilter() {
-    const courses = [
+    const courses: PrimaryVideoDetails[] = [
         {
             _id: 1,
-            name: "Coding Masterclass",
+            title: "Coding Masterclass",
             category: "Courses",
             price: 99.99,
-            date: "2023-04-15",
+            launch_date: "2023-04-15",
             mentor: "John Doe",
             thumbnail: Image1,
             description: "Learn to code from the best in the industry.",
         },
         {
             _id: 2,
-            name: "UI/UX Design Workshop",
+            title: "UI/UX Design Workshop",
             category: "Courses",
             price: 79.99,
-            date: "2023-03-20",
+            launch_date: "2023-03-20",
             mentor: "Jane Smith",
             thumbnail: Image2,
             description: "Unlock your design potential with our expert-led workshop.",
         },
         {
             _id: 3,
-            name: "Entrepreneurship Bootcamp",
+            title: "Entrepreneurship Bootcamp",
             category: "Courses",
             price: 149.99,
             mentor: "Michael Johnson",
-            date: "2023-05-01",
+            launch_date: "2023-05-01",
             thumbnail: Image3,
             description: "Embark on your entrepreneurial journey with our intensive bootcamp.",
         },
         {
             _id: 4,
-            name: "Data Science Fundamentals",
+            title: "Data Science Fundamentals",
             category: "Courses",
             price: 89.99,
             mentor: "Emily Davis",
-            date: "2023-02-28",
+            launch_date: "2023-02-28",
             thumbnail: Image4,
             description: "Dive into the world of data science with our comprehensive course.",
         },
         {
             _id: 5,
-            name: "Digital Marketing Masterclass",
+            title: "Digital Marketing Masterclass",
             category: "Courses",
             price: 119.99,
             mentor: "David Lee",
-            date: "2023-06-10",
+            launch_date: "2023-06-10",
             thumbnail: Image1,
             description: "Elevate your digital marketing skills with our expert-led masterclass.",
         },
         {
             _id: 6,
-            name: "Project Management Essentials",
+            title: "Project Management Essentials",
             category: "Courses",
             price: 69.99,
             mentor: "Sarah Wilson",
-            date: "2023-01-25",
+            launch_date: "2023-01-25",
             thumbnail: Image2,
             description: "Master the fundamentals of project management with our comprehensive course.",
         },
         {
             _id: 7,
-            name: "Creative Writing Workshop",
+            title: "Creative Writing Workshop",
             category: "Courses",
             price: 59.99,
             mentor: "Alex Thompson",
-            date: "2023-07-01",
+            launch_date: "2023-07-01",
             thumbnail: Image3,
             description: "Unleash your creative writing potential with our expert-led workshop.",
         },
         {
             _id: 8,
-            name: "Public Speaking Masterclass",
+            title: "Public Speaking Masterclass",
             category: "Courses",
             price: 99.99,
             mentor: "Olivia Martinez",
-            date: "2023-05-15",
+            launch_date: "2023-05-15",
             thumbnail: Image4,
             description: "Conquer your fear of public speaking with our transformative masterclass.",
         },
@@ -106,9 +107,9 @@ export default function AllCoursesFilter() {
     const filteredCourses = useMemo(() => {
         return courses
             .filter((product) => {
-                const nameMatch = product.name.toLowerCase().includes(searchTerm.toLowerCase())
+                const nameMatch = product.title.toLowerCase().includes(searchTerm.toLowerCase())
                 const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
-                const priceMatch = product.price >= priceRange[0] && product.price <= priceRange[1]
+                const priceMatch = product.price! >= priceRange[0] && product.price! <= priceRange[1]
                 const mentorMatch = selectedMentor.length === 0 || selectedMentor.includes(product.mentor)
                 return nameMatch && categoryMatch && priceMatch && mentorMatch
             })

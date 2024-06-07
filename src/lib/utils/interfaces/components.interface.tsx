@@ -12,13 +12,17 @@ export type Slider = {
 }
 
 export type PrimaryVideoDetails = {
-    _id: string | number
+    _id: string | number;
+    category?: string;
+    launch_date?: string;
     title: string;
     thumbnail: string | { src: string };
-    enrolled: number;
-    review_members: number;
-    review: number;
-    price: number;
+    enrolled?: number;
+    mentor?: string;
+    review_members?: number;
+    description?: string;
+    review?: number;
+    price?: number;
 
 }
 
