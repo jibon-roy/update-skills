@@ -24,10 +24,10 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
     return (
         <div className='bg-main-primary-violet'>
             <FlexSimple flexDirection='column' flexDirectionMd='column' className='text-center py-10 text-white' justifyContent='center' alignItems='center'>
-                <h1 className='mb-10 font-semibold text-4xl'>
+                <h1 className='font-semibold text-4xl'>
                     {heading}
                 </h1>
-                <Breadcrumb>
+                <Breadcrumb className='mx-auto mb-10'>
                     <BreadcrumbList className='flex text-white items-center'>
                         <BreadcrumbItem>
                             <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href='/'>Home</BreadcrumbLink>
