@@ -20,6 +20,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
 
     const maxVisibleBreadcrumbs = 3;
     const overflow = paths.length > maxVisibleBreadcrumbs;
+    let num: number;
 
     return (
         <div className='bg-main-primary-violet'>
@@ -42,7 +43,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
                                     <DropdownMenuContent>
                                         {paths.slice(0, -maxVisibleBreadcrumbs).map((path, index) => (
                                             <DropdownMenuItem key={index}>
-                                                <BreadcrumbLink className='text-black' href={buildPath(index + 1)}>{path}</BreadcrumbLink>
+                                                <BreadcrumbLink className='text-black' href={buildPath(index)}>{path}</BreadcrumbLink>
                                             </DropdownMenuItem>
                                         ))}
                                     </DropdownMenuContent>
@@ -53,7 +54,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
                             <React.Fragment key={index}>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={buildPath(paths.length - maxVisibleBreadcrumbs + index + 1)}>{path}</BreadcrumbLink>
+                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={buildPath(paths.length - maxVisibleBreadcrumbs + index + 2)}>{path}</BreadcrumbLink>
                                 </BreadcrumbItem>
                             </React.Fragment>
                         ))}
