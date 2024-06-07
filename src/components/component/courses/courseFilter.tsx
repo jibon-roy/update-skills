@@ -12,7 +12,6 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import Image from "next/image"
 import VideoHolder from "../videoHolder"
 
 export default function AllCoursesFilter() {
