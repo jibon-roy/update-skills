@@ -117,7 +117,7 @@ export default function AllCoursesFilter() {
                 if (sortBy === "name") {
                     return sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
                 } else if (sortBy === "price") {
-                    return sortOrder === "asc" ? a.price - b.price : b.price - a.price
+                    return sortOrder === "asc" ? a.price! - b.price! : b.price! - a.price!
                 } else if (sortBy === "date") {
                     return sortOrder === "asc" ? new Date(a.launch_date!).valueOf() - new Date(b.launch_date!).valueOf() : new Date(b.launch_date).valueOf() - new Date(a.launch_date).valueOf()
                 } else if (sortBy === "mentor") {
