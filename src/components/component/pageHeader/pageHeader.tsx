@@ -20,7 +20,8 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
 
     const maxVisibleBreadcrumbs = 3;
     const overflow = paths.length > maxVisibleBreadcrumbs;
-    let num: number;
+    let num: number = paths.length > 2 ? 2 : 1;
+    console.log(num)
 
     return (
         <div className='bg-main-primary-violet'>
@@ -54,7 +55,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
                             <React.Fragment key={index}>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={buildPath(paths.length - maxVisibleBreadcrumbs + index + 2)}>{path}</BreadcrumbLink>
+                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={buildPath(paths.length - maxVisibleBreadcrumbs + index + num)}>{path}</BreadcrumbLink>
                                 </BreadcrumbItem>
                             </React.Fragment>
                         ))}
