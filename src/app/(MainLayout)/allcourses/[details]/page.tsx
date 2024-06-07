@@ -9,7 +9,9 @@ function Details({ }: Props) {
 
     return (
         <section>
-            <PageHeader heading="Course details" >Course Details</PageHeader>
+            <PageHeader heading="Course details" >
+                <h3 className="text-xl">Course Title </h3>
+            </PageHeader>
         </section>
     )
 };
