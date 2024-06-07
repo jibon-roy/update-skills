@@ -27,7 +27,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
                 <h1 className='font-semibold text-4xl'>
                     {heading}
                 </h1>
-                <Breadcrumb className='mx-auto mb-10'>
+                <Breadcrumb className='mx-auto mb-7'>
                     <BreadcrumbList className='flex text-white items-center'>
                         <BreadcrumbItem>
                             <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href='/'>Home</BreadcrumbLink>
