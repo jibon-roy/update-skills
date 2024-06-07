@@ -115,13 +115,13 @@ export default function AllCoursesFilter() {
             })
             .sort((a, b) => {
                 if (sortBy === "name") {
-                    return sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.name)
+                    return sortOrder === "asc" ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
                 } else if (sortBy === "price") {
                     return sortOrder === "asc" ? a.price - b.price : b.price - a.price
                 } else if (sortBy === "date") {
-                    return sortOrder === "asc" ? new Date(a.date).valueOf() - new Date(b.date).valueOf() : new Date(b.date).valueOf() - new Date(a.date).valueOf()
+                    return sortOrder === "asc" ? new Date(a.launch_date!).valueOf() - new Date(b.launch_date!).valueOf() : new Date(b.launch_date).valueOf() - new Date(a.launch_date).valueOf()
                 } else if (sortBy === "mentor") {
-                    return sortOrder === "asc" ? a.mentor.localeCompare(b.mentor) : b.mentor.localeCompare(a.mentor)
+                    return sortOrder === "asc" ? a.mentor!.localeCompare(b.mentor ?? '') : b.mentor!.localeCompare(a.mentor)
                 }
                 return 0
             })
