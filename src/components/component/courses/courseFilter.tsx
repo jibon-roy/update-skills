@@ -119,9 +119,9 @@ export default function AllCoursesFilter() {
                 } else if (sortBy === "price") {
                     return sortOrder === "asc" ? a.price! - b.price! : b.price! - a.price!
                 } else if (sortBy === "date") {
-                    return sortOrder === "asc" ? new Date(a.launch_date!).valueOf() - new Date(b.launch_date!).valueOf() : new Date(b.launch_date).valueOf() - new Date(a.launch_date).valueOf()
+                    return sortOrder === "asc" ? new Date(a.launch_date!).valueOf() - new Date(b.launch_date!).valueOf() : new Date(b.launch_date!).valueOf() - new Date(a.launch_date).valueOf()
                 } else if (sortBy === "mentor") {
-                    return sortOrder === "asc" ? a.mentor!.localeCompare(b.mentor ?? '') : b.mentor!.localeCompare(a.mentor)
+                    return sortOrder === "asc" ? a.mentor!.localeCompare(b.mentor ?? '') : b.mentor!.localeCompare(a.mentor!)
                 }
                 return 0
             })
