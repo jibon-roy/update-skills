@@ -1,6 +1,6 @@
 "use client"
 import FlexSimple from '@/components/sections/flex-simple'
-import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { usePathname } from 'next/navigation';
 import React from 'react'
@@ -11,10 +11,15 @@ type Props = {
 }
 
 const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
+    const location: string = usePathname();
+    const paths: string[] = location.split('/').filter(path => path); // Filter out empty segments
 
-    const location: string = usePathname()
-    const paths: string[] = location.split('/');
+    const buildPath = (index: number) => {
+        return '/' + paths.slice(0, index + 1).join('/');
+    }
 
+    const maxVisibleBreadcrumbs = 3;
+    const overflow = paths.length > maxVisibleBreadcrumbs;
 
     return (
         <div className='bg-main-primary-violet'>
@@ -23,16 +28,34 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
                     {heading}
                 </h1>
                 <Breadcrumb>
-                    <BreadcrumbList  >
-                        {paths.map((path, key) => (
-                            <div className='flex justify-center text-white items-center gap-2' key={key}>
-                                <BreadcrumbItem >
-                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={path === '' ? '/' : path}>{path === '' ? 'Home' : path}</BreadcrumbLink>
+                    <BreadcrumbList className='flex items-center'>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href='/'>Home</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        {overflow && <BreadcrumbSeparator />}
+                        {overflow && (
+                            <BreadcrumbItem>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger className='text-white hover:text-main-primary-yellow'>
+                                        ...
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent>
+                                        {paths.slice(0, -maxVisibleBreadcrumbs).map((path, index) => (
+                                            <DropdownMenuItem key={index}>
+                                                <BreadcrumbLink className='text-black' href={buildPath(index + 1)}>{path}</BreadcrumbLink>
+                                            </DropdownMenuItem>
+                                        ))}
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </BreadcrumbItem>
+                        )}
+                        {paths.slice(-maxVisibleBreadcrumbs).map((path, index) => (
+                            <React.Fragment key={index}>
+                                <BreadcrumbSeparator />
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink className='text-white hover:text-main-primary-yellow' href={buildPath(paths.length - maxVisibleBreadcrumbs + index + 1)}>{path}</BreadcrumbLink>
                                 </BreadcrumbItem>
-                                {key < paths.length - 1 &&
-                                    <BreadcrumbSeparator />
-                                }
-                            </div>
+                            </React.Fragment>
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>
