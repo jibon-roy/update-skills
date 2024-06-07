@@ -18,7 +18,7 @@ import VideoHolder from "../videoHolder"
 export default function AllCoursesFilter() {
     const courses = [
         {
-            id: 1,
+            _id: 1,
             name: "Coding Masterclass",
             category: "Courses",
             price: 99.99,
@@ -28,7 +28,7 @@ export default function AllCoursesFilter() {
             description: "Learn to code from the best in the industry.",
         },
         {
-            id: 2,
+            _id: 2,
             name: "UI/UX Design Workshop",
             category: "Courses",
             price: 79.99,
@@ -38,7 +38,7 @@ export default function AllCoursesFilter() {
             description: "Unlock your design potential with our expert-led workshop.",
         },
         {
-            id: 3,
+            _id: 3,
             name: "Entrepreneurship Bootcamp",
             category: "Courses",
             price: 149.99,
@@ -48,7 +48,7 @@ export default function AllCoursesFilter() {
             description: "Embark on your entrepreneurial journey with our intensive bootcamp.",
         },
         {
-            id: 4,
+            _id: 4,
             name: "Data Science Fundamentals",
             category: "Courses",
             price: 89.99,
@@ -58,7 +58,7 @@ export default function AllCoursesFilter() {
             description: "Dive into the world of data science with our comprehensive course.",
         },
         {
-            id: 5,
+            _id: 5,
             name: "Digital Marketing Masterclass",
             category: "Courses",
             price: 119.99,
@@ -68,7 +68,7 @@ export default function AllCoursesFilter() {
             description: "Elevate your digital marketing skills with our expert-led masterclass.",
         },
         {
-            id: 6,
+            _id: 6,
             name: "Project Management Essentials",
             category: "Courses",
             price: 69.99,
@@ -78,7 +78,7 @@ export default function AllCoursesFilter() {
             description: "Master the fundamentals of project management with our comprehensive course.",
         },
         {
-            id: 7,
+            _id: 7,
             name: "Creative Writing Workshop",
             category: "Courses",
             price: 59.99,
@@ -88,7 +88,7 @@ export default function AllCoursesFilter() {
             description: "Unleash your creative writing potential with our expert-led workshop.",
         },
         {
-            id: 8,
+            _id: 8,
             name: "Public Speaking Masterclass",
             category: "Courses",
             price: 99.99,
@@ -242,7 +242,7 @@ export default function AllCoursesFilter() {
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
                     {filteredCourses.map((product) => (
-                        <VideoHolder key={product.id} course={product} />
+                        <VideoHolder key={product._id} course={product} />
                     ))}
                 </div>
             </div>

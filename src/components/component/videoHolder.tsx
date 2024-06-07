@@ -8,6 +8,7 @@ import StarRatings from "../ui/ratings";
 function VideoHolder({ course }: any) {
 
     const {
+        _id,
         title,
         thumbnail,
         enrolled,
