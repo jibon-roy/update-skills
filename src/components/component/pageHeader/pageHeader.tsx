@@ -21,7 +21,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
     const maxVisibleBreadcrumbs = 3;
     const overflow = paths.length > maxVisibleBreadcrumbs;
     let num: number = paths.length > 2 ? 1 : 2;
-    console.log(num)
+
 
     return (
         <div className='bg-main-primary-violet'>
