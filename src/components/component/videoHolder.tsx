@@ -46,7 +46,7 @@ function VideoHolder({ course }: any) {
                         <StarRatings readOnly review={review}></StarRatings>
                         ({review_members})
                     </div>
-                    <Button size="sm" className="my-5">Enroll Now</Button>
+                    <Button size="sm" className="my-5">Details</Button>
                 </div>
             </div>
         </div>
