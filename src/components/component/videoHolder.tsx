@@ -47,7 +47,7 @@ function VideoHolder({ course }: any) {
                         <StarRatings readOnly review={review}></StarRatings>
                         ({review_members})
                     </div>
-                    <Link content={course} href={`/allcourses/${_id}`}>
+                    <Link href={`/allcourses/${_id}`}>
                         <Button size="sm" className="my-5">Details</Button>
                     </Link>
                 </div>
