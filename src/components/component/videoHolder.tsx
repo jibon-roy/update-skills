@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { PrimaryVideoDetails } from "@/lib/utils/interfaces/components.interface";
 import { FaBookReader } from "react-icons/fa";
 import StarRatings from "../ui/ratings";
+import Link from "next/link";
 
 
 function VideoHolder({ course }: any) {
@@ -46,7 +47,9 @@ function VideoHolder({ course }: any) {
                         <StarRatings readOnly review={review}></StarRatings>
                         ({review_members})
                     </div>
-                    <Button size="sm" className="my-5">Details</Button>
+                    <Link href={`/allcourses/${_id}`}>
+                        <Button size="sm" className="my-5">Details</Button>
+                    </Link>
                 </div>
             </div>
         </div>
