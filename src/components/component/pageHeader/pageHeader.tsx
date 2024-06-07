@@ -24,7 +24,7 @@ const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
     return (
         <div className='bg-main-primary-violet'>
             <FlexSimple flexDirection='column' flexDirectionMd='column' className='text-center py-10 text-white' justifyContent='center' alignItems='center'>
-                <h1 className='font-semibold text-4xl'>
+                <h1 className='font-semibold text-4xl mb-3'>
                     {heading}
                 </h1>
                 <Breadcrumb className='mx-auto mb-7'>
