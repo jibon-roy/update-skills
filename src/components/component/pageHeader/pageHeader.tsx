@@ -3,7 +3,7 @@ import FlexSimple from '@/components/sections/flex-simple'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 type Props = {
     heading: string;
@@ -13,14 +13,20 @@ type Props = {
 const PageHeader: React.FC<Props> = ({ heading, children }: Props) => {
     const location: string = usePathname();
     const paths: string[] = location.split('/').filter(path => path); // Filter out empty segments
-
+    const [num, setNum] = useState(0)
     const buildPath = (index: number) => {
         return '/' + paths.slice(0, index + 1).join('/');
     }
 
     const maxVisibleBreadcrumbs = 3;
     const overflow = paths.length > maxVisibleBreadcrumbs;
-    let num: number = paths.length > 2 ? 1 : 2;
+    useEffect(() => {
+        if (paths.length >= 2) {
+            setNum(1)
+        } else {
+            setNum(2)
+        }
+    }, [paths])
 
 
     return (
