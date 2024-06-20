@@ -175,12 +175,12 @@ export default function AllCoursesFilter() {
                         </label>
                         <div className="mt-1">
                             <Slider
+                                id="price"
+                                className="w-full"
                                 max={500}
                                 min={0}
                                 value={priceRange}
-                                id="price"
                                 onValueChange={setPriceRange}
-                                className="w-full"
                                 step={10}
                             />
                             <div className="flex justify-between text-sm text-gray-500">
