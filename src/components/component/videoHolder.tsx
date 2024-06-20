@@ -23,11 +23,11 @@ function VideoHolder({ course }: any) {
             <Image
                 priority
                 alt="Property 2"
-                className="h-60 w-full hover:brightness-90 object-cover object-center transition-all duration-300 group-hover:scale-105"
+                className="w-full hover:brightness-90 object-cover object-center transition-all duration-300 group-hover:scale-105"
                 height={400}
                 src={typeof thumbnail === 'string' ? thumbnail : thumbnail.src}
                 style={{
-                    aspectRatio: "600/400",
+                    aspectRatio: "720/480",
                     objectFit: "cover",
                 }}
                 width={600}
