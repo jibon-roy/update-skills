@@ -69,7 +69,7 @@ export function PaginationView() {
   )
 }
 
-function ChevronLeftIcon(props) {
+function ChevronLeftIcon(props:) {
   return (
     <svg
       {...props}
