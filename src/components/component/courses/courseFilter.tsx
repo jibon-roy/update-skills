@@ -178,8 +178,8 @@ export default function AllCoursesFilter() {
                                 id="price"
                                 max={500}
                                 min={0}
-                                step={10}
                                 value={priceRange}
+                                step={10}
                                 onValueChange={setPriceRange}
                                 className="w-full"
                             />
