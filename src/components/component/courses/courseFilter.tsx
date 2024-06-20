@@ -14,6 +14,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import VideoHolder from "../videoHolder"
 import { PrimaryVideoDetails } from "@/lib/utils/interfaces/components.interface"
+import { PaginationView } from "../pagination"
 
 export default function AllCoursesFilter() {
     const courses: PrimaryVideoDetails[] = [
@@ -133,6 +134,7 @@ export default function AllCoursesFilter() {
         return [...new Set(courses.map((product) => product.mentor))]
     }, [])
     return (
+        <>
         <div className="grid container mx-auto grid-cols-1 md:grid-cols-[300px_1fr] gap-8 p-8">
             <div className="bg-white h-fit rounded-lg shadow-md p-6">
                 <h2 className="text-lg font-semibold mb-4">Search and filters</h2>
@@ -149,7 +151,7 @@ export default function AllCoursesFilter() {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 placeholder="Search courses..."
                                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                            />
+                                />
                         </div>
                     </div>
                     <div>
@@ -244,8 +246,14 @@ export default function AllCoursesFilter() {
                     {filteredCourses.map((product) => (
                         <VideoHolder key={product._id} course={product} />
                     ))}
+
                 </div>
+
             </div>
         </div>
+                <div className="my-10">
+                    <PaginationView />
+                </div>
+                        </>
     )
 }
