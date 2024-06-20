@@ -48,7 +48,7 @@ function VideoHolder({ course }: any) {
                         ({review_members})
                     </div>
                     <Link href={`/allcourses/${_id}`}>
-                        <Button size="sm" className="my-5">Details</Button>
+                        <Button size="sm" className="mt-3">Details</Button>
                     </Link>
                 </div>
             </div>
