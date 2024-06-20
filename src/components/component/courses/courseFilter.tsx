@@ -177,8 +177,8 @@ export default function AllCoursesFilter() {
                             <Slider
                                 max={500}
                                 min={0}
-                                id="price"
                                 value={priceRange}
+                                id="price"
                                 onValueChange={setPriceRange}
                                 className="w-full"
                                 step={10}
