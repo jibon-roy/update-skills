@@ -175,9 +175,9 @@ export default function AllCoursesFilter() {
                         </label>
                         <div className="mt-1">
                             <Slider
-                                id="price"
                                 max={500}
                                 min={0}
+                                id="price"
                                 value={priceRange}
                                 step={10}
                                 onValueChange={setPriceRange}
