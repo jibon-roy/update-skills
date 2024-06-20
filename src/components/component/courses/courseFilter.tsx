@@ -179,8 +179,8 @@ export default function AllCoursesFilter() {
                                 className="w-full"
                                 max={500}
                                 min={0}
-                                value={priceRange}
                                 onValueChange={setPriceRange}
+                                value={priceRange}
                                 step={10}
                             />
                             <div className="flex justify-between text-sm text-gray-500">
