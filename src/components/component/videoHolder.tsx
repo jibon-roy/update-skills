@@ -11,8 +11,8 @@ function VideoHolder({ course }: any) {
     const {
         _id,
         title,
-        thumbnail,
         enrolled,
+        thumbnail,
         review_members,
         review,
         price
