@@ -58,7 +58,7 @@ export function PaginationView() {
           <PaginationNext
             href="#"
             onClick={() => handlePageChange(currentPage + 1)}
-            is={currentPage === totalPages}
+            isActive={currentPage === totalPages}
             className="rounded-md px-3 py-2 transition-colors hover:bg-muted hover:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <ChevronRightIcon className="h-4 w-4" />
