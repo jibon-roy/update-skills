@@ -89,7 +89,7 @@ function ChevronLeftIcon(props: any) {
 }
 
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(props:) {
   return (
     <svg
       {...props}
