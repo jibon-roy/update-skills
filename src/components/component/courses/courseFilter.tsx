@@ -102,8 +102,8 @@ export default function AllCoursesFilter() {
     const [searchTerm, setSearchTerm] = useState("")
     const [selectedCategory, setSelectedCategory] = useState([])
     const [priceRange, setPriceRange] = useState([0, 500])
-    const [sortBy, setSortBy] = useState("date")
     const [selectedMentor, setSelectedMentor] = useState([])
+    const [sortBy, setSortBy] = useState("date")
     const [sortOrder, setSortOrder] = useState("desc")
     const filteredCourses = useMemo(() => {
         return courses
