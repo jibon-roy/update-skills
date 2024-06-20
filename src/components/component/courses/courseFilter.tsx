@@ -145,9 +145,9 @@ export default function AllCoursesFilter() {
                         </label>
                         <div className="mt-1">
                             <Input
+                                type="text"
                                 id="search"
                                 value={searchTerm}
-                                type="text"
                                 placeholder="Search courses..."
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
