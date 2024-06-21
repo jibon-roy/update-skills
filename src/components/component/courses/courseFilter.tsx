@@ -97,6 +97,7 @@ export default function AllCoursesFilter() {
         {
             _id: 8,
             title: "Public Speaking Masterclass",
+            review_members: 3,
             category: "Courses",
             price: 99.99,
             mentor: "Olivia Martinez",
