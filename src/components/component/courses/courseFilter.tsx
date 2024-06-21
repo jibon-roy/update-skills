@@ -86,6 +86,7 @@ export default function AllCoursesFilter() {
         {
             _id: 7,
             title: "Creative Writing Workshop",
+            review_members: 3,
             category: "Courses",
             price: 59.99,
             mentor: "Alex Thompson",
