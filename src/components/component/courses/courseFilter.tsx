@@ -116,9 +116,9 @@ export default function AllCoursesFilter() {
         return courses
             .filter((product) => {
                 const nameMatch = product.title.toLowerCase().includes(searchTerm.toLowerCase())
-                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product?.category)
+                const categoryMatch = selectedCategory.length === 0 || selectedCategory.includes(product.category)
                 const priceMatch = product.price! >= priceRange[0] && product.price! <= priceRange[1]
-                const mentorMatch = selectedMentor.length === 0 || selectedMentor.includes(product?.mentor)
+                const mentorMatch = selectedMentor.length === 0 || selectedMentor.includes(product.mentor)
                 return nameMatch && categoryMatch && priceMatch && mentorMatch
             })
             .sort((a, b) => {
