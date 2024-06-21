@@ -26,11 +26,13 @@ export default function AllCoursesFilter() {
             launch_date: "2023-04-15",
             mentor: "John Doe",
             thumbnail: Image1,
+            review_members: 3,
             description: "Learn to code from the best in the industry.",
         },
         {
             _id: 2,
             title: "UI/UX Design Workshop",
+            review_members: 3,
             category: "Courses",
             price: 79.99,
             launch_date: "2023-03-20",
