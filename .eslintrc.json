@@ -1,8 +1,5 @@
 {
   "extends": "next/core-web-vitals",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  },
    "rules": {
     "no-console": "error"
   }

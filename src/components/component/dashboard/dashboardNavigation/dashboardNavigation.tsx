@@ -10,7 +10,7 @@ type Props = {
 }
 
 function DashboardNavigation({ handleOpenNav,  isMenuOpen }: Props) {
- console.log(isMenuOpen)
+
     return (
         <div className="min-h-full overflow-x-hidden bg-slate-700 text-white max-w-[280px] lg:block ">
             <div className="flex h-full  min-h-screen flex-col gap-2">
