@@ -53,6 +53,7 @@ export default function AllCoursesFilter() {
         {
             _id: 4,
             title: "Data Science Fundamentals",
+            review_members: 3,
             category: "Courses",
             price: 89.99,
             mentor: "Emily Davis",
