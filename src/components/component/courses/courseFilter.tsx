@@ -75,6 +75,7 @@ export default function AllCoursesFilter() {
         {
             _id: 6,
             title: "Project Management Essentials",
+            review_members: 3,
             category: "Courses",
             price: 69.99,
             mentor: "Sarah Wilson",
