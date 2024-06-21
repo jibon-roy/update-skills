@@ -1,30 +1,32 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Logo from "../../logo/logo"
-import { FaArrowLeft } from "react-icons/fa"
-
+import { LuPanelLeftClose } from "react-icons/lu";
 
 
 type Props = {
     handleOpenNav: any;
+    isMenuOpen: boolean;
 }
 
-function DashboardNavigation({ handleOpenNav }: Props) {
+function DashboardNavigation({ handleOpenNav,  isMenuOpen }: Props) {
+ console.log(isMenuOpen)
     return (
         <div className="min-h-full overflow-x-hidden bg-slate-700 text-white max-w-[280px] lg:block ">
-            <div className="flex h-full min-h-screen flex-col gap-2">
+            <div className="flex h-full  min-h-screen flex-col gap-2">
                 <div className="flex h-[60px] items-center border-b px-1">
                     <Link className="flex h-14 lg:h-[60px] items-center gap-4 font-semibold" href="/">
                         <Logo sm />
                         <span>Dashboard</span>
                     </Link>
-                    <Button onClick={handleOpenNav} className="ml-auto bg-slate-500  rounded-full border-0 h-8 w-8" size="icon">
-                        <FaArrowLeft className="text-slate-700" />
+                    <Button onClick={handleOpenNav} className={`ml-auto bg-slate-500 ${isMenuOpen ? '': 'bg-main-primary-yellow'}  rounded-full border-0 h-8 w-8`} size="icon">
+                        <LuPanelLeftClose className="text-slate-700" /> 
+                        
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
                 </div>
-                <div className="flex-1 overflow-auto py-2">
-                    <nav className="grid overflow-x-hidden items-start text-sm font-medium">
+                <div className="flex-1 py-2">
+                    <nav className={`grid h-screen lg:h-full items-start overflow-x-hidden hover:overflow-x-auto hover:overflow-y-auto text-sm font-medium ${isMenuOpen ? 'overflow-y-auto overflow-x-auto' : 'overflow-y-hidden overflow-x-hidden'}`}>
                         <Link
                             className="flex items-center gap-5 bg-slate-600 px-2 py-2 text-slate-100 transition-all hover:text-slate-300"
                             href="/dashboard"
