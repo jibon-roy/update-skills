@@ -20,13 +20,13 @@ function UserIconDropdown({ }: Props) {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
+                    className="rounded-full border border-gray-400 p1 w-10 h-10 "
                     size="icon"
                     variant="ghost"
                 >
                     <Image
                         alt="Avatar"
-                        className="rounded-full"
+                        className="rounded-full hover:brightness-95 transition"
                         height="32"
                         src={data?.user?.image ? data?.user?.image : userIcon.src}
                         style={{
