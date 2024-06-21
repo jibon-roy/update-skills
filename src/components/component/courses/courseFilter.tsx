@@ -63,6 +63,7 @@ export default function AllCoursesFilter() {
         },
         {
             _id: 5,
+            review_members: 3,
             title: "Digital Marketing Masterclass",
             category: "Courses",
             price: 119.99,
