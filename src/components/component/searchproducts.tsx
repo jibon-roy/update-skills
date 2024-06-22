@@ -8,7 +8,7 @@ import Image4 from "@/assets/images/wordpress.png"
 import { useState, useMemo } from "react"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
-import { Checkbox, Checkbox.Group } from "@/components/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
 import { Calendar } from "@/components/ui/calendar"
 
@@ -162,7 +162,7 @@ export default function Component() {
           </div>
           <div>
             <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Price Range</label>
-            <Slider min={0} max={200} step={10} value={[priceRange]} onValueChange={setPriceRange} className="w-full" />
+            <Slider min={0} max={200} step={10} value={priceRange} onValueChange={setPriceRange} className="w-full" />
             <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
               <span>${priceRange[0]}</span>
               <span>${priceRange[1]}</span>
@@ -172,7 +172,7 @@ export default function Component() {
             <label htmlFor="date" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
               Date
             </label>
-            <Calendar id="date" mode="single" value={selectedDate} onValueChange={setSelectedDate} className="w-full" />
+            <Calendar id="date" mode="single" value={selectedDate??''} onValueChange={setSelectedDate} className="w-full" />
           </div>
           <div>
             <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">Mentor</label>
