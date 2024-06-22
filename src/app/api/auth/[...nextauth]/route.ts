@@ -73,7 +73,7 @@ export const authOptions: NextAuthOptions = {
             });
             await newUser.save();
           } else {
-            // console.log('Existing user found:', existingUser);
+            console.log('Existing user found:', existingUser);
           }
           return true;
         } catch (err: any) {
