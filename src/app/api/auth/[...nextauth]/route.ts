@@ -84,9 +84,7 @@ export const authOptions: NextAuthOptions = {
       return false;
     },
   },
-  // pages: {
-  //     signIn: ['/login', '/', '/signup'],
-  // },
+  
 };
 
 // Create the handler
