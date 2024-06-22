@@ -33,7 +33,7 @@ export const authOptions: NextAuthOptions = {
 
           return null;
         } catch (error) {
-          // console.error(error);
+          console.error(error);
           return null;
         }
       },
