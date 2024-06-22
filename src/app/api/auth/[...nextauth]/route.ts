@@ -77,7 +77,7 @@ export const authOptions: NextAuthOptions = {
           }
           return true;
         } catch (err: any) {
-          console.log('Error in signIn callback:', err);
+          // console.log('Error in signIn callback:', err);
           return false;
         }
       }
