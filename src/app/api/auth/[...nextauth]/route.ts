@@ -47,8 +47,8 @@ export const authOptions: NextAuthOptions = {
     async signIn({
       user,
       account,
-      // profile,
-      // email,
+      profile,
+      email,
     }: {
       user: AuthUser;
       account: Account | null;
