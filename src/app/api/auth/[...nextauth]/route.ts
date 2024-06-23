@@ -65,8 +65,8 @@ export const authOptions: NextAuthOptions = {
           if (!existingUser) {
             const newUser = new User({
               email: user.email,
-              name: user.name,
               image: user.image,
+              name: user.name,
               dateOfBirth: '',
               password: '',
               gender: '',
