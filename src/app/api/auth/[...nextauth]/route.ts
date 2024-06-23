@@ -67,8 +67,8 @@ export const authOptions: NextAuthOptions = {
               email: user.email,
               image: user.image,
               name: user.name,
-              dateOfBirth: '',
               password: '',
+              dateOfBirth: '',
               gender: '',
             });
             await newUser.save();
