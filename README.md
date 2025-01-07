@@ -1,5 +1,5 @@
 # Welcome to Update Skills
-# It is an online course platform.
+# It is an online course platform
 # Anyone can buy the courses and techers can teach by upload their courses (inthe topic which they skilled)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
