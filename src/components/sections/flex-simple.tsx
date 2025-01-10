@@ -32,7 +32,6 @@ function FlexSimple({ flexDirection, flexDirectionMd, textColor, justifyContent,
         };
     }, [flexDirection, flexDirectionMd]);
 
-
     const styles: CSS.Properties = {
         flexDirection: direction,
         justifyContent: justifyContent,
